@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EC224 Week 2 — Indifference Curves, Budget Constraints & Consumer Optimum</title>
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #1a1a2e;
+  background: #fff;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 32px 80px;
+}
+
+/* ── TYPOGRAPHY ── */
+h1 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 2rem; font-weight: 700; color: #0a0a1a; line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.02em; }
+h2 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1.35rem; font-weight: 700; color: #0a0a1a; margin: 40px 0 12px; padding-top: 16px; border-top: 1px solid #e0e4ea; letter-spacing: -0.01em; }
+h3 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1.05rem; font-weight: 700; color: #1a1a2e; margin: 24px 0 8px; }
+h4 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #555; margin: 20px 0 6px; }
+p { margin-bottom: 14px; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+ol, ul { padding-left: 28px; margin-bottom: 14px; }
+li { margin-bottom: 5px; }
+a { color: #0066B3; }
+
+/* ── HEADER ── */
+.chapter-header { margin-bottom: 40px; padding-bottom: 28px; border-bottom: 2px solid #e0e4ea; }
+.week-tag { display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #0066B3; background: #e8f2fb; padding: 4px 12px; border-radius: 100px; margin-bottom: 14px; }
+.course-tag { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; color: #666; margin-bottom: 8px; }
+.chapter-quote { font-style: italic; color: #555; font-size: 1rem; border-left: 3px solid #c5ddf4; padding-left: 16px; margin: 18px 0; line-height: 1.7; }
+.chapter-quote cite { display: block; font-size: 0.82rem; margin-top: 6px; color: #888; font-style: normal; }
+
+/* ── META BAR ── */
+.meta-bar { display: flex; gap: 28px; flex-wrap: wrap; padding: 12px 18px; background: #f7f9fc; border: 1px solid #e0e4ea; border-radius: 8px; margin-bottom: 28px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.meta-item { display: flex; flex-direction: column; gap: 1px; }
+.meta-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; }
+.meta-value { font-size: 13px; font-weight: 600; color: #333; }
+
+/* ── QUESTIONS BOX ── */
+.questions-box { background: #e8f2fb; border: 1px solid #c5ddf4; border-radius: 10px; padding: 18px 20px; margin-bottom: 28px; }
+.questions-box-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #004F8C; margin-bottom: 12px; }
+.questions-box ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 7px 24px; }
+.questions-box li { font-size: 0.88rem; color: #004F8C; padding-left: 16px; position: relative; line-height: 1.5; }
+.questions-box li::before { content: "→"; position: absolute; left: 0; color: #0066B3; font-weight: 700; }
+
+/* ── LEARNING OBJECTIVES ── */
+.lo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+.lo-card { background: #f7f9fc; border: 1px solid #e0e4ea; border-radius: 8px; padding: 12px 14px; }
+.lo-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #0066B3; color: #fff; border-radius: 6px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 700; margin-bottom: 7px; }
+.lo-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12.5px; color: #333; line-height: 1.5; font-weight: 500; }
+.lo-sections { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; color: #999; margin-top: 4px; }
+
+/* ── NOTATION TABLE ── */
+.notation-table { width: 100%; border-collapse: collapse; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; margin-bottom: 28px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.07); }
+.notation-table th { background: #0066B3; color: #fff; padding: 9px 14px; text-align: left; font-size: 12px; font-weight: 600; }
+.notation-table td { padding: 8px 14px; border-bottom: 1px solid #e0e4ea; color: #333; }
+.notation-table tr:nth-child(even) td { background: #f7f9fc; }
+.notation-table tr:last-child td { border-bottom: none; }
+.sym { font-family: 'Courier New', monospace; font-size: 13px; color: #004F8C; font-weight: 600; }
+
+/* ── SECTION HEADER ── */
+.section-num-tag { display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; font-weight: 700; color: #0066B3; background: #e8f2fb; padding: 2px 9px; border-radius: 100px; margin-right: 8px; vertical-align: middle; }
+.section-lead { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; color: #666; font-style: italic; margin: -6px 0 14px; }
+
+/* ── CONTENT BOXES ── */
+.box { border-radius: 8px; padding: 16px 18px; margin: 18px 0; border-left: 4px solid; }
+.box-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 7px; }
+.box p { margin-bottom: 8px; font-size: 0.95rem; }
+.box p:last-child { margin-bottom: 0; }
+.box ol, .box ul { font-size: 0.95rem; margin-bottom: 8px; }
+/* Key Idea */
+.box-key { background: #e8f2fb; border-left-color: #0066B3; }
+.box-key .box-title { color: #004F8C; }
+/* Application */
+.box-app { background: #f0f7ee; border-left-color: #2E7D32; }
+.box-app .box-title { color: #1b5e20; }
+/* Try It */
+.box-try { background: #fff8e7; border-left-color: #F59E0B; }
+.box-try .box-title { color: #92400e; }
+/* Warning */
+.box-warn { background: #fef2f2; border-left-color: #DC2626; }
+.box-warn .box-title { color: #991b1b; }
+/* Definition */
+.box-def { background: #f3f0ff; border-left-color: #7C3AED; }
+.box-def .box-title { color: #4c1d95; }
+/* Insight */
+.box-insight { background: #f0fdf4; border-left-color: #059669; }
+.box-insight .box-title { color: #065f46; }
+/* Mini Case Study */
+.box-case { background: #f8f8f8; border-left-color: #374151; }
+.box-case .box-title { color: #111827; }
+
+/* ── EQUATIONS ── */
+.eq-wrap { background: #f7f9fc; border: 1px solid #e0e4ea; border-radius: 8px; padding: 14px 32px; margin: 16px 0; text-align: center; position: relative; font-size: 1.05rem; overflow-x: auto; }
+.eq-num { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; color: #999; }
+.eq-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #0066B3; text-align: center; margin-bottom: 4px; }
+
+/* ── CHECK QUESTIONS ── */
+.check-q { background: #f7f9fc; border: 1px solid #e0e4ea; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+.check-q-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #666; margin-bottom: 10px; }
+.check-q ol { margin-bottom: 0; font-size: 0.93rem; }
+.check-q li { margin-bottom: 8px; }
+.check-q li:last-child { margin-bottom: 0; }
+
+/* ── FIGURES ── */
+.figure-wrap { margin: 22px 0; }
+.figure-wrap svg { width: 100%; max-width: 100%; display: block; border: 1px solid #e0e4ea; border-radius: 8px; background: #fff; }
+.fig-caption { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12.5px; color: #555; text-align: center; margin-top: 8px; line-height: 1.6; padding: 0 12px; }
+.fig-caption strong { color: #1a1a2e; }
+
+/* ── SUMMARY TABLES ── */
+.sum-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 16px 0 24px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.07); }
+.sum-table th { background: #0066B3; color: #fff; padding: 9px 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 600; text-align: left; }
+.sum-table td { padding: 8px 14px; border-bottom: 1px solid #e0e4ea; vertical-align: middle; line-height: 1.5; }
+.sum-table tr:nth-child(even) td { background: #f7f9fc; }
+.sum-table tr:last-child td { border-bottom: none; }
+
+/* ── WORKED EXAMPLES ── */
+.worked-example { border: 1px solid #e0e4ea; border-radius: 10px; overflow: hidden; margin: 22px 0; }
+.we-header { background: #0066B3; color: #fff; padding: 12px 18px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 700; }
+.we-body { padding: 18px; }
+.we-step { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0; }
+.we-step:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.we-step-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0066B3; margin-bottom: 6px; }
+
+/* ── DECISION GUIDE ── */
+.decision-guide { background: #f7f9fc; border: 1px solid #e0e4ea; border-radius: 10px; padding: 18px; margin: 18px 0; }
+.dg-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #333; margin-bottom: 14px; }
+.dg-row { display: flex; gap: 12px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e0e4ea; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; }
+.dg-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.dg-pref { font-weight: 700; color: #0066B3; min-width: 180px; }
+.dg-method { color: #333; }
+
+/* ── CHAPTER AT A GLANCE ── */
+.glance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 18px 0; }
+.glance-card { background: #f7f9fc; border: 1px solid #e0e4ea; border-radius: 8px; padding: 16px; }
+.glance-card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0066B3; margin-bottom: 10px; }
+
+/* ── KEY TERMS ── */
+.key-terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+.term-card { border: 1px solid #e0e4ea; border-radius: 8px; padding: 12px 14px; }
+.term-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 700; color: #0066B3; margin-bottom: 5px; }
+.term-def { font-size: 0.88rem; color: #444; line-height: 1.5; }
+
+/* ── VIDEO CARDS ── */
+.video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+.video-card { border: 1px solid #e0e4ea; border-radius: 8px; padding: 14px; }
+.video-num { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0066B3; margin-bottom: 5px; }
+.video-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 600; color: #1a1a2e; margin-bottom: 5px; }
+.video-desc { font-size: 0.85rem; color: #555; line-height: 1.5; margin-bottom: 8px; }
+.video-link { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; color: #0066B3; text-decoration: none; }
+.video-link:hover { text-decoration: underline; }
+.video-time { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; color: #999; }
+
+/* ── FIVE MISTAKES ── */
+.mistake-list { counter-reset: mistake; list-style: none; padding: 0; }
+.mistake-list li { counter-increment: mistake; padding: 12px 14px 12px 48px; border: 1px solid #fecaca; border-radius: 8px; background: #fef2f2; margin-bottom: 10px; position: relative; font-size: 0.95rem; }
+.mistake-list li::before { content: counter(mistake); position: absolute; left: 14px; top: 12px; background: #DC2626; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 700; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; line-height: 1; }
+.mistake-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 700; color: #991b1b; font-size: 13px; margin-bottom: 4px; }
+
+/* ── WHERE NEXT ── */
+.where-next { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px 18px; margin: 18px 0; }
+.where-next-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #065f46; margin-bottom: 10px; }
+.where-next ul { font-size: 0.93rem; margin-bottom: 0; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  body { padding: 20px 16px; font-size: 16px; }
+  .questions-box ul, .lo-grid, .glance-grid, .key-terms-grid, .video-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     CHAPTER HEADER
+══════════════════════════════════ -->
+<header class="chapter-header">
+  <div class="course-tag">Bentley University &nbsp;·&nbsp; EC224 Intermediate Microeconomics &nbsp;·&nbsp; Prof. Naveen Sunder</div>
+  <div class="week-tag">Week 2</div>
+  <h1>Indifference Curves, Budget Constraints,<br>and the Consumer Optimum</h1>
+  <blockquote class="chapter-quote">
+    "The real price of everything is the toil and trouble of acquiring it."
+    <cite>— Adam Smith, <em>The Wealth of Nations</em>, 1776</cite>
+  </blockquote>
+
+  <div class="meta-bar">
+    <div class="meta-item"><span class="meta-label">Course</span><span class="meta-value">EC224</span></div>
+    <div class="meta-item"><span class="meta-label">Instructor</span><span class="meta-value">Prof. Naveen Sunder</span></div>
+    <div class="meta-item"><span class="meta-label">Week</span><span class="meta-value">2 of 12</span></div>
+    <div class="meta-item"><span class="meta-label">Learning Objectives</span><span class="meta-value">7</span></div>
+    <div class="meta-item"><span class="meta-label">Practice Questions</span><span class="meta-value">27</span></div>
+  </div>
+
+  <div class="questions-box">
+    <div class="questions-box-title">Questions This Chapter Will Answer</div>
+    <ul>
+      <li>Why do airlines offer economy and business class?</li>
+      <li>When fuel taxes rise, do consumers cut driving as predicted?</li>
+      <li>Why might raising a price increase total revenue?</li>
+      <li>How does a student rationally allocate a fixed weekly budget?</li>
+      <li>Why do firms like Apple bundle features rather than price separately?</li>
+      <li>When your salary doubles, does every spending category double?</li>
+    </ul>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════
+     LEARNING OBJECTIVES
+══════════════════════════════════ -->
+<h2>Learning Objectives</h2>
+<p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#666;margin-bottom:14px;">Each objective states what you will be able to do after completing this chapter.</p>
+<div class="lo-grid">
+  <div class="lo-card"><div class="lo-badge">LO1</div><div class="lo-text">Identify and sketch the four IC types and explain the logic behind each shape.</div><div class="lo-sections">§2.1 · §2.2 · §2.3 · §2.4 · §2.5 · §2.6</div></div>
+  <div class="lo-card"><div class="lo-badge">LO2</div><div class="lo-text">Derive the budget constraint; identify slope, intercepts, and the affordable set.</div><div class="lo-sections">§2.7 · §2.8</div></div>
+  <div class="lo-card"><div class="lo-badge">LO3</div><div class="lo-text">Predict and diagram how income changes (shift) and price changes (pivot) move the budget line.</div><div class="lo-sections">§2.9</div></div>
+  <div class="lo-card"><div class="lo-badge">LO4</div><div class="lo-text">State and apply the two conditions for an interior optimum: budget exhaustion and tangency.</div><div class="lo-sections">§2.10</div></div>
+  <div class="lo-card"><div class="lo-badge">LO5</div><div class="lo-text">Use the bang-for-the-buck condition to assess and correct a consumer's allocation.</div><div class="lo-sections">§2.11</div></div>
+  <div class="lo-card"><div class="lo-badge">LO6</div><div class="lo-text">Solve algebraically for the optimal bundle under Cobb-Douglas and perfect-complement preferences.</div><div class="lo-sections">§2.12</div></div>
+  <div class="lo-card"><div class="lo-badge">LO7</div><div class="lo-text">Select the correct optimisation method (tangency, corner, or kink) for any preference type.</div><div class="lo-sections">§2.10 · §2.12</div></div>
+</div>
+
+<!-- ══════════════════════════════════
+     NOTATION
+══════════════════════════════════ -->
+<h2>Notation Used in This Chapter</h2>
+<table class="notation-table">
+  <thead><tr><th>Symbol</th><th>Meaning</th><th>Symbol</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><span class="sym">X, Y</span></td><td>Quantities of goods X and Y</td><td><span class="sym">U(X,Y)</span></td><td>Utility function</td></tr>
+    <tr><td><span class="sym">P<sub>x</sub>, P<sub>y</sub></span></td><td>Prices of goods X and Y</td><td><span class="sym">MU<sub>x</sub></span></td><td>Marginal utility of X</td></tr>
+    <tr><td><span class="sym">I</span></td><td>Consumer income</td><td><span class="sym">MU<sub>y</sub></span></td><td>Marginal utility of Y</td></tr>
+    <tr><td><span class="sym">X*, Y*</span></td><td>Optimal quantities</td><td><span class="sym">MRS</span></td><td>Marginal rate of substitution</td></tr>
+    <tr><td><span class="sym">IC</span></td><td>Indifference curve</td><td><span class="sym">BC</span></td><td>Budget constraint</td></tr>
+  </tbody>
+</table>
+
+<!-- ══════════════════════════════════
+     SECTION 2.1
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.1</span>Recap: What Is an Indifference Curve?</h2>
+<p class="section-lead">How do economists represent what a consumer wants, without asking them to put a dollar value on their happiness?</p>
+
+<p>In the previous week, we introduced the concept of consumer preferences and indifference curves. To briefly recap: a consumer who faces two goods, X and Y, can be described by an <strong>indifference curve</strong> — a set of all bundles (X,Y) that provide the consumer with exactly the same level of utility (satisfaction). The consumer is, by definition, indifferent among all bundles on the same curve.</p>
+
+<p>Several key properties hold for well-behaved preferences:</p>
+<ul>
+  <li><strong>Downward sloping:</strong> since both goods are desirable, giving up some Y must be compensated by more X to keep utility constant.</li>
+  <li><strong>Convex:</strong> the consumer prefers variety, so they are willing to give up less and less of Y as they consume more X.</li>
+  <li><strong>Non-crossing:</strong> two indifference curves representing different utility levels can never intersect.</li>
+  <li><strong>Higher is better:</strong> moving outward from the origin (upper right) reaches higher utility levels.</li>
+</ul>
+
+<div class="box box-key">
+  <div class="box-title">💡 Why This Matters</div>
+  <p>Indifference curves are the economist's way of representing preferences without asking people to assign dollar values to their satisfaction. Businesses use similar logic — through market research and conjoint analysis — to understand how customers trade off product features such as price, quality, and convenience. The same framework that describes a student choosing between food and clothing underlies how airlines design fare classes and how phone manufacturers bundle features.</p>
+</div>
+
+<div class="check-q">
+  <div class="check-q-title">✏️ Check Your Understanding</div>
+  <ol>
+    <li>Name two properties that all well-behaved indifference curves share, and explain in one sentence why each property makes economic sense.</li>
+    <li>True or false: a consumer can be indifferent between a bundle with more of both goods and one with less of both goods. Justify your answer.</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2.2
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.2</span>Types of Goods and Their Indifference Curves</h2>
+<p class="section-lead">The shape of the indifference curve depends entirely on the relationship between the two goods.</p>
+
+<p>The standard convex indifference curve is the right shape for a typical consumer who values both goods and prefers variety. But economics deals with many kinds of goods, and the shape of the indifference curve changes depending on the relationship between them. We examine four important cases.</p>
+
+<div class="box box-case">
+  <div class="box-title">📋 Mini Case Study: Maya's Weekly Budget</div>
+  <p>Consider Maya, a college student with $60 per week to spend on coffee and textbooks. She values both, but they are neither perfect substitutes (she cannot read a cup of coffee) nor perfect complements (she can enjoy coffee without a textbook in hand). Her preferences are well-behaved: she prefers more of each, she prefers variety, and her willingness to give up coffee for an extra textbook declines as she already has many textbooks. Her indifference curves are the standard convex shape — downward sloping and bowing toward the origin. The concepts in this section explain how Maya's optimal choice changes if her budget grows or if textbook prices change.</p>
+</div>
+
+<h3>Summary of IC Shapes by Good Type</h3>
+<table class="sum-table">
+  <thead><tr><th>Good Type</th><th>IC Shape</th><th>MRS</th></tr></thead>
+  <tbody>
+    <tr><td>Standard (both goods desired)</td><td>Downward-sloping, convex</td><td>Diminishing</td></tr>
+    <tr><td>Perfect substitutes</td><td>Straight line, slope &minus;a/b</td><td>Constant = a/b</td></tr>
+    <tr><td>Perfect complements</td><td>L-shaped (kink on ratio ray)</td><td>0, &infin;, or undefined</td></tr>
+    <tr><td>Neutral good (Y useless)</td><td>Vertical line</td><td>&infin;</td></tr>
+    <tr><td>Economic bad (Y bad)</td><td>Upward sloping</td><td>Negative</td></tr>
+  </tbody>
+</table>
+
+<!-- ══════════════════════════════════
+     SECTION 2.3
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.3</span>Perfect Substitutes</h2>
+<p class="section-lead">If two products are truly identical in the eyes of the consumer, how does that change the shape of the indifference curve — and what does it mean for how a firm should price them?</p>
+
+<div class="box box-def">
+  <div class="box-title">📖 Definition: Perfect Substitutes</div>
+  <p><strong>Perfect Substitutes:</strong> Two goods are perfect substitutes if the consumer regards them as identical — they serve the same function perfectly and the consumer is always willing to trade one for the other at a constant ratio.</p>
+  <p>The classic example is gasoline from two neighboring stations: Exxon gas and Mobil gas. For most consumers, a gallon of gasoline is a gallon of gasoline, regardless of brand.</p>
+</div>
+
+<p>Consider a consumer starting at bundle A = (2 Mobil, 2 Exxon) — two gallons from each station, four gallons total.</p>
+<ul>
+  <li>Bundle B = (3 Mobil, 1 Exxon): still four gallons total — <em>same utility as A</em>.</li>
+  <li>Bundle C = (4 Mobil, 0 Exxon): still four gallons total — <em>same utility as A</em>.</li>
+</ul>
+<p>Because the consumer only cares about total quantity, all these bundles lie on the same IC. The willingness to trade is constant — always one-for-one. This constant trade-off rate means the IC is a <strong>straight line with slope &minus;1</strong>. More generally, if the consumer trades <em>a</em> units of Y for <em>b</em> units of X, the IC has slope &minus;a/b.</p>
+
+<p>The utility function for perfect substitutes takes the linear form:</p>
+<div class="eq-label">Utility Function — Perfect Substitutes</div>
+<div class="eq-wrap">U(X,Y) = aX + bY &nbsp;&nbsp;&nbsp; MRS = a/b (constant)<span class="eq-num">(1)</span></div>
+
+<div class="figure-wrap">
+  <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+    <!-- axes -->
+    <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="50" y1="300" x2="50" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+    <polygon points="470,300 460,295 460,305" fill="#1a1a2e"/>
+    <polygon points="50,20 45,30 55,30" fill="#1a1a2e"/>
+    <!-- grid -->
+    <line x1="50" y1="240" x2="470" y2="240" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="50" y1="180" x2="470" y2="180" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="50" y1="120" x2="470" y2="120" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="50" y1="60" x2="470" y2="60" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="170" y1="20" x2="170" y2="300" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="290" y1="20" x2="290" y2="300" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="410" y1="20" x2="410" y2="300" stroke="#e8ecf0" stroke-width="1"/>
+    <!-- U1: x+y=4, so y=4-x. scaled: x∈[0,4], plot from (50,60) to (290,300) approx -->
+    <!-- scale: x-axis 50 to 470 = 420px for 0 to 7; y-axis 300 to 20 = 280px for 0 to ~7 -->
+    <!-- px_per_unit_x = 60; px_per_unit_y = 60 -->
+    <line x1="50" y1="60" x2="290" y2="300" stroke="#0066B3" stroke-width="2.5"/>
+    <line x1="170" y1="60" x2="410" y2="300" stroke="#2E7D32" stroke-width="2.5"/>
+    <line x1="290" y1="60" x2="470" y2="220" stroke="#7C3AED" stroke-width="2.5"/>
+    <!-- labels U1 U2 U3 -->
+    <text x="56" y="52" font-family="sans-serif" font-size="13" fill="#0066B3" font-weight="600">U&#x2081;</text>
+    <text x="176" y="52" font-family="sans-serif" font-size="13" fill="#2E7D32" font-weight="600">U&#x2082;</text>
+    <text x="296" y="52" font-family="sans-serif" font-size="13" fill="#7C3AED" font-weight="600">U&#x2083;</text>
+    <!-- increasing utility arrow -->
+    <line x1="100" y1="200" x2="240" y2="120" stroke="#555" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <polygon points="240,120 230,122 234,132" fill="#555"/>
+    <text x="108" y="215" font-family="sans-serif" font-size="11" fill="#555">Increasing utility</text>
+    <!-- points A B C on U1 -->
+    <circle cx="170" cy="180" r="5" fill="#DC2626"/>
+    <text x="178" y="176" font-family="sans-serif" font-size="11" fill="#DC2626" font-weight="600">A=(2,2)</text>
+    <circle cx="230" cy="120" r="5" fill="#DC2626"/>
+    <text x="238" y="116" font-family="sans-serif" font-size="11" fill="#DC2626" font-weight="600">B=(3,1)</text>
+    <circle cx="290" cy="60" r="5" fill="#DC2626"/>
+    <text x="298" y="56" font-family="sans-serif" font-size="11" fill="#DC2626" font-weight="600">C=(4,0)</text>
+    <!-- axis labels -->
+    <text x="472" y="304" font-family="sans-serif" font-size="13" fill="#1a1a2e">X (Mobil)</text>
+    <text x="22" y="18" font-family="sans-serif" font-size="13" fill="#1a1a2e">Y</text>
+    <text x="8" y="30" font-family="sans-serif" font-size="11" fill="#666">(Exxon)</text>
+    <!-- tick labels -->
+    <text x="167" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">2</text>
+    <text x="287" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">4</text>
+    <text x="407" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">6</text>
+    <text x="44" y="244" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">2</text>
+    <text x="44" y="184" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">4</text>
+  </svg>
+  <div class="fig-caption"><strong>Figure 1.</strong> Perfect substitutes: Exxon vs. Mobil gasoline. All three curves are straight parallel lines — the hallmark of perfect substitutes. Bundles A, B, and C all lie on U&#x2081; because each involves exactly 4 gallons total. The equal spacing between curves reflects the fact that each additional gallon raises utility by the same fixed amount regardless of brand mix.</div>
+</div>
+
+<div class="box box-key">
+  <div class="box-title">💡 Key Idea</div>
+  <p>Because the consumer treats the two goods as identical, no amount of X or Y already consumed changes how willing they are to swap. The MRS is fixed. This is why the IC is a <strong>straight line</strong> rather than the bowed shape we see for ordinary goods.</p>
+  <p><strong>Key feature:</strong> The ICs are straight, parallel, downward-sloping lines. The MRS is constant — the consumer is always willing to trade the two goods at the same fixed rate, regardless of how much of each they already have.</p>
+</div>
+
+<div class="box box-app">
+  <div class="box-title">📊 Application 2.1: Store Brands and the Perfect-Substitute Threat</div>
+  <p>Retailers face perfect-substitute logic every time they launch a private-label product. If consumers genuinely view a store-brand paper towel as identical to the name-brand version, the IC between the two is a straight line with slope &minus;1. The consumer will always choose whichever is cheaper — the budget line will be tangent to the IC at a corner, buying only the cheaper brand.</p>
+  <p>This is why Procter &amp; Gamble and Unilever invest heavily in advertising: the goal is not just awareness but <em>preference differentiation</em> — shifting consumers away from a linear IC toward a bowed one, so that they prefer a mix rather than the cheapest-only corner solution.</p>
+</div>
+
+<div class="box box-try">
+  <div class="box-title">✏️ Try It</div>
+  <ol>
+    <li>A consumer has utility U(X,Y) = 2X + 3Y. What is the MRS? Draw one indifference curve for U = 12.</li>
+    <li>If two goods are perfect substitutes, will the consumer ever buy both simultaneously? Under what special condition might they?</li>
+  </ol>
+</div>
+
+<div class="check-q">
+  <div class="check-q-title">✏️ Check Your Understanding</div>
+  <ol>
+    <li>A consumer has utility U(X,Y) = 2X + 3Y. What is the MRS? Draw one indifference curve for U = 12.</li>
+    <li>If two goods are perfect substitutes, will the consumer ever buy both simultaneously? Under what special condition might they?</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2.4 — PERFECT COMPLEMENTS
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.4</span>Perfect Complements</h2>
+<p class="section-lead">What happens when two goods must always be consumed together in a fixed ratio?</p>
+
+<div class="box box-def">
+  <div class="box-title">📖 Definition: Perfect Complements</div>
+  <p><strong>Perfect Complements:</strong> Two goods are perfect complements if they must be consumed together in fixed proportions in order to generate utility. Extra units of one good, without the corresponding extra units of the other, provide no additional utility.</p>
+  <p>The canonical example is left shoes and right shoes. A consumer with 2 left shoes and 2 right shoes has 2 functional pairs.</p>
+</div>
+
+<ul>
+  <li>Bundle A = (2 left, 2 right): 2 functional pairs.</li>
+  <li>Bundle B = (3 left, 2 right): still only 2 functional pairs — the extra left shoe is useless without a matching right shoe. <em>Same utility as A.</em></li>
+  <li>Bundle C = (4 left, 2 right): still 2 functional pairs. <em>Same utility.</em></li>
+</ul>
+
+<p>The IC through A = (2,2) is <strong>L-shaped</strong>: a vertical arm at X = 2 and a horizontal arm at Y = 2. The kink is at (2,2). More generally, for goods consumed in fixed proportions a:b:</p>
+
+<div class="eq-label">Utility Function — Perfect Complements</div>
+<div class="eq-wrap">U(X,Y) = min(X/a, Y/b)<span class="eq-num">(2)</span></div>
+<p style="font-size:0.88rem;color:#666;text-align:center;margin-top:-8px;">For equal proportions (a = b = 1): U = min(X,Y).</p>
+
+<div class="figure-wrap">
+  <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+    <!-- axes -->
+    <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="50" y1="300" x2="50" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+    <polygon points="470,300 460,295 460,305" fill="#1a1a2e"/>
+    <polygon points="50,20 45,30 55,30" fill="#1a1a2e"/>
+    <!-- grid -->
+    <line x1="50" y1="240" x2="470" y2="240" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="50" y1="180" x2="470" y2="180" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="50" y1="120" x2="470" y2="120" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="170" y1="20" x2="170" y2="300" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="290" y1="20" x2="290" y2="300" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="410" y1="20" x2="410" y2="300" stroke="#e8ecf0" stroke-width="1"/>
+    <!-- 45 degree ray dashed -->
+    <line x1="50" y1="300" x2="430" y2="20" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <text x="420" y="18" font-family="sans-serif" font-size="11" fill="#999">45°</text>
+    <!-- L-shaped ICs — U1 kink at (1,1) → x=110,y=240 -->
+    <polyline points="110,20 110,240 470,240" stroke="#0066B3" stroke-width="2.5" fill="none"/>
+    <!-- U2 kink at (2,2) → x=170,y=180 -->
+    <polyline points="170,20 170,180 470,180" stroke="#2E7D32" stroke-width="2.5" fill="none"/>
+    <!-- U3 kink at (3,3) → x=230,y=120 -->
+    <polyline points="290,20 290,120 470,120" stroke="#7C3AED" stroke-width="2.5" fill="none"/>
+    <!-- kink dots -->
+    <circle cx="110" cy="240" r="5" fill="#0066B3"/>
+    <circle cx="170" cy="180" r="5" fill="#2E7D32"/>
+    <circle cx="290" cy="120" r="5" fill="#7C3AED"/>
+    <!-- labels -->
+    <text x="116" y="236" font-family="sans-serif" font-size="11" fill="#0066B3" font-weight="600">U&#x2081;(1,1)</text>
+    <text x="176" y="176" font-family="sans-serif" font-size="11" fill="#2E7D32" font-weight="600">U&#x2082;(2,2)</text>
+    <text x="296" y="116" font-family="sans-serif" font-size="11" fill="#7C3AED" font-weight="600">U&#x2083;(3,3)</text>
+    <!-- B and C on U2 arm -->
+    <circle cx="230" cy="180" r="4" fill="#DC2626"/>
+    <text x="238" y="176" font-family="sans-serif" font-size="11" fill="#DC2626">B</text>
+    <circle cx="350" cy="180" r="4" fill="#DC2626"/>
+    <text x="358" y="176" font-family="sans-serif" font-size="11" fill="#DC2626">C</text>
+    <!-- increasing utility arrow -->
+    <line x1="80" y1="220" x2="160" y2="160" stroke="#555" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <polygon points="160,160 150,163 154,173" fill="#555"/>
+    <text x="52" y="234" font-family="sans-serif" font-size="10" fill="#555">Increasing</text>
+    <text x="52" y="246" font-family="sans-serif" font-size="10" fill="#555">utility</text>
+    <!-- axis labels -->
+    <text x="472" y="304" font-family="sans-serif" font-size="13" fill="#1a1a2e">X (Left shoes)</text>
+    <text x="10" y="18" font-family="sans-serif" font-size="13" fill="#1a1a2e">Y</text>
+    <text x="4" y="30" font-family="sans-serif" font-size="10" fill="#666">(Right shoes)</text>
+    <!-- ticks -->
+    <text x="107" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">1</text>
+    <text x="167" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">2</text>
+    <text x="287" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">3</text>
+    <text x="44" y="244" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">1</text>
+    <text x="44" y="184" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">2</text>
+    <text x="44" y="124" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">3</text>
+  </svg>
+  <div class="fig-caption"><strong>Figure 2.</strong> Perfect complements: left shoes and right shoes. The kink of each L-shaped curve is the only bundle where both goods are fully "used up." On the horizontal arm (bundles B and C), there are surplus left shoes that add nothing. All kinks lie on the 45&deg; ray, confirming the consumer always wants equal amounts of each good.</div>
+</div>
+
+<div class="box box-key">
+  <div class="box-title">💡 Key Idea</div>
+  <p>The kink of the L is the only point on each IC where both goods are being "used." Anywhere else on the L, one good is in excess. Extra units of the surplus good add no utility.</p>
+  <p><strong>Key feature:</strong> L-shaped ICs with the kink on the ray X/a = Y/b. The MRS is not defined at the kink, and is either 0 (horizontal arm) or &infin; (vertical arm).</p>
+</div>
+
+<div class="box box-app">
+  <div class="box-title">📊 Application 2.2: The Razor-and-Blade Business Model</div>
+  <p>Perfect-complement preferences underlie one of the most successful pricing strategies in business history. Gillette sells razors cheaply (near cost) and charges a premium on replacement blades. Printer companies do the same with ink cartridges. Apple's ecosystem — iPhone and App Store — exhibits the same logic. When two goods are perfect complements, the consumer must buy them in a fixed ratio. A firm that controls supply of one complement can therefore extract value through the other. This is the foundation for understanding why firms in technology, gaming (consoles and games), and healthcare (devices and consumables) adopt two-part pricing structures.</p>
+</div>
+
+<div class="check-q">
+  <div class="check-q-title">✏️ Check Your Understanding</div>
+  <ol>
+    <li>A consumer has U(X,Y) = min(X, 2Y). Sketch two indifference curves and identify the kink points. Where do all kinks lie?</li>
+    <li>Why is the MRS undefined at the kink of an L-shaped IC? What does this mean for applying the tangency condition?</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2.5 — NEUTRAL GOOD
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.5</span>Neutral (Useless) Good</h2>
+<p class="section-lead">Can a good have zero value to a consumer? What does the indifference map look like when one good simply does not matter?</p>
+
+<div class="box box-def">
+  <div class="box-title">📖 Definition: Neutral Good</div>
+  <p><strong>Neutral Good:</strong> A good is neutral if it provides zero marginal utility to the consumer — consuming more or less of it leaves utility completely unchanged. Examples include class notes for a course you have never taken, or a book in a language you do not speak.</p>
+</div>
+
+<p>Suppose good Y is neutral and good X is a normal good. Starting at bundle A = (2,2):</p>
+<ul>
+  <li>Moving to (2,3): added one unit of Y — utility unchanged.</li>
+  <li>Moving to (2,10): Y is still neutral — utility unchanged.</li>
+  <li>Any bundle of the form (2, Y) for any Y ≥ 0 has the same utility as A.</li>
+</ul>
+<p>The IC through A is therefore a <strong>vertical line at X = 2</strong>. Utility only changes when X changes, so utility increases as you move horizontally to the right.</p>
+
+<div class="figure-wrap">
+  <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+    <!-- axes -->
+    <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="50" y1="300" x2="50" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+    <polygon points="470,300 460,295 460,305" fill="#1a1a2e"/>
+    <polygon points="50,20 45,30 55,30" fill="#1a1a2e"/>
+    <!-- grid -->
+    <line x1="50" y1="240" x2="470" y2="240" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="50" y1="180" x2="470" y2="180" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="50" y1="120" x2="470" y2="120" stroke="#e8ecf0" stroke-width="1"/>
+    <!-- vertical IC lines -->
+    <line x1="170" y1="25" x2="170" y2="295" stroke="#0066B3" stroke-width="2.5"/>
+    <line x1="290" y1="25" x2="290" y2="295" stroke="#2E7D32" stroke-width="2.5"/>
+    <line x1="410" y1="25" x2="410" y2="295" stroke="#7C3AED" stroke-width="2.5"/>
+    <!-- labels -->
+    <text x="160" y="22" font-family="sans-serif" font-size="13" fill="#0066B3" font-weight="600" text-anchor="middle">U&#x2081;</text>
+    <text x="280" y="22" font-family="sans-serif" font-size="13" fill="#2E7D32" font-weight="600" text-anchor="middle">U&#x2082;</text>
+    <text x="400" y="22" font-family="sans-serif" font-size="13" fill="#7C3AED" font-weight="600" text-anchor="middle">U&#x2083;</text>
+    <!-- increasing utility arrow -->
+    <line x1="190" y1="150" x2="380" y2="150" stroke="#16a34a" stroke-width="2"/>
+    <polygon points="380,150 370,145 370,155" fill="#16a34a"/>
+    <text x="240" y="143" font-family="sans-serif" font-size="11" fill="#16a34a">Increasing utility</text>
+    <!-- Point A -->
+    <circle cx="170" cy="180" r="5" fill="#DC2626"/>
+    <text x="178" y="176" font-family="sans-serif" font-size="11" fill="#DC2626" font-weight="600">A=(2,2)</text>
+    <!-- same utility point -->
+    <circle cx="170" cy="120" r="4" fill="#555"/>
+    <text x="178" y="117" font-family="sans-serif" font-size="11" fill="#555">(2,3) same utility</text>
+    <!-- axis labels -->
+    <text x="472" y="304" font-family="sans-serif" font-size="13" fill="#1a1a2e">X (Food)</text>
+    <text x="22" y="18" font-family="sans-serif" font-size="13" fill="#1a1a2e">Y</text>
+    <text x="8" y="30" font-family="sans-serif" font-size="10" fill="#666">(Neutral</text>
+    <text x="8" y="42" font-family="sans-serif" font-size="10" fill="#666">Good)</text>
+    <text x="167" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">2</text>
+    <text x="287" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">4</text>
+    <text x="407" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">6</text>
+    <text x="44" y="184" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">2</text>
+    <text x="44" y="124" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">3</text>
+  </svg>
+  <div class="fig-caption"><strong>Figure 3.</strong> Neutral (useless) good: vertical indifference curves. Point A=(2,2) and the point (2,3) lie on the same IC U&#x2081; — adding more of the neutral good Y changes nothing. Utility increases only when X increases, which is why higher ICs lie to the right, not above.</div>
+</div>
+
+<div class="check-q">
+  <div class="check-q-title">✏️ Check Your Understanding</div>
+  <ol>
+    <li>For the utility function U(X,Y) = X, verify that Y is neutral by computing &part;U/&part;Y.</li>
+    <li>A consumer has U(X,Y) = X. If their income doubles, does their demand for Y change? Explain without algebra.</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2.6 — ECONOMIC BADS
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.6</span>Economic Bads</h2>
+<p class="section-lead">How do economists model goods that consumers would prefer to avoid entirely — like pollution, noise, or a long commute?</p>
+
+<div class="box box-def">
+  <div class="box-title">📖 Definition: Economic Bad</div>
+  <p><strong>Economic Bad:</strong> A good is an economic bad if consuming more of it <em>reduces</em> the consumer's utility. It confers negative marginal utility — also called disutility. Classic examples: pollution, noise, commute time.</p>
+</div>
+
+<p>Suppose good Y is an economic bad (e.g., air pollution) and good X is a normal good (e.g., food). Starting at bundle A = (2,2):</p>
+<ul>
+  <li>If we add more Y (more pollution), the consumer is worse off.</li>
+  <li>To compensate and keep utility constant, we must give them more X.</li>
+  <li>Moving along the IC requires moving to the upper right: more X to compensate for more Y.</li>
+</ul>
+<p>The IC through A is therefore <strong>upward sloping</strong>. Higher utility is reached by moving right (more X) or downward (less of the bad Y).</p>
+
+<div class="figure-wrap">
+  <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+    <!-- axes -->
+    <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="50" y1="300" x2="50" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+    <polygon points="470,300 460,295 460,305" fill="#1a1a2e"/>
+    <polygon points="50,20 45,30 55,30" fill="#1a1a2e"/>
+    <!-- grid -->
+    <line x1="50" y1="240" x2="470" y2="240" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="50" y1="180" x2="470" y2="180" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="50" y1="120" x2="470" y2="120" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="170" y1="20" x2="170" y2="300" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="290" y1="20" x2="290" y2="300" stroke="#e8ecf0" stroke-width="1"/>
+    <line x1="410" y1="20" x2="410" y2="300" stroke="#e8ecf0" stroke-width="1"/>
+    <!-- upward-sloping ICs -->
+    <line x1="50" y1="240" x2="430" y2="60" stroke="#0066B3" stroke-width="2.5"/>
+    <line x1="130" y1="240" x2="470" y2="80" stroke="#2E7D32" stroke-width="2.5"/>
+    <line x1="50" y1="180" x2="310" y2="60" stroke="#7C3AED" stroke-width="2.5" opacity="0.6"/>
+    <!-- labels -->
+    <text x="56" y="234" font-family="sans-serif" font-size="13" fill="#0066B3" font-weight="600">U&#x2081;</text>
+    <text x="136" y="234" font-family="sans-serif" font-size="13" fill="#2E7D32" font-weight="600">U&#x2082;</text>
+    <text x="56" y="174" font-family="sans-serif" font-size="13" fill="#7C3AED" font-weight="600">U&#x2083;</text>
+    <!-- increasing utility arrow -->
+    <line x1="340" y1="220" x2="430" y2="160" stroke="#16a34a" stroke-width="2"/>
+    <polygon points="430,160 420,163 424,173" fill="#16a34a"/>
+    <text x="330" y="234" font-family="sans-serif" font-size="10" fill="#16a34a">Increasing</text>
+    <text x="330" y="246" font-family="sans-serif" font-size="10" fill="#16a34a">utility</text>
+    <!-- Point A -->
+    <circle cx="170" cy="180" r="5" fill="#DC2626"/>
+    <text x="178" y="176" font-family="sans-serif" font-size="11" fill="#DC2626" font-weight="600">A=(2,2)</text>
+    <!-- axis labels -->
+    <text x="472" y="304" font-family="sans-serif" font-size="13" fill="#1a1a2e">X (Food)</text>
+    <text x="22" y="18" font-family="sans-serif" font-size="13" fill="#1a1a2e">Y</text>
+    <text x="10" y="30" font-family="sans-serif" font-size="10" fill="#666">(Bad:</text>
+    <text x="8" y="42" font-family="sans-serif" font-size="10" fill="#666">Pollution)</text>
+    <text x="167" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">2</text>
+    <text x="287" y="315" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle">4</text>
+    <text x="44" y="184" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">2</text>
+    <text x="44" y="244" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">1</text>
+  </svg>
+  <div class="fig-caption"><strong>Figure 4.</strong> Economic bad: upward-sloping indifference curves. All three curves slope upward. Bundle A=(2,2) lies on U&#x2081;. To stay on U&#x2081; when pollution Y rises above 2, the consumer must receive more food X as compensation. Moving right (more food, same pollution) reaches U&#x2082; and U&#x2083;.</div>
+</div>
+
+<div class="box box-key">
+  <div class="box-title">💡 Why This Matters — Policy Application</div>
+  <p>Economic bads appear constantly in policy debates. When a government evaluates a highway expansion, residents near the road experience noise and pollution as economic bads. To keep utility constant, they need compensation — more of some other good (income, parks, soundproofing). Understanding ICs for bads helps economists design sensible compensation policies and value environmental amenities.</p>
+</div>
+
+<div class="check-q">
+  <div class="check-q-title">✏️ Check Your Understanding</div>
+  <ol>
+    <li>Commute time is an economic bad for most workers. If a firm offers a pay rise to compensate employees for a longer commute, what does this say about the shape of their ICs over income and commute time?</li>
+    <li>For U(X,Y) = X &minus; Y&sup2; (where Y &ge; 0), show that Y is a bad by computing &part;U/&part;Y.</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2.7 — BUDGET CONSTRAINT
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.7</span>The Budget Constraint</h2>
+<p class="section-lead">A student has $60 a week for coffee and textbooks. What is the full set of bundles she can afford, and how does that set change if textbook prices rise?</p>
+
+<p>Indifference curves describe what the consumer <em>wants</em>. But wanting something is not enough — the consumer also faces a resource constraint. This is where the <strong>budget constraint (BC)</strong> comes in.</p>
+
+<p>Suppose a consumer has income I and faces prices P<sub>x</sub> for good X and P<sub>y</sub> for good Y. If the consumer spends all of their income:</p>
+
+<div class="eq-label">The Budget Constraint</div>
+<div class="eq-wrap">I = P<sub>x</sub> &middot; X + P<sub>y</sub> &middot; Y<span class="eq-num">(3)</span></div>
+
+<p>Rearranging so that Y is on the left gives us the slope-intercept form:</p>
+
+<div class="eq-label">Slope-Intercept Form</div>
+<div class="eq-wrap">Y = I/P<sub>y</sub> &nbsp;&minus;&nbsp; (P<sub>x</sub>/P<sub>y</sub>) &middot; X<span class="eq-num">(4)</span></div>
+
+<p>From this form, we can read off the key properties:</p>
+<ul>
+  <li><strong>Y-intercept (X = 0):</strong> Y<sub>max</sub> = I/P<sub>y</sub> — the maximum amount of Y if all income is spent on Y.</li>
+  <li><strong>X-intercept (Y = 0):</strong> X<sub>max</sub> = I/P<sub>x</sub> — the maximum amount of X if all income is spent on X.</li>
+  <li><strong>Slope = &minus;P<sub>x</sub>/P<sub>y</sub>:</strong> the opportunity cost of X in terms of Y — for every extra unit of X, the consumer gives up P<sub>x</sub>/P<sub>y</sub> units of Y.</li>
+</ul>
+
+<div class="figure-wrap">
+  <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+    <!-- axes -->
+    <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="50" y1="300" x2="50" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+    <polygon points="470,300 460,295 460,305" fill="#1a1a2e"/>
+    <polygon points="50,20 45,30 55,30" fill="#1a1a2e"/>
+    <!-- shaded affordable region -->
+    <polygon points="50,60 50,300 380,300" fill="#e8f2fb" opacity="0.6"/>
+    <!-- budget line -->
+    <line x1="50" y1="60" x2="380" y2="300" stroke="#0066B3" stroke-width="2.5"/>
+    <!-- intercept dots -->
+    <circle cx="50" cy="60" r="5" fill="#0066B3"/>
+    <circle cx="380" cy="300" r="5" fill="#0066B3"/>
+    <!-- labels -->
+    <text x="28" y="60" font-family="sans-serif" font-size="12" fill="#004F8C" text-anchor="end" font-weight="600">I/P<tspan baseline-shift="sub" font-size="9">y</tspan></text>
+    <text x="375" y="316" font-family="sans-serif" font-size="12" fill="#004F8C" text-anchor="middle" font-weight="600">I/P<tspan baseline-shift="sub" font-size="9">x</tspan></text>
+    <!-- slope annotation -->
+    <text x="180" y="195" font-family="sans-serif" font-size="12" fill="#0066B3" transform="rotate(-35,180,195)">slope = &minus;P<tspan baseline-shift="sub" font-size="9">x</tspan>/P<tspan baseline-shift="sub" font-size="9">y</tspan></text>
+    <!-- affordable label -->
+    <text x="120" y="220" font-family="sans-serif" font-size="13" fill="#004F8C" font-weight="600">Affordable</text>
+    <text x="120" y="237" font-family="sans-serif" font-size="13" fill="#004F8C" font-weight="600">Bundles</text>
+    <!-- axis labels -->
+    <text x="472" y="304" font-family="sans-serif" font-size="13" fill="#1a1a2e">X</text>
+    <text x="30" y="18" font-family="sans-serif" font-size="13" fill="#1a1a2e">Y</text>
+  </svg>
+  <div class="fig-caption"><strong>Figure 5.</strong> The budget constraint. The Y-intercept is the most Y the consumer can buy (spending everything on Y); the X-intercept is the most X they can buy. The slope &minus;P<sub>x</sub>/P<sub>y</sub> tells you exactly how many units of Y must be sacrificed for one more unit of X. Every point in the shaded triangle is affordable; every point above the line is not.</div>
+</div>
+
+<div class="box box-key">
+  <div class="box-title">💡 Key Idea</div>
+  <p>The budget constraint separates the feasible from the infeasible. Any bundle on or below the line is affordable; any bundle above the line requires more money than the consumer has. The line itself represents all the ways the consumer can spend every last dollar.</p>
+</div>
+
+<h3>Worked Example: Sheela's Budget Constraint</h3>
+<div class="worked-example">
+  <div class="we-header">Sheela's Budget Constraint — I = $100, P<sub>x</sub> = $5, P<sub>y</sub> = $2</div>
+  <div class="we-body">
+    <div class="we-step">
+      <div class="we-step-label">Step 1 — Maximum quantities</div>
+      <p>X<sub>max</sub> = I/P<sub>x</sub> = 100/5 = <strong>20</strong> &nbsp;&nbsp;&nbsp; Y<sub>max</sub> = I/P<sub>y</sub> = 100/2 = <strong>50</strong></p>
+    </div>
+    <div class="we-step">
+      <div class="we-step-label">Step 2 — Budget constraint equation</div>
+      <p>100 = 5X + 2Y</p>
+    </div>
+    <div class="we-step">
+      <div class="we-step-label">Step 3 — Slope</div>
+      <p>Slope = &minus;P<sub>x</sub>/P<sub>y</sub> = &minus;5/2 = <strong>&minus;2.5</strong></p>
+      <p><em>In words:</em> For every additional unit of food Sheela buys, she must give up 2.5 units of clothing.</p>
+    </div>
+    <div class="we-step">
+      <div class="we-step-label">Step 4 — Draw the line</div>
+      <p>Plot (0, 50) on the Y-axis and (20, 0) on the X-axis; connect them with a straight line.</p>
+    </div>
+  </div>
+</div>
+
+<div class="box box-try">
+  <div class="box-title">✏️ Try It</div>
+  <p>Suppose Sheela's income rises to $150 but prices stay the same. Without calculating, predict what happens to the budget line. Then verify by computing the new intercepts.</p>
+  <p><em>Answer: both intercepts scale by 1.5; slope unchanged.</em></p>
+</div>
+
+<div class="check-q">
+  <div class="check-q-title">✏️ Check Your Understanding</div>
+  <ol>
+    <li>A consumer has I = $120, P<sub>x</sub> = $4, P<sub>y</sub> = $6. Write the budget constraint, find both intercepts, and state the slope. What is the opportunity cost of one unit of X?</li>
+    <li>True or false: if P<sub>x</sub> and P<sub>y</sub> both double while income stays constant, the budget line shifts inward in parallel. Justify carefully.</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2.8 — CHANGES IN BC
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.8</span>Changes in the Budget Constraint</h2>
+<p class="section-lead">When a government cuts fuel taxes, does the budget line shift or rotate? Getting this right is the foundation for predicting how consumers respond to price changes.</p>
+
+<h3>Income Increases: Parallel Outward Shift</h3>
+<p>When income increases from $100 to $150 while P<sub>x</sub> = 5 and P<sub>y</sub> = 2 remain the same:</p>
+<ul>
+  <li>Y-intercept = I/P<sub>y</sub>: increases from 50 to <strong>75</strong>.</li>
+  <li>X-intercept = I/P<sub>x</sub>: increases from 20 to <strong>30</strong>.</li>
+  <li>Slope = &minus;P<sub>x</sub>/P<sub>y</sub> = &minus;5/2: <strong>unchanged</strong> (prices did not change).</li>
+</ul>
+<p>Both intercepts increase proportionally and the slope is unchanged. The budget line <strong>shifts outward in parallel</strong>.</p>
+
+<div class="box box-key">
+  <div class="box-title">💡 Key Idea</div>
+  <p><strong>Income change &Rightarrow; parallel shift</strong> of budget line. The slope is set by prices alone, so as long as prices do not change, a higher income simply slides the entire line outward. Income up: BC shifts outward. Income down: BC shifts inward.</p>
+</div>
+
+<h3>Price Change: Pivoting the Budget Line</h3>
+<p>When P<sub>x</sub> decreases from $5 to $4, while income = $100 and P<sub>y</sub> = $2 remain the same:</p>
+<ul>
+  <li>Y-intercept = I/P<sub>y</sub> = 100/2 = 50: <strong>unchanged</strong> (neither I nor P<sub>y</sub> changed).</li>
+  <li>X-intercept = I/P<sub>x</sub>: increases from 100/5 = 20 to 100/4 = <strong>25</strong>.</li>
+  <li>Slope = &minus;P<sub>x</sub>/P<sub>y</sub>: changes from &minus;2.5 to <strong>&minus;2</strong> (becomes flatter).</li>
+</ul>
+<p>The line <strong>pivots outward</strong> around the fixed Y-intercept. The X-intercept moves outward; the slope changes.</p>
+
+<div class="box box-key">
+  <div class="box-title">💡 Key Idea</div>
+  <p><strong>Own-price change &Rightarrow; pivot</strong> of budget line. The intercept on the other good's axis is fixed; only the intercept on the good whose price changed moves. P<sub>x</sub> falls: pivot outward (flatter). P<sub>x</sub> rises: pivot inward (steeper).</p>
+</div>
+
+<div class="box box-warn">
+  <div class="box-title">⚠️ Common Mistake: Confusing Shifts with Pivots</div>
+  <p>Students often draw a parallel shift when a price changes, or a pivot when income changes. The rule is simple: <strong>income changes both intercepts proportionally and leaves the slope unchanged (parallel shift); a price change fixes one intercept and moves the other, changing the slope (pivot).</strong> Quick check: if the fixed intercept has moved, it is not a pivot.</p>
+</div>
+
+<h3>Quick-Reference: What Moves on the Budget Line?</h3>
+<table class="sum-table">
+  <thead><tr><th>Change</th><th>Y-intercept</th><th>X-intercept</th><th>Slope</th><th>Type</th></tr></thead>
+  <tbody>
+    <tr><td>Income &uarr;</td><td>Moves out</td><td>Moves out</td><td>Fixed</td><td>Parallel shift out</td></tr>
+    <tr><td>Income &darr;</td><td>Moves in</td><td>Moves in</td><td>Fixed</td><td>Parallel shift in</td></tr>
+    <tr><td>P<sub>x</sub> &darr;</td><td>Fixed</td><td>Moves out</td><td>Flatter</td><td>Pivot out</td></tr>
+    <tr><td>P<sub>x</sub> &uarr;</td><td>Fixed</td><td>Moves in</td><td>Steeper</td><td>Pivot in</td></tr>
+    <tr><td>P<sub>y</sub> &darr;</td><td>Moves out</td><td>Fixed</td><td>Steeper</td><td>Pivot out</td></tr>
+    <tr><td>P<sub>y</sub> &uarr;</td><td>Moves in</td><td>Fixed</td><td>Flatter</td><td>Pivot in</td></tr>
+    <tr><td>All prices &times;k</td><td>Moves in</td><td>Moves in</td><td>Fixed</td><td>&equiv; income &divide;k</td></tr>
+  </tbody>
+</table>
+
+<div class="box box-app">
+  <div class="box-title">📊 Application 2.3: Fuel Tax vs. Income Tax — Same Revenue, Different Behaviour</div>
+  <p>Suppose the government needs to raise $500 per household in revenue. It can do so either by levying a tax on petrol (pivoting the budget line inward around the non-petrol intercept) or by reducing all households' income by $500 (a parallel shift inward). Both policies raise the same revenue. But they affect consumer choices very differently: the fuel tax changes relative prices and discourages petrol consumption specifically; the income tax leaves relative prices intact and reduces consumption of all goods proportionally.</p>
+  <p>This is why environmental economists prefer fuel taxes to income taxes when they want to reduce emissions — the pivot, not the shift, does the work.</p>
+</div>
+
+<div class="check-q">
+  <div class="check-q-title">✏️ Check Your Understanding</div>
+  <ol>
+    <li>Sheela has I = $100, P<sub>x</sub> = $5, P<sub>y</sub> = $2. Draw the original budget line. Now P<sub>y</sub> rises to $4. Which intercept is fixed? Redraw and state the new slope.</li>
+    <li>A student claims: "doubling all prices is the same as halving my income." Is she correct? Use the budget constraint equation to verify.</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2.9 — OPTIMAL BUNDLE
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.9</span>Determining the Optimal Consumption Bundle</h2>
+<p class="section-lead">Given that a consumer wants to reach the highest IC and can only afford bundles on or below the budget line, where exactly is the best bundle — and how do we find it?</p>
+
+<p>We now have two pieces: (1) indifference curves, which describe what the consumer <em>wants</em>, and (2) the budget constraint, which describes what they can <em>afford</em>. The consumer's goal is:</p>
+<p style="text-align:center;font-style:italic;font-size:1.05rem;margin:16px 0;padding:12px;background:#f7f9fc;border-radius:8px;border-left:4px solid #0066B3;">Choose the bundle that provides the highest utility while remaining within the budget.</p>
+
+<p><strong>Why interior points are not optimal.</strong> Consider a bundle A that lies strictly inside the budget constraint. The consumer is spending less than their income — some income is unspent. But since both goods are desirable, spending that remaining income on more X or Y would push the consumer to a higher IC. Therefore, the optimal bundle must lie on the budget line.</p>
+
+<p><strong>Why crossing is not optimal.</strong> Consider bundle B on the budget line, where an IC crosses (rather than is tangent to) the budget line. At a crossing, between the two intersection points there are affordable bundles that lie above the IC through B. The consumer can do better than B by moving along the budget line. Therefore, B is not optimal.</p>
+
+<p><strong>The tangency point is optimal.</strong> Point C is where the budget line is tangent to an IC. At this point: (1) the consumer is spending all income, and (2) there is no affordable bundle on a higher IC. Point C is the <strong>optimal consumption bundle</strong>.</p>
+
+<h3>The Two Conditions for Optimality</h3>
+<p>From the geometric analysis, two conditions must hold at the optimal bundle:</p>
+
+<div class="eq-label">Condition 1 — Budget Exhaustion</div>
+<div class="eq-wrap">P<sub>x</sub> &middot; X* + P<sub>y</sub> &middot; Y* = I<span class="eq-num">(5)</span></div>
+
+<div class="eq-label">Condition 2 — Tangency Condition</div>
+<div class="eq-wrap">P<sub>x</sub>/P<sub>y</sub> = MU<sub>x</sub>/MU<sub>y</sub><span class="eq-num">(6)</span></div>
+
+<p>In words: the market's trade-off between the two goods (the price ratio) must equal the consumer's personal trade-off (the MRS). If they differ, the consumer can always rearrange spending to reach a higher IC.</p>
+
+<div class="box box-key">
+  <div class="box-title">💡 Key Idea</div>
+  <p>The tangency condition says: at the optimum, the market's exchange rate between X and Y (the price ratio) exactly equals the consumer's personal exchange rate (the MRS). If they differed, the consumer could rearrange spending to get more utility without spending more money.</p>
+</div>
+
+<div class="box box-warn">
+  <div class="box-title">⚠️ Common Mistake: Using Tangency for All Preference Types</div>
+  <p>The tangency condition holds only for smooth, strictly convex ICs (like Cobb-Douglas). For perfect complements, the optimum is at the kink of the L, where the MRS is undefined. For perfect substitutes, the optimum is typically at a corner. Always check the type of preferences before applying the tangency condition mechanically.</p>
+</div>
+
+<h3>Which Method Do I Use? A Decision Guide</h3>
+<div class="decision-guide">
+  <div class="dg-title">Selecting the Correct Optimisation Method</div>
+  <div class="dg-row"><div class="dg-pref">Smooth, strictly convex IC<br><em>(e.g. Cobb-Douglas)</em></div><div class="dg-method">Use <strong>tangency condition:</strong> P<sub>x</sub>/P<sub>y</sub> = MU<sub>x</sub>/MU<sub>y</sub>, plus budget exhaustion.</div></div>
+  <div class="dg-row"><div class="dg-pref">Perfect complements<br><em>U = min(X/a, Y/b)</em></div><div class="dg-method">Use <strong>kink condition:</strong> X/a = Y/b, plus budget exhaustion. Tangency does not apply.</div></div>
+  <div class="dg-row"><div class="dg-pref">Perfect substitutes<br><em>U = aX + bY</em></div><div class="dg-method">Compare MU<sub>x</sub>/P<sub>x</sub> vs. MU<sub>y</sub>/P<sub>y</sub>. <strong>Buy only the better-value good</strong> (corner solution).</div></div>
+</div>
+
+<div class="check-q">
+  <div class="check-q-title">✏️ Check Your Understanding</div>
+  <ol>
+    <li>A consumer is at a bundle where MU<sub>x</sub>/P<sub>x</sub> &gt; MU<sub>y</sub>/P<sub>y</sub> and the budget is exhausted. Are they at the optimum? If not, how should they adjust?</li>
+    <li>Explain in one sentence why a rational consumer with positive marginal utilities for both goods will never choose a bundle strictly inside the budget constraint.</li>
+  </ol>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2.10 — BANG FOR THE BUCK
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.10</span>Bang for the Buck</h2>
+
+<p>The optimality condition can be rearranged to yield a very intuitive interpretation. Rearranging P<sub>x</sub>/P<sub>y</sub> = MU<sub>x</sub>/MU<sub>y</sub>:</p>
+
+<div class="eq-label">Bang for the Buck Condition</div>
+<div class="eq-wrap">MU<sub>x</sub>/P<sub>x</sub> = MU<sub>y</sub>/P<sub>y</sub><span class="eq-num">(7)</span></div>
+
+<p>What does each side mean?</p>
+<ul>
+  <li>MU<sub>x</sub> is the extra utility from consuming one more unit of X — the <em>benefit</em> of X.</li>
+  <li>P<sub>x</sub> is the cost of one unit of X — the <em>cost</em> of X.</li>
+  <li>MU<sub>x</sub>/P<sub>x</sub> is the "utility per dollar" spent on X — the <strong>bang for the buck</strong> from X.</li>
+</ul>
+
+<p>The optimality condition says: <strong>at the optimal bundle, the utility per dollar spent is the same for every good.</strong> If this were not so — say, MU<sub>x</sub>/P<sub>x</sub> &gt; MU<sub>y</sub>/P<sub>y</sub> — the consumer could increase total utility by spending one less dollar on Y and one more dollar on X.</p>
+
+<div class="box box-key">
+  <div class="box-title">💡 Why This Matters</div>
+  <p>The bang-for-the-buck condition applies far beyond individual consumers. A firm deciding how to allocate a marketing budget across TV and digital advertising should equalize the return per dollar across channels. A hospital system allocating resources across departments, or a government allocating spending across programs, faces the same logic. Wherever resources are scarce and alternatives exist, equating marginal return per dollar is the path to efficiency.</p>
+</div>
+
+<div class="box box-app">
+  <div class="box-title">📊 Application 2.4: Marketing Budget Allocation</div>
+  <p>A coffee shop owner has $10,000 to split between espresso machine upgrades and barista training. The last $1,000 spent on machines increases daily throughput worth $80. The last $1,000 spent on training improves customer satisfaction, increasing repeat visits worth $130 per $1,000 over a quarter. Since the return per dollar is higher for training ($130) than for machines ($80), the owner should shift spending toward training — and keep reallocating until marginal returns per dollar are equalized. This is the bang-for-the-buck condition applied directly to a capital budgeting decision.</p>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2.11 — WORKED EXAMPLES
+══════════════════════════════════ -->
+<h2><span class="section-num-tag">§ 2.11</span>Finding the Optimal Bundle: Worked Examples</h2>
+<p class="section-lead">How do we translate the two conditions for optimality into a concrete step-by-step calculation?</p>
+
+<div class="worked-example">
+  <div class="we-header">Worked Example 1: Amanda's Optimal Consumption Bundle</div>
+  <div class="we-body">
+    <p>Amanda has income I = $200. P<sub>x</sub> = $4 (food), P<sub>y</sub> = $5 (clothing). Utility: U(X,Y) = &radic;(XY) = X<sup>1/2</sup>Y<sup>1/2</sup>.</p>
+    <div class="we-step">
+      <div class="we-step-label">Part (a) — Budget line and slope</div>
+      <p>200 = 4X + 5Y &nbsp;&nbsp; Slope = &minus;P<sub>x</sub>/P<sub>y</sub> = &minus;4/5</p>
+    </div>
+    <div class="we-step">
+      <div class="we-step-label">Part (b) — Marginal utilities</div>
+      <p>MU<sub>x</sub> = &frac12; X<sup>&minus;1/2</sup>Y<sup>1/2</sup> = &frac12;&radic;(Y/X) &nbsp;&nbsp;&nbsp; MU<sub>y</sub> = &frac12; X<sup>1/2</sup>Y<sup>&minus;1/2</sup> = &frac12;&radic;(X/Y)</p>
+    </div>
+    <div class="we-step">
+      <div class="we-step-label">Part (c) — MRS</div>
+      <p>MRS = MU<sub>x</sub>/MU<sub>y</sub> = Y/X &nbsp;&nbsp; (the slope of the IC at any bundle)</p>
+    </div>
+    <div class="we-step">
+      <div class="we-step-label">Part (d) — Optimal bundle (P<sub>x</sub> = 4, P<sub>y</sub> = 5)</div>
+      <p><strong>Condition 1 (budget):</strong> &nbsp; 200 = 4X + 5Y &nbsp;&nbsp;&nbsp; (i)</p>
+      <p><strong>Condition 2 (tangency):</strong> &nbsp; 4/5 = Y/X &nbsp;&rArr;&nbsp; Y = 4X/5 &nbsp;&nbsp;&nbsp; (ii)</p>
+      <p>Substitute (ii) into (i): &nbsp; 200 = 4X + 5&middot;(4X/5) = 4X + 4X = 8X &nbsp;&rArr;&nbsp; <strong>X* = 25</strong></p>
+      <p>Y* = 4(25)/5 = <strong>20</strong></p>
+      <p>Verification: 4(25) + 5(20) = 100 + 100 = 200 = I &#10003;</p>
+    </div>
+    <div class="we-step">
+      <div class="we-step-label">Part (e) — New optimal bundle when P<sub>x</sub> = $2</div>
+      <p>New budget: 200 = 2X + 5Y. New tangency: 2/5 = Y/X &rArr; Y = 2X/5</p>
+      <p>200 = 2X + 5&middot;(2X/5) = 2X + 2X = 4X &rArr; <strong>X* = 50, Y* = 20</strong></p>
+      <p><em>Observation:</em> When the price of food fell from $4 to $2, Amanda doubled her food consumption (25 &rarr; 50). Her clothing consumption stayed at 20. This reflects the equal-expenditure-share property of &radic;(XY): exactly half of income is always spent on each good.</p>
+    </div>
+  </div>
+</div>
+
+<div class="box box-insight">
+  <div class="box-title">💚 Economic Insight</div>
+  <p>When two goods are consumed under Cobb-Douglas preferences, a fall in the price of one good raises its consumption but leaves consumption of the other good <em>completely unchanged</em>. The freed-up spending goes entirely into the cheaper good — a result that turns out to be useful for understanding demand elasticities in Chapter 3.</p>
+</div>
+
+<div class="worked-example">
+  <div class="we-header">Worked Example 2: Cobb-Douglas Demand Functions (General Case)</div>
+  <div class="we-body">
+    <p>Generalising: U(X,Y) = X<sup>&alpha;</sup>Y<sup>&beta;</sup> with budget P<sub>x</sub>X + P<sub>y</sub>Y = I.</p>
+    <div class="we-step">
+      <div class="we-step-label">Derivation</div>
+      <p>MU<sub>x</sub> = &alpha;X<sup>&alpha;&minus;1</sup>Y<sup>&beta;</sup> &nbsp;&nbsp; MU<sub>y</sub> = &beta;X<sup>&alpha;</sup>Y<sup>&beta;&minus;1</sup></p>
+      <p>Tangency: MU<sub>x</sub>/MU<sub>y</sub> = P<sub>x</sub>/P<sub>y</sub> &nbsp;&rArr;&nbsp; &alpha;Y/(&beta;X) = P<sub>x</sub>/P<sub>y</sub> &nbsp;&rArr;&nbsp; Y = (&beta;P<sub>x</sub>)/(&alpha;P<sub>y</sub>) &middot; X</p>
+      <p>Substituting into budget constraint and solving:</p>
+    </div>
+    <div class="we-step">
+      <div class="we-step-label">General Cobb-Douglas Demand Functions</div>
+      <div class="eq-wrap" style="margin:8px 0;">X* = [&alpha;/(&alpha;+&beta;)] &middot; I/P<sub>x</sub> &nbsp;&nbsp;&nbsp;&nbsp; Y* = [&beta;/(&alpha;+&beta;)] &middot; I/P<sub>y</sub></div>
+      <p><strong>Interpretation:</strong> The consumer spends fraction &alpha;/(&alpha;+&beta;) of income on X and fraction &beta;/(&alpha;+&beta;) on Y. For Amanda (&alpha; = &beta; = 1/2): X* = I/(2P<sub>x</sub>), Y* = I/(2P<sub>y</sub>) — exactly half of income on each.</p>
+    </div>
+  </div>
+</div>
+
+<div class="box box-insight">
+  <div class="box-title">💚 Economic Insight: Fixed Expenditure Shares</div>
+  <p>The fixed-expenditure-share property of Cobb-Douglas preferences is one of the most empirically useful results in consumer theory. When a government or market research firm reports that "households spend roughly 30% of income on housing regardless of income level," they are observing Cobb-Douglas behaviour. This result will reappear in Chapter 3 when we compute income and price elasticities of demand.</p>
+</div>
+
+<!-- ══════════════════════════════════
+     FIVE COMMON MISTAKES
+══════════════════════════════════ -->
+<h2>Five Common Exam Mistakes — and How to Avoid Them</h2>
+<ol class="mistake-list">
+  <li><div class="mistake-title">Drawing a parallel shift when a price changes.</div>A price change pivots the budget line around one fixed intercept — it never shifts both intercepts equally. Only an income change produces a parallel shift.</li>
+  <li><div class="mistake-title">Applying the tangency condition to perfect complements or substitutes.</div>The tangency condition requires a smooth, convex IC. For perfect complements, use the kink condition X/a = Y/b. For perfect substitutes, compare MU<sub>x</sub>/P<sub>x</sub> vs. MU<sub>y</sub>/P<sub>y</sub> and buy only the better-value good.</li>
+  <li><div class="mistake-title">Placing the optimal bundle off the budget line.</div>The optimal bundle must exhaust the budget — it always lies on the budget line, not inside it.</li>
+  <li><div class="mistake-title">Getting the MRS direction wrong.</div>The MRS is MU<sub>x</sub>/MU<sub>y</sub> (good on horizontal axis over good on vertical axis). Inverting this is one of the most common algebraic errors in this topic.</li>
+  <li><div class="mistake-title">Concluding that higher MU<sub>x</sub>/P<sub>x</sub> means spend less on X.</div>The opposite is true: if MU<sub>x</sub>/P<sub>x</sub> &gt; MU<sub>y</sub>/P<sub>y</sub>, shift spending <em>toward</em> X, not away from it.</li>
+</ol>
+
+<!-- ══════════════════════════════════
+     WHERE DOES THIS TAKE US?
+══════════════════════════════════ -->
+<div class="where-next">
+  <div class="where-next-title">&#x1F9ED; Where Does This Take Us?</div>
+  <ul>
+    <li><strong>Chapter 3</strong> builds directly on the tangency condition to derive the consumer's individual demand curve — showing how the optimal bundle changes as price changes.</li>
+    <li><strong>The Cobb-Douglas demand shares</strong> derived here will reappear as the foundation for computing income and substitution effects.</li>
+    <li><strong>Chapter 4</strong> uses the budget constraint framework to measure consumer surplus and evaluate welfare effects of price changes and taxes.</li>
+    <li><strong>Production theory (Chapter 6)</strong> uses an identical apparatus — isoquants and isocost lines play exactly the roles that ICs and budget lines play here.</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════
+     CHAPTER AT A GLANCE
+══════════════════════════════════ -->
+<h2>Chapter at a Glance</h2>
+<p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#666;margin-bottom:16px;">Your one-page revision guide — everything you need before an exam or tutorial.</p>
+
+<div class="glance-grid">
+  <div class="glance-card">
+    <div class="glance-card-title">Key Equations</div>
+    <table class="sum-table" style="margin:0;">
+      <thead><tr><th>Name</th><th>Formula</th></tr></thead>
+      <tbody>
+        <tr><td>Budget constraint</td><td>P<sub>x</sub>X + P<sub>y</sub>Y = I</td></tr>
+        <tr><td>Slope of BC</td><td>&minus;P<sub>x</sub>/P<sub>y</sub></td></tr>
+        <tr><td>Tangency condition</td><td>P<sub>x</sub>/P<sub>y</sub> = MU<sub>x</sub>/MU<sub>y</sub></td></tr>
+        <tr><td>Bang for the buck</td><td>MU<sub>x</sub>/P<sub>x</sub> = MU<sub>y</sub>/P<sub>y</sub></td></tr>
+        <tr><td>Cobb-Douglas demand</td><td>X* = [&alpha;/(&alpha;+&beta;)] &middot; I/P<sub>x</sub></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="glance-card">
+    <div class="glance-card-title">IC Shapes at a Glance</div>
+    <table class="sum-table" style="margin:0;">
+      <thead><tr><th>Preference</th><th>IC Shape</th><th>MRS</th></tr></thead>
+      <tbody>
+        <tr><td>Standard</td><td>Convex, downward</td><td>Diminishing</td></tr>
+        <tr><td>Substitutes</td><td>Straight line</td><td>Constant</td></tr>
+        <tr><td>Complements</td><td>L-shaped</td><td>0/&infin;/undef.</td></tr>
+        <tr><td>Neutral Y</td><td>Vertical</td><td>&infin;</td></tr>
+        <tr><td>Bad Y</td><td>Upward sloping</td><td>Negative</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="glance-card">
+    <div class="glance-card-title">Which Method to Use?</div>
+    <ul style="font-size:0.88rem;padding-left:18px;margin:0;">
+      <li><strong>Smooth convex IC</strong> (Cobb-Douglas): use tangency P<sub>x</sub>/P<sub>y</sub> = MU<sub>x</sub>/MU<sub>y</sub></li>
+      <li><strong>Perfect complements:</strong> use kink condition X/a = Y/b</li>
+      <li><strong>Perfect substitutes:</strong> compare MU/P; buy only the better-value good</li>
+    </ul>
+  </div>
+  <div class="glance-card">
+    <div class="glance-card-title">Five Key Terms</div>
+    <ol style="font-size:0.88rem;padding-left:18px;margin:0;">
+      <li><strong>IC</strong> — bundles giving equal utility</li>
+      <li><strong>Budget constraint</strong> — all affordable bundles</li>
+      <li><strong>MRS</strong> — consumer's personal trade-off rate</li>
+      <li><strong>Tangency condition</strong> — market rate = MRS at optimum</li>
+      <li><strong>Bang for the buck</strong> — MU/P equalised at optimum</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     KEY TERMS
+══════════════════════════════════ -->
+<h2>Key Terms</h2>
+<div class="key-terms-grid">
+  <div class="term-card"><div class="term-name">Perfect Substitutes</div><div class="term-def">Two goods that serve identical functions and can be traded at a constant ratio. ICs are straight, parallel, downward-sloping lines.</div></div>
+  <div class="term-card"><div class="term-name">Perfect Complements</div><div class="term-def">Two goods consumed in fixed proportions. Extra units of one without the other provide no utility. ICs are L-shaped.</div></div>
+  <div class="term-card"><div class="term-name">Neutral Good</div><div class="term-def">A good providing zero marginal utility. Extra units leave utility unchanged. ICs are vertical lines.</div></div>
+  <div class="term-card"><div class="term-name">Economic Bad</div><div class="term-def">A good conferring negative marginal utility. More of it reduces utility. ICs are upward sloping.</div></div>
+  <div class="term-card"><div class="term-name">Budget Constraint</div><div class="term-def">The equation P<sub>x</sub>X + P<sub>y</sub>Y = I describing all bundles the consumer can afford when spending exactly all income.</div></div>
+  <div class="term-card"><div class="term-name">Slope of the Budget Line</div><div class="term-def">&minus;P<sub>x</sub>/P<sub>y</sub>: the opportunity cost of good X in terms of Y. For every extra unit of X, P<sub>x</sub>/P<sub>y</sub> units of Y must be given up.</div></div>
+  <div class="term-card"><div class="term-name">Parallel Shift</div><div class="term-def">What happens when income changes (prices fixed): both intercepts move proportionally, slope unchanged.</div></div>
+  <div class="term-card"><div class="term-name">Pivot (Rotation)</div><div class="term-def">What happens when a price changes: one intercept is fixed, the other moves, and the slope changes.</div></div>
+  <div class="term-card"><div class="term-name">Tangency Condition</div><div class="term-def">At the optimum: slope of BC = slope of IC, i.e. P<sub>x</sub>/P<sub>y</sub> = MU<sub>x</sub>/MU<sub>y</sub>.</div></div>
+  <div class="term-card"><div class="term-name">Bang for the Buck</div><div class="term-def">The utility per dollar spent: MU<sub>x</sub>/P<sub>x</sub> for good X. At the optimum, MU<sub>x</sub>/P<sub>x</sub> = MU<sub>y</sub>/P<sub>y</sub>.</div></div>
+  <div class="term-card"><div class="term-name">MRS</div><div class="term-def">Marginal Rate of Substitution: the rate at which the consumer willingly trades Y for X at constant utility. Equals MU<sub>x</sub>/MU<sub>y</sub> in magnitude.</div></div>
+  <div class="term-card"><div class="term-name">Cobb-Douglas Utility</div><div class="term-def">U(X,Y) = X<sup>&alpha;</sup>Y<sup>&beta;</sup>. Generates smooth, convex ICs. Consumer spends fixed fraction &alpha;/(&alpha;+&beta;) of income on X.</div></div>
+</div>
+
+<!-- ══════════════════════════════════
+     VIDEO RESOURCES
+══════════════════════════════════ -->
+<h2>Supplementary Video Resources</h2>
+<p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#666;margin-bottom:14px;">Watch in order for the best results. Each video is directly aligned to the sections listed.</p>
+<div class="video-grid">
+  <div class="video-card">
+    <div class="video-num">Video 1 &nbsp;&middot;&nbsp; <span class="video-time">~9 min</span></div>
+    <div class="video-title">Indifference Curves and the MRS</div>
+    <div class="video-desc">Jacob Clifford (ACDC Economics). Covers IC definition, shape, downward slope, convexity, and the MRS. Directly aligned to §2.1–§2.6. Ideal as a visual complement before attempting practice questions.</div>
+    <a href="https://www.youtube.com/watch?v=V7cSn87b3YE" class="video-link" target="_blank">▶ Watch on YouTube</a>
+  </div>
+  <div class="video-card">
+    <div class="video-num">Video 2 &nbsp;&middot;&nbsp; <span class="video-time">~5 min</span></div>
+    <div class="video-title">Budget Constraints</div>
+    <div class="video-desc">Marginal Revolution University (Tyler Cowen &amp; Alex Tabarrok). Concise explanation of the BC equation, intercepts, slope, and affordable set. Directly reinforces §2.7–§2.8.</div>
+    <a href="https://www.youtube.com/watch?v=pLhh_D5b_Lg" class="video-link" target="_blank">▶ Watch on YouTube</a>
+  </div>
+  <div class="video-card">
+    <div class="video-num">Video 3 &nbsp;&middot;&nbsp; <span class="video-time">~10 min</span></div>
+    <div class="video-title">Consumer Optimum: Putting It Together</div>
+    <div class="video-desc">Khan Academy. Combines ICs and the budget constraint to locate the optimal bundle graphically and algebraically. Walks through the tangency condition intuitively. Reinforces §2.9–§2.10.</div>
+    <a href="https://www.youtube.com/watch?v=uFHnFWMJE0A" class="video-link" target="_blank">▶ Watch on YouTube</a>
+  </div>
+  <div class="video-card">
+    <div class="video-num">Video 4 &nbsp;&middot;&nbsp; <span class="video-time">~12 min</span></div>
+    <div class="video-title">Cobb-Douglas Utility: Deriving Demand</div>
+    <div class="video-desc">Economics in Many Lessons. Derives Cobb-Douglas demand functions step by step using the tangency condition, with numerical examples that closely mirror Worked Example 2 in §2.11. Recommended for students wanting extra algebra practice.</div>
+    <a href="https://www.youtube.com/watch?v=7Qtr9AQBEPA" class="video-link" target="_blank">▶ Watch on YouTube</a>
+  </div>
+</div>
+
+</body>
+</html>
