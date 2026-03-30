@@ -170,6 +170,212 @@ a { color: #0066B3; }
 .where-next-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #065f46; margin-bottom: 10px; }
 .where-next ul { font-size: 0.93rem; margin-bottom: 0; }
 
+/* ── DARK MODE ── */
+body.dark { background: #0f1117; color: #d8dee9; }
+body.dark h1,body.dark h2,body.dark h3,body.dark h4 { color: #e8ecf0; }
+body.dark p { color: #c0c8d4; }
+body.dark .notation-table td,body.dark .sum-table td,body.dark .toc-table td { border-color: #2e3545; color: #c0c8d4; }
+body.dark .notation-table tr:nth-child(even) td,body.dark .sum-table tr:nth-child(even) td { background: #1e2535; }
+body.dark .lo-card,body.dark .how-to-use,body.dark .check-q,body.dark .decision-guide,body.dark .glance-card,body.dark .term-card,body.dark .video-card,body.dark .worked-example { background: #1a1f2e; border-color: #2e3545; }
+body.dark .box-key { background: #1a2a3a; } body.dark .box-app { background: #1a2e1a; }
+body.dark .box-try { background: #2d2510; } body.dark .box-warn { background: #2d1010; }
+body.dark .box-def { background: #1e1428; } body.dark .box-insight { background: #0f2018; }
+body.dark .eq-wrap { background: #1e2535; border-color: #2e3d55; }
+body.dark .we-body { background: #1a1f2e; } body.dark .we-step { border-color: #2e3545; }
+body.dark .section-lead { color: #8a97a8; }
+body.dark .meta-bar { background: #1a1f2e; border-color: #2e3545; }
+body.dark .questions-box { background: #1a2a3a; border-color: #2a4060; }
+body.dark .figure-wrap svg { background: #1a1f2e; border-color: #2e3545; }
+
+/* ── COLLAPSIBLE SECTIONS ── */
+.collapsible-section { margin-bottom: 0; }
+.collapse-trigger {
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer; user-select: none;
+  padding: 14px 0 12px;
+  border-top: 1px solid #e0e4ea;
+  margin-top: 32px;
+}
+.collapse-trigger h2 {
+  margin: 0; padding: 0; border: none;
+  font-size: 1.6rem; display: flex; align-items: center; gap: 0;
+  pointer-events: none;
+}
+.collapse-arrow {
+  font-size: 18px; color: #0066B3; transition: transform 250ms ease;
+  flex-shrink: 0; margin-left: 12px;
+}
+.collapse-trigger.open .collapse-arrow { transform: rotate(180deg); }
+.collapse-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 400ms cubic-bezier(0.4,0,0.2,1);
+}
+.collapse-body.open { max-height: 9999px; }
+.collapse-divider {
+  height: 2px; background: linear-gradient(to right, #0066B3, transparent);
+  margin-bottom: 18px; transform: scaleX(0); transform-origin: left;
+  transition: transform 300ms ease 50ms;
+}
+.collapse-body.open .collapse-divider { transform: scaleX(1); }
+body.dark .collapse-trigger { border-color: #2e3545; }
+
+/* ── SECTION NUM TAG — bigger ── */
+.section-num-tag {
+  font-size: 13px !important; padding: 3px 11px !important;
+  font-weight: 700; letter-spacing: 0.06em;
+}
+
+/* ── WORKED EXAMPLE COLLAPSIBLE ── */
+.we-trigger {
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer; padding: 12px 18px; background: #0066B3;
+  color: #fff; user-select: none;
+}
+.we-trigger .we-arrow { font-size: 16px; transition: transform 250ms ease; }
+.we-trigger.open .we-arrow { transform: rotate(180deg); }
+.we-collapse { max-height: 0; overflow: hidden; transition: max-height 400ms cubic-bezier(0.4,0,0.2,1); }
+.we-collapse.open { max-height: 9999px; }
+
+/* ── STICKY SECTION TITLE ── */
+.sticky-title {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(255,255,255,0.95); backdrop-filter: blur(6px);
+  border-bottom: 2px solid #0066B3;
+  padding: 8px 0 8px; margin: 0 0 16px;
+  display: none; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 13px; font-weight: 700; color: #0066B3;
+}
+.sticky-title.visible { display: block; }
+body.dark .sticky-title { background: rgba(15,17,23,0.95); }
+
+/* ── PROGRESS BAR ── */
+#progress-bar {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: #0066B3; width: 0%; z-index: 1000;
+  transition: width 100ms linear;
+}
+
+/* ── SCROLL TO TOP ── */
+#scroll-top {
+  position: fixed; bottom: 28px; right: 28px;
+  background: #0066B3; color: #fff; border: none;
+  width: 40px; height: 40px; border-radius: 50%;
+  font-size: 18px; cursor: pointer; display: none;
+  align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  transition: opacity 200ms, transform 200ms;
+  z-index: 999;
+}
+#scroll-top:hover { transform: translateY(-2px); }
+
+/* ── DARK MODE BUTTON ── */
+#dark-toggle {
+  position: fixed; bottom: 28px; left: 28px;
+  background: #1a1a2e; color: #fff; border: none;
+  padding: 8px 14px; border-radius: 100px;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2); z-index: 999;
+  transition: background 200ms;
+}
+body.dark #dark-toggle { background: #e8ecf0; color: #1a1a2e; }
+
+/* ── EQUATION HOVER ── */
+.eq-wrap { transition: box-shadow 200ms, border-color 200ms; }
+.eq-wrap:hover { border-color: #0066B3; box-shadow: 0 0 0 3px rgba(0,102,179,.1); }
+.eq-copy {
+  position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
+  background: none; border: 1px solid #c5ddf4; border-radius: 4px;
+  font-size: 11px; color: #0066B3; padding: 2px 7px; cursor: pointer;
+  opacity: 0; transition: opacity 200ms;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+.eq-wrap:hover .eq-copy { opacity: 1; }
+.eq-wrap { position: relative; }
+
+/* ── FIGURE BADGE ── */
+.figure-wrap { position: relative; }
+.fig-badge {
+  position: absolute; top: 10px; left: 10px;
+  background: #0066B3; color: #fff;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 10px; font-weight: 700; padding: 2px 8px;
+  border-radius: 4px; letter-spacing: 0.06em;
+}
+
+/* ── BOX ICON SIZING ── */
+.box-title { font-size: 11.5px !important; }
+.box-title span.icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(0,0,0,.08); font-size: 12px; flex-shrink: 0;
+}
+
+/* ── NUMBERED QUESTION BADGES ── */
+.check-q ol, .box-try ol { list-style: none; padding-left: 0; }
+.check-q ol li, .box-try ol li {
+  padding-left: 34px; position: relative; margin-bottom: 10px;
+}
+.check-q ol li::before, .box-try ol li::before {
+  content: counter(q-counter);
+  counter-increment: q-counter;
+  position: absolute; left: 0; top: 1px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #0066B3; color: #fff;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.check-q ol, .box-try ol { counter-reset: q-counter; }
+
+/* ── PRACTICE QUESTIONS ── */
+.pq-section { margin-top: 40px; }
+.pq-level-label {
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: #999; margin: 28px 0 14px;
+  padding-bottom: 8px; border-bottom: 1px solid #e0e4ea;
+}
+.pq-item { border: 1px solid #e0e4ea; border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+.pq-q {
+  padding: 14px 18px; font-size: 0.95rem; cursor: default;
+  background: #fff; line-height: 1.7;
+}
+body.dark .pq-item { border-color: #2e3545; }
+body.dark .pq-q { background: #1a1f2e; }
+.pq-star {
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 10px; color: #f59e0b; margin-right: 6px;
+}
+.pq-num {
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 11px; font-weight: 700; color: #0066B3;
+  background: #e8f2fb; padding: 2px 8px; border-radius: 100px;
+  margin-right: 10px;
+}
+.sol-btn {
+  display: block; width: 100%; text-align: left;
+  padding: 9px 18px; background: #f7f9fc;
+  border: none; border-top: 1px solid #e0e4ea;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 12px; font-weight: 600; color: #0066B3;
+  cursor: pointer; transition: background 150ms;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sol-btn:hover { background: #e8f2fb; }
+.sol-btn .s-arrow { transition: transform 250ms ease; }
+.sol-btn.open .s-arrow { transform: rotate(180deg); }
+.sol-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 400ms cubic-bezier(0.4,0,0.2,1);
+  background: #f7f9fc; border-top: 1px solid #e0e4ea;
+}
+.sol-body.open { max-height: 2000px; }
+.sol-inner { padding: 14px 18px; font-size: 0.92rem; line-height: 1.75; color: #333; }
+body.dark .sol-btn { background: #1e2535; border-color: #2e3545; }
+body.dark .sol-body { background: #1e2535; border-color: #2e3545; }
+body.dark .sol-inner { color: #c0c8d4; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
   body { padding: 20px 16px; font-size: 16px; }
@@ -246,7 +452,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.1
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.1</span>Recap: What Is an Indifference Curve?</h2>
+
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.1</span>Recap: What Is an Indifference Curve?</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.1 — Recap: What Is an Indifference Curve?</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">How do economists represent what a consumer wants, without asking them to put a dollar value on their happiness?</p>
 
 <p>In the previous week, we introduced the concept of consumer preferences and indifference curves. To briefly recap: a consumer who faces two goods, X and Y, can be described by an <strong>indifference curve</strong> — a set of all bundles (X,Y) that provide the consumer with exactly the same level of utility (satisfaction). The consumer is, by definition, indifferent among all bundles on the same curve.</p>
@@ -275,7 +489,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.2
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.2</span>Types of Goods and Their Indifference Curves</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.2</span>Types of Goods and Their Indifference Curves</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.2 — Types of Goods and Their Indifference Curves</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">The shape of the indifference curve depends entirely on the relationship between the two goods.</p>
 
 <p>The standard convex indifference curve is the right shape for a typical consumer who values both goods and prefers variety. But economics deals with many kinds of goods, and the shape of the indifference curve changes depending on the relationship between them. We examine four important cases.</p>
@@ -300,7 +522,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.3
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.3</span>Perfect Substitutes</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.3</span>Perfect Substitutes</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.3 — Perfect Substitutes</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">If two products are truly identical in the eyes of the consumer, how does that change the shape of the indifference curve — and what does it mean for how a firm should price them?</p>
 
 <div class="box box-def">
@@ -321,6 +551,7 @@ a { color: #0066B3; }
 <div class="eq-wrap">U(X,Y) = aX + bY &nbsp;&nbsp;&nbsp; MRS = a/b (constant)<span class="eq-num">(1)</span></div>
 
 <div class="figure-wrap">
+  <span class="fig-badge">Fig. 1</span>
   <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
     <!-- axes -->
     <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
@@ -401,7 +632,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.4 — PERFECT COMPLEMENTS
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.4</span>Perfect Complements</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.4</span>Perfect Complements</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.4 — Perfect Complements</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">What happens when two goods must always be consumed together in a fixed ratio?</p>
 
 <div class="box box-def">
@@ -423,6 +662,7 @@ a { color: #0066B3; }
 <p style="font-size:0.88rem;color:#666;text-align:center;margin-top:-8px;">For equal proportions (a = b = 1): U = min(X,Y).</p>
 
 <div class="figure-wrap">
+  <span class="fig-badge">Fig. 2</span>
   <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
     <!-- axes -->
     <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
@@ -500,7 +740,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.5 — NEUTRAL GOOD
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.5</span>Neutral (Useless) Good</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.5</span>Neutral (Useless) Good</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.5 — Neutral (Useless) Good</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">Can a good have zero value to a consumer? What does the indifference map look like when one good simply does not matter?</p>
 
 <div class="box box-def">
@@ -517,6 +765,7 @@ a { color: #0066B3; }
 <p>The IC through A is therefore a <strong>vertical line at X = 2</strong>. Utility only changes when X changes, so utility increases as you move horizontally to the right.</p>
 
 <div class="figure-wrap">
+  <span class="fig-badge">Fig. 3</span>
   <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
     <!-- axes -->
     <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
@@ -570,7 +819,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.6 — ECONOMIC BADS
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.6</span>Economic Bads</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.6</span>Economic Bads</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.6 — Economic Bads</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">How do economists model goods that consumers would prefer to avoid entirely — like pollution, noise, or a long commute?</p>
 
 <div class="box box-def">
@@ -587,6 +844,7 @@ a { color: #0066B3; }
 <p>The IC through A is therefore <strong>upward sloping</strong>. Higher utility is reached by moving right (more X) or downward (less of the bad Y).</p>
 
 <div class="figure-wrap">
+  <span class="fig-badge">Fig. 4</span>
   <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
     <!-- axes -->
     <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
@@ -645,7 +903,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.7 — BUDGET CONSTRAINT
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.7</span>The Budget Constraint</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.7</span>The Budget Constraint</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.7 — The Budget Constraint</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">A student has $60 a week for coffee and textbooks. What is the full set of bundles she can afford, and how does that set change if textbook prices rise?</p>
 
 <p>Indifference curves describe what the consumer <em>wants</em>. But wanting something is not enough — the consumer also faces a resource constraint. This is where the <strong>budget constraint (BC)</strong> comes in.</p>
@@ -668,6 +934,7 @@ a { color: #0066B3; }
 </ul>
 
 <div class="figure-wrap">
+  <span class="fig-badge">Fig. 5</span>
   <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
     <!-- axes -->
     <line x1="50" y1="300" x2="470" y2="300" stroke="#1a1a2e" stroke-width="2"/>
@@ -703,7 +970,11 @@ a { color: #0066B3; }
 
 <h3>Worked Example: Sheela's Budget Constraint</h3>
 <div class="worked-example">
-  <div class="we-header">Sheela's Budget Constraint — I = $100, P<sub>x</sub> = $5, P<sub>y</sub> = $2</div>
+  <div class="we-trigger">
+    <span><strong>Worked Example: Sheela's Budget Constraint — I = $100, P<sub>x</sub> = $5, P<sub>y</sub> = $2</strong></span>
+    <span class="we-arrow">▾</span>
+  </div>
+  <div class="we-collapse">
   <div class="we-body">
     <div class="we-step">
       <div class="we-step-label">Step 1 — Maximum quantities</div>
@@ -724,6 +995,7 @@ a { color: #0066B3; }
     </div>
   </div>
 </div>
+</div>
 
 <div class="box box-try">
   <div class="box-title">✏️ Try It</div>
@@ -742,7 +1014,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.8 — CHANGES IN BC
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.8</span>Changes in the Budget Constraint</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.8</span>Changes in the Budget Constraint</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.8 — Changes in the Budget Constraint</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">When a government cuts fuel taxes, does the budget line shift or rotate? Getting this right is the foundation for predicting how consumers respond to price changes.</p>
 
 <h3>Income Increases: Parallel Outward Shift</h3>
@@ -809,7 +1089,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.9 — OPTIMAL BUNDLE
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.9</span>Determining the Optimal Consumption Bundle</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.9</span>Determining the Optimal Consumption Bundle</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.9 — Determining the Optimal Consumption Bundle</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">Given that a consumer wants to reach the highest IC and can only afford bundles on or below the budget line, where exactly is the best bundle — and how do we find it?</p>
 
 <p>We now have two pieces: (1) indifference curves, which describe what the consumer <em>wants</em>, and (2) the budget constraint, which describes what they can <em>afford</em>. The consumer's goal is:</p>
@@ -849,6 +1137,7 @@ a { color: #0066B3; }
   <div class="dg-row"><div class="dg-pref">Perfect complements<br><em>U = min(X/a, Y/b)</em></div><div class="dg-method">Use <strong>kink condition:</strong> X/a = Y/b, plus budget exhaustion. Tangency does not apply.</div></div>
   <div class="dg-row"><div class="dg-pref">Perfect substitutes<br><em>U = aX + bY</em></div><div class="dg-method">Compare MU<sub>x</sub>/P<sub>x</sub> vs. MU<sub>y</sub>/P<sub>y</sub>. <strong>Buy only the better-value good</strong> (corner solution).</div></div>
 </div>
+</div>
 
 <div class="check-q">
   <div class="check-q-title">✏️ Check Your Understanding</div>
@@ -861,7 +1150,15 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.10 — BANG FOR THE BUCK
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.10</span>Bang for the Buck</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.10</span>Bang for the Buck</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.10 — Bang for the Buck</div>
+<div class="collapse-divider"></div>
 
 <p>The optimality condition can be rearranged to yield a very intuitive interpretation. Rearranging P<sub>x</sub>/P<sub>y</sub> = MU<sub>x</sub>/MU<sub>y</sub>:</p>
 
@@ -890,11 +1187,23 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      SECTION 2.11 — WORKED EXAMPLES
 ══════════════════════════════════ -->
-<h2><span class="section-num-tag">§ 2.11</span>Finding the Optimal Bundle: Worked Examples</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2><span class="section-num-tag">§ 2.11</span>Finding the Optimal Bundle: Worked Examples</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="sticky-title">§ 2.11 — Finding the Optimal Bundle: Worked Examples</div>
+<div class="collapse-divider"></div>
 <p class="section-lead">How do we translate the two conditions for optimality into a concrete step-by-step calculation?</p>
 
 <div class="worked-example">
-  <div class="we-header">Worked Example 1: Amanda's Optimal Consumption Bundle</div>
+  <div class="we-trigger">
+    <span><strong>Worked Example 1: Amanda's Optimal Consumption Bundle</strong></span>
+    <span class="we-arrow">▾</span>
+  </div>
+  <div class="we-collapse">
   <div class="we-body">
     <p>Amanda has income I = $200. P<sub>x</sub> = $4 (food), P<sub>y</sub> = $5 (clothing). Utility: U(X,Y) = &radic;(XY) = X<sup>1/2</sup>Y<sup>1/2</sup>.</p>
     <div class="we-step">
@@ -925,6 +1234,7 @@ a { color: #0066B3; }
     </div>
   </div>
 </div>
+</div>
 
 <div class="box box-insight">
   <div class="box-title">💚 Economic Insight</div>
@@ -932,7 +1242,11 @@ a { color: #0066B3; }
 </div>
 
 <div class="worked-example">
-  <div class="we-header">Worked Example 2: Cobb-Douglas Demand Functions (General Case)</div>
+  <div class="we-trigger">
+    <span><strong>Worked Example 2: Cobb-Douglas Demand Functions (General Case)</strong></span>
+    <span class="we-arrow">▾</span>
+  </div>
+  <div class="we-collapse">
   <div class="we-body">
     <p>Generalising: U(X,Y) = X<sup>&alpha;</sup>Y<sup>&beta;</sup> with budget P<sub>x</sub>X + P<sub>y</sub>Y = I.</p>
     <div class="we-step">
@@ -947,6 +1261,7 @@ a { color: #0066B3; }
       <p><strong>Interpretation:</strong> The consumer spends fraction &alpha;/(&alpha;+&beta;) of income on X and fraction &beta;/(&alpha;+&beta;) on Y. For Amanda (&alpha; = &beta; = 1/2): X* = I/(2P<sub>x</sub>), Y* = I/(2P<sub>y</sub>) — exactly half of income on each.</p>
     </div>
   </div>
+</div>
 </div>
 
 <div class="box box-insight">
@@ -982,7 +1297,14 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      CHAPTER AT A GLANCE
 ══════════════════════════════════ -->
-<h2>Chapter at a Glance</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2>Chapter at a Glance</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="collapse-divider"></div>
 <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#666;margin-bottom:16px;">Your one-page revision guide — everything you need before an exam or tutorial.</p>
 
 <div class="glance-grid">
@@ -1035,7 +1357,14 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      KEY TERMS
 ══════════════════════════════════ -->
-<h2>Key Terms</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2>Key Terms</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="collapse-divider"></div>
 <div class="key-terms-grid">
   <div class="term-card"><div class="term-name">Perfect Substitutes</div><div class="term-def">Two goods that serve identical functions and can be traded at a constant ratio. ICs are straight, parallel, downward-sloping lines.</div></div>
   <div class="term-card"><div class="term-name">Perfect Complements</div><div class="term-def">Two goods consumed in fixed proportions. Extra units of one without the other provide no utility. ICs are L-shaped.</div></div>
@@ -1054,7 +1383,14 @@ a { color: #0066B3; }
 <!-- ══════════════════════════════════
      VIDEO RESOURCES
 ══════════════════════════════════ -->
-<h2>Supplementary Video Resources</h2>
+</div></div>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2>Supplementary Video Resources</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="collapse-divider"></div>
 <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#666;margin-bottom:14px;">Watch in order for the best results. Each video is directly aligned to the sections listed.</p>
 <div class="video-grid">
   <div class="video-card">
@@ -1083,5 +1419,194 @@ a { color: #0066B3; }
   </div>
 </div>
 
+
+<!-- ══════════════════════════════════
+     PRACTICE QUESTIONS Q1-Q10
+══════════════════════════════════ -->
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2>Practice Questions — Level 1</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="collapse-divider"></div>
+<p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#666;margin-bottom:18px;">Questions are arranged by difficulty. Level 1 builds vocabulary and geometric intuition. Attempt each question independently before revealing the solution.</p>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q1</span><span class="pq-star">⋆</span>Describe the shape of the indifference curve for each good type below and give a one-sentence economic justification.<br>
+  <ol style="margin-top:8px;padding-left:20px;">
+    <li>Two goods that are perfect substitutes.</li>
+    <li>Two goods that are perfect complements.</li>
+    <li>A neutral (useless) good paired with a normal good.</li>
+    <li>An economic bad paired with a normal good.</li>
+  </ol></div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a) Perfect substitutes:</strong> straight, parallel, downward-sloping lines. The consumer is always willing to trade the goods at a constant ratio (constant MRS), so the IC has constant slope.</p>
+    <p><strong>(b) Perfect complements:</strong> L-shaped. Extra units of one good without the other provide zero marginal utility, so horizontal and vertical arms represent equal utility.</p>
+    <p><strong>(c) Neutral good (Y):</strong> vertical straight lines. Utility only depends on X; any amount of Y at fixed X gives the same utility. Increasing utility means moving right.</p>
+    <p><strong>(d) Economic bad (Y):</strong> upward sloping. More Y reduces utility, so to stay on the same IC the consumer needs compensation in the form of more X. The IC therefore rises as Y increases.</p>
+  </div></div>
+</div>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q2</span><span class="pq-star">⋆</span>For each utility function, identify the preference type, describe the IC shape, and state the MRS where defined.<br>
+  <ol style="margin-top:8px;padding-left:20px;">
+    <li>U(X,Y) = 3X + 4Y</li>
+    <li>U(X,Y) = min(2X, Y)</li>
+    <li>U(X,Y) = X</li>
+    <li>U(X,Y) = X &minus; Y&sup2; (Y &ge; 0)</li>
+  </ol></div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> U = 3X + 4Y: linear utility &rArr; perfect substitutes with constant MRS = 3/4. ICs are parallel straight lines with slope &minus;3/4.</p>
+    <p><strong>(b)</strong> U = min(2X,Y): perfect complements with kinks on the ray 2X = Y (i.e. Y = 2X). L-shaped ICs.</p>
+    <p><strong>(c)</strong> U = X: utility depends only on X &rArr; Y is a neutral good. ICs are vertical lines (constant X, any Y).</p>
+    <p><strong>(d)</strong> U = X &minus; Y&sup2;: MU<sub>y</sub> = &minus;2Y &lt; 0 for Y &gt; 0 &rArr; Y is an economic bad. ICs slope upward.</p>
+  </div></div>
+</div>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q3</span><span class="pq-star">⋆</span>A consumer has I = $120, P<sub>x</sub> = $3, P<sub>y</sub> = $4.<br>
+  <ol style="margin-top:8px;padding-left:20px;">
+    <li>Write the budget constraint equation.</li>
+    <li>Find the X- and Y-intercepts.</li>
+    <li>State the slope and explain its economic meaning.</li>
+    <li>Sketch the budget line on a labelled diagram, shading the affordable set.</li>
+  </ol></div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> 3X + 4Y = 120.</p>
+    <p><strong>(b)</strong> X<sub>max</sub> = 120/3 = <strong>40</strong>; Y<sub>max</sub> = 120/4 = <strong>30</strong>.</p>
+    <p><strong>(c)</strong> Slope = &minus;3/4. Economic meaning: for every additional unit of X purchased, the consumer must give up 3/4 of a unit of Y. This is the opportunity cost of X in terms of Y.</p>
+    <p><strong>(d)</strong> Draw axes (Y vertical, X horizontal). Mark (0,30) on Y-axis and (40,0) on X-axis. Connect with a straight line labeled 3X + 4Y = 120. Shade the affordable region below and to the left of the line.</p>
+  </div></div>
+</div>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q4</span><span class="pq-star">⋆</span>Explain the difference between a parallel shift and a pivot of the budget line. What causes each? Give one real-world example of each.</div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>Parallel shift:</strong> both intercepts change proportionally, slope unchanged. Caused by an income change (prices fixed). <em>Example:</em> a wage increase shifts the budget line outward without changing the relative price of goods.</p>
+    <p><strong>Pivot (rotation):</strong> one intercept is fixed (the other good's axis), the second intercept changes, and the slope changes. Caused by a price change for one good (income and other price fixed). <em>Example:</em> a petrol tax raises the price of driving, pivoting the budget line inward around the non-petrol intercept.</p>
+  </div></div>
+</div>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q5</span><span class="pq-star">⋆</span>State the two conditions for an interior optimum. Explain in plain English why each is necessary — what goes wrong if either fails?</div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>Condition 1 — Budget exhaustion:</strong> P<sub>x</sub>X* + P<sub>y</sub>Y* = I. Necessary because both goods are desirable: any unspent income is wasteful — the consumer could increase utility by spending it on more of either good.</p>
+    <p><strong>Condition 2 — Tangency:</strong> P<sub>x</sub>/P<sub>y</sub> = MU<sub>x</sub>/MU<sub>y</sub>. Necessary because if the slopes differ, the IC crosses the budget line, meaning there is an affordable bundle on a higher IC. Only at tangency is it impossible to reach a higher IC within the budget.</p>
+  </div></div>
+</div>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q6</span><span class="pq-star">⋆</span>Explain the "bang for the buck" condition in your own words. Give a concrete business example of what a manager should do when the condition is not satisfied.</div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p>The bang-for-the-buck condition states MU<sub>x</sub>/P<sub>x</sub> = MU<sub>y</sub>/P<sub>y</sub>. At the optimum, the extra utility gained per dollar spent must be the same for every good. If MU<sub>x</sub>/P<sub>x</sub> &gt; MU<sub>y</sub>/P<sub>y</sub>, the consumer gets more utility per dollar from X than from Y. They should reduce spending on Y by $1 (losing MU<sub>y</sub>/P<sub>y</sub> utility) and increase spending on X by $1 (gaining MU<sub>x</sub>/P<sub>x</sub> utility). Since the gain exceeds the loss, total utility increases. This reallocation continues until the ratios are equalised.</p>
+    <p><em>Business example:</em> if concert tickets give 20 utils per dollar and coffee gives 10 utils per dollar, a manager allocating an entertainment budget should shift spending from coffee to concert tickets until the ratios equalise (as diminishing MU sets in).</p>
+  </div></div>
+</div>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q7</span><span class="pq-star">⋆</span>A consumer has MU<sub>x</sub>/P<sub>x</sub> = 8 and MU<sub>y</sub>/P<sub>y</sub> = 5 and her budget is exactly exhausted. Is she at an optimum? If not, how should she reallocate spending?</div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p>She is <strong>not</strong> at an optimum. Since MU<sub>x</sub>/P<sub>x</sub> = 8 &gt; 5 = MU<sub>y</sub>/P<sub>y</sub>, good X provides more utility per dollar than good Y. The consumer should <strong>increase spending on X and decrease spending on Y</strong>. As she does so, diminishing marginal utility will lower MU<sub>x</sub> and raise MU<sub>y</sub> (assuming standard convex preferences), eventually equating the two ratios.</p>
+  </div></div>
+</div>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q8</span><span class="pq-star">⋆</span>A consumer says: "No matter how much coffee I drink, I always value the next unit of music streaming the same relative to coffee." What preferences is she describing? Write down a utility function and sketch her indifference map.</div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p>She is describing <strong>perfect substitutes</strong>. Her marginal rate of substitution between music streaming and coffee is constant — she always values one unit of streaming relative to coffee at the same fixed rate, regardless of how much of either she already has. Her indifference map consists of straight, parallel, downward-sloping lines.</p>
+    <p>A suitable utility function: U(X,Y) = aX + bY, where X = coffee and Y = streaming, and a/b reflects the constant trade-off rate she described.</p>
+  </div></div>
+</div>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q9</span><span class="pq-star">⋆</span>Why will a rational consumer with positive marginal utilities never choose a bundle strictly inside the budget constraint? How does the answer change if one good is an economic bad?</div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p>A rational consumer will never choose a bundle strictly inside the budget constraint because at any such point, she has unspent income. Since both goods are desirable (positive MU), she can increase utility by spending the remaining income on more of either X or Y, reaching a higher IC. The optimal bundle must therefore lie <em>on</em> the budget line.</p>
+    <p>If one good is an economic bad (negative MU), the consumer would want to consume zero of that bad. In that case, she spends all income on the normal good and zero on the bad — a corner solution on the budget line, not interior. The conclusion (optimal bundle lies on the budget line) still holds.</p>
+  </div></div>
+</div>
+
+<div class="pq-item">
+  <div class="pq-q"><span class="pq-num">Q10</span><span class="pq-star">⋆</span>A student says: "Doubling my income always doubles my consumption of every good." Under what class of utility functions is this true? What is this property called?</div>
+  <button class="sol-btn"><span class="sol-btn-txt">Show Solution</span> <span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p>This property holds for <strong>Cobb-Douglas utility functions</strong> U(X,Y) = X<sup>&alpha;</sup>Y<sup>&beta;</sup>. The demand functions are X* = [&alpha;/(&alpha;+&beta;)] &middot; I/P<sub>x</sub> and Y* = [&beta;/(&alpha;+&beta;)] &middot; I/P<sub>y</sub>, which are both linear in income. Doubling I exactly doubles X* and Y*.</p>
+    <p>More generally, this property is called <strong>homotheticity</strong>. Preferences are homothetic when optimal demands are proportional to income — any homothetic utility function (not just Cobb-Douglas) shares this property.</p>
+  </div></div>
+</div>
+
+</div></div>
+</div></div>
+<!-- FIXED UI -->
+<div id="progress-bar"></div>
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button id="dark-toggle" onclick="toggleDark()">🌙 Dark</button>
+
+<script>
+// Dark mode
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  var on=document.body.classList.contains('dark');
+  localStorage.setItem('dk',on);
+  document.getElementById('dark-toggle').textContent=on?'☀️ Light':'🌙 Dark';
+}
+if(localStorage.getItem('dk')==='true'){document.body.classList.add('dark');document.getElementById('dark-toggle').textContent='☀️ Light';}
+
+// Progress bar + scroll-top
+var pb=document.getElementById('progress-bar'),st=document.getElementById('scroll-top');
+window.addEventListener('scroll',function(){
+  var h=document.documentElement;
+  pb.style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%';
+  st.style.display=h.scrollTop>400?'flex':'none';
+});
+
+// Collapsible sections
+document.querySelectorAll('.collapse-trigger').forEach(function(t){
+  t.addEventListener('click',function(){
+    this.classList.toggle('open');
+    this.nextElementSibling.classList.toggle('open');
+  });
+});
+
+// Worked example collapse
+document.querySelectorAll('.we-trigger').forEach(function(t){
+  t.addEventListener('click',function(){
+    this.classList.toggle('open');
+    this.nextElementSibling.classList.toggle('open');
+  });
+});
+
+// Solution buttons
+document.querySelectorAll('.sol-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var open=this.classList.toggle('open');
+    this.querySelector('.sol-btn-txt').textContent=open?'Hide Solution':'Show Solution';
+    this.querySelector('.s-arrow').textContent=open?'▴':'▾';
+    this.nextElementSibling.classList.toggle('open');
+  });
+});
+
+// Equation copy
+document.querySelectorAll('.eq-wrap').forEach(function(eq){
+  var btn=document.createElement('button');
+  btn.className='eq-copy';btn.textContent='copy';
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var txt=eq.innerText.replace(/copy$/,'').replace(/\(\d+\)$/,'').trim();
+    navigator.clipboard.writeText(txt).then(function(){btn.textContent='✓';setTimeout(function(){btn.textContent='copy';},1500);});
+  });
+  eq.appendChild(btn);
+});
+</script>
 </body>
 </html>
