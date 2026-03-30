@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EC224 Week 2 — Practice Questions</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;font-size:17px;line-height:1.8;color:#1a1a2e;background:#f7f9fc;}
+body.dark{background:#0f1117;color:#d8dee9;}
+.top-band{background:#0066B3;color:#fff;padding:9px 32px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;font-weight:500;display:flex;align-items:center;gap:14px;}
+.top-band-sep{opacity:.4;}
+.page-header{background:#fff;border-bottom:1px solid #e0e4ea;padding:32px 40px 28px;}
+body.dark .page-header{background:#1a1f2e;border-color:#2e3545;}
+.page-header-inner{max-width:820px;margin:0 auto;}
+.back-link{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:#0066B3;text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;}
+.back-link:hover{text-decoration:underline;}
+h1{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:1.8rem;font-weight:700;color:#0a0a1a;margin-bottom:10px;letter-spacing:-.02em;}
+body.dark h1{color:#e8ecf0;}
+.meta-bar{display:flex;gap:24px;flex-wrap:wrap;padding:10px 16px;background:#f7f9fc;border:1px solid #e0e4ea;border-radius:8px;margin:14px 0 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+body.dark .meta-bar{background:#1a1f2e;border-color:#2e3545;}
+.meta-item{display:flex;flex-direction:column;gap:1px;}
+.meta-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#999;}
+.meta-value{font-size:13px;font-weight:600;color:#333;}
+body.dark .meta-value{color:#d8dee9;}
+.attempt-banner{background:#fff8e7;border:1px solid #fde68a;border-radius:8px;padding:10px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#92400e;margin:0 auto;max-width:820px;margin-top:16px;}
+body.dark .attempt-banner{background:#2d2510;border-color:#92400e;color:#fcd34d;}
+.container{max-width:820px;margin:0 auto;padding:32px 40px 80px;}
+/* Jump links */
+.jump-links{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
+.jump-btn{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;font-weight:600;padding:6px 16px;border-radius:100px;text-decoration:none;border:1.5px solid;transition:all 150ms;}
+.jump-l1{color:#0066B3;border-color:#c5ddf4;background:#e8f2fb;}
+.jump-l1:hover{background:#0066B3;color:#fff;}
+.jump-l2{color:#92400e;border-color:#fde68a;background:#fff8e7;}
+.jump-l2:hover{background:#f59e0b;color:#fff;border-color:#f59e0b;}
+.jump-l3{color:#4c1d95;border-color:#ddd6fe;background:#ede9fe;}
+.jump-l3:hover{background:#7c3aed;color:#fff;border-color:#7c3aed;}
+/* Level headers */
+.level-header{padding:14px 0 8px;border-bottom:2px solid #e0e4ea;margin:32px 0 18px;}
+body.dark .level-header{border-color:#2e3545;}
+.level-title{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;font-weight:700;color:#1a1a2e;display:flex;align-items:center;gap:10px;}
+body.dark .level-title{color:#e8ecf0;}
+.level-badge-1{background:#0066B3;color:#fff;font-size:11px;padding:3px 10px;border-radius:100px;font-weight:700;}
+.level-badge-2{background:#f59e0b;color:#fff;font-size:11px;padding:3px 10px;border-radius:100px;font-weight:700;}
+.level-badge-3{background:#7c3aed;color:#fff;font-size:11px;padding:3px 10px;border-radius:100px;font-weight:700;}
+.level-desc{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:#666;margin-top:4px;}
+body.dark .level-desc{color:#8a97a8;}
+/* Question cards */
+.pq-item{border:1px solid #e0e4ea;border-radius:10px;margin-bottom:14px;overflow:hidden;}
+body.dark .pq-item{border-color:#2e3545;}
+.pq-q{padding:16px 18px;font-size:1.09rem;background:#fff;line-height:1.75;}
+body.dark .pq-q{background:#1a1f2e;color:#c0c8d4;}
+.pq-q-header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+.pq-num{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;font-weight:700;color:#0066B3;background:#e8f2fb;padding:2px 9px;border-radius:100px;}
+body.dark .pq-num{background:#1a3a5c;color:#93c5fd;}
+.pq-star{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:#f59e0b;}
+.pq-section-ref{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;color:#999;text-decoration:none;border-bottom:1px dashed #ccc;margin-left:4px;transition:color 150ms;}
+.pq-section-ref:hover{color:#0066B3;border-color:#0066B3;}
+body.dark .pq-section-ref{color:#6b7280;border-color:#4b5563;}
+.pq-warn{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;color:#dc2626;margin-left:4px;}
+.sol-btn{display:flex;width:100%;align-items:center;justify-content:space-between;padding:9px 18px;background:#f7f9fc;border:none;border-top:1px solid #e0e4ea;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;font-weight:600;color:#0066B3;cursor:pointer;transition:background 150ms;}
+.sol-btn:hover{background:#e8f2fb;}
+body.dark .sol-btn{background:#1e2535;border-color:#2e3545;color:#93c5fd;}
+.s-arrow{transition:transform 250ms ease;}
+.sol-btn.open .s-arrow{transform:rotate(180deg);}
+.sol-body{max-height:0;overflow:hidden;transition:max-height 400ms cubic-bezier(.4,0,.2,1);}
+.sol-body.open{max-height:4000px;}
+.sol-inner{padding:16px 18px;font-size:1.06rem;line-height:1.78;color:#333;background:#f7f9fc;border-top:1px solid #e0e4ea;}
+body.dark .sol-inner{background:#1e2535;border-color:#2e3545;color:#c0c8d4;}
+.sol-inner p{margin-bottom:10px;}
+.sol-inner p:last-child{margin-bottom:0;}
+.sol-inner strong{color:#111;}
+body.dark .sol-inner strong{color:#e8ecf0;}
+.sol-inner ol,.sol-inner ul{padding-left:24px;margin-bottom:10px;}
+.sol-quality{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;color:#666;font-style:italic;margin-top:12px;padding-top:10px;border-top:1px dashed #e0e4ea;}
+body.dark .sol-quality{color:#6b7280;border-color:#2e3545;}
+.eq-inline{background:#f0f4f8;padding:2px 8px;border-radius:4px;font-family:'Courier New',monospace;font-size:0.9em;color:#1a3a5c;}
+body.dark .eq-inline{background:#1e2535;color:#93c5fd;}
+/* Progress bar + scroll top + dark toggle */
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:#0066B3;width:0%;z-index:1000;transition:width 100ms linear;}
+#scroll-top{position:fixed;bottom:28px;right:28px;background:#0066B3;color:#fff;border:none;width:40px;height:40px;border-radius:50%;font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2);z-index:999;}
+#dark-toggle{position:fixed;bottom:28px;left:28px;background:#1a1a2e;color:#fff;border:none;padding:8px 14px;border-radius:100px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);z-index:999;}
+body.dark #dark-toggle{background:#e8ecf0;color:#1a1a2e;}
+body.dark #scroll-top{background:#1a3a5c;}
+.footer{border-top:1px solid #e0e4ea;padding:20px 40px;max-width:820px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:#aaa;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+body.dark .footer{border-color:#2e3545;}
+@media(max-width:640px){.container{padding:20px 16px;}.page-header{padding:20px;}}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button id="dark-toggle" onclick="toggleDark()">🌙 Dark</button>
+
+<div class="top-band">
+  <span>Bentley University</span><span class="top-band-sep">·</span>
+  <span>Department of Economics</span><span class="top-band-sep">·</span>
+  <span>EC224 · Intermediate Microeconomics · Prof. Naveen Sunder</span>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <a href="week2.html" class="back-link">← Back to Chapter</a>
+    <h1>Week 2 · Practice Questions</h1>
+    <div class="meta-bar">
+      <div class="meta-item"><span class="meta-label">Chapter</span><span class="meta-value">Indifference Curves, Budget Constraints &amp; Consumer Optimum</span></div>
+      <div class="meta-item"><span class="meta-label">Questions</span><span class="meta-value">27 Total</span></div>
+      <div class="meta-item"><span class="meta-label">Levels</span><span class="meta-value">3 (⋆ · ⋆⋆ · ⋆⋆⋆)</span></div>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:820px;margin:16px auto 0;padding:0 40px;">
+  <div class="attempt-banner">⚠️ <strong>Attempt each question independently before revealing the solution.</strong> Clicking "Show Solution" too early significantly reduces the learning benefit.</div>
+</div>
+
+<div class="container">
+
+<!-- Jump links -->
+<div class="jump-links">
+  <a href="#level1" class="jump-btn jump-l1">⋆ Level 1 — Conceptual (Q1–Q10)</a>
+  <a href="#level2" class="jump-btn jump-l2">⋆⋆ Level 2 — Intermediate (Q11–Q17)</a>
+  <a href="#level3" class="jump-btn jump-l3">⋆⋆⋆ Level 3 — Advanced (Q18–Q27)</a>
+</div>
+
+<!-- Difficulty reminder -->
+<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#666;background:#fff;border:1px solid #e0e4ea;border-radius:8px;padding:12px 16px;margin-bottom:28px;">
+  <strong style="color:#333;">Difficulty guide:</strong> &nbsp;
+  <span style="color:#0066B3;">⋆ Level 1</span> — vocabulary and geometric intuition. &nbsp;
+  <span style="color:#f59e0b;">⋆⋆ Level 2</span> — algebra and diagram work. &nbsp;
+  <span style="color:#7c3aed;">⋆⋆⋆ Level 3</span> — synthesis and long-answer problems requiring full exam-quality responses.
+</div>
+
+<!-- ══════════════════════════════════
+     LEVEL 1
+══════════════════════════════════ -->
+<div id="level1" class="level-header">
+  <div class="level-title"><span class="level-badge-1">⋆ Level 1</span> Conceptual and Short-Answer</div>
+  <div class="level-desc">Build vocabulary and geometric intuition. Each question requires a short answer or diagram — no algebra needed.</div>
+</div>
+
+<div class="pq-item" id="q1">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q1</span><span class="pq-star">⋆</span><a href="week2.html#s21" class="pq-section-ref">§2.1–2.6</a></div>
+    Describe the shape of the indifference curve for each good type below and give a one-sentence economic justification.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Two goods that are perfect substitutes.</li>
+      <li>Two goods that are perfect complements.</li>
+      <li>A neutral (useless) good paired with a normal good.</li>
+      <li>An economic bad paired with a normal good.</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a) Perfect substitutes:</strong> straight, parallel, downward-sloping lines. The consumer is always willing to trade the goods at a constant ratio (constant MRS), so the IC has constant slope.</p>
+    <p><strong>(b) Perfect complements:</strong> L-shaped. Extra units of one good without the other provide zero marginal utility, so horizontal and vertical arms represent equal utility.</p>
+    <p><strong>(c) Neutral good (Y):</strong> vertical straight lines. Utility only depends on X; any amount of Y at fixed X gives the same utility. Increasing utility means moving right.</p>
+    <p><strong>(d) Economic bad (Y):</strong> upward sloping. More Y reduces utility, so to stay on the same IC the consumer needs compensation in the form of more X.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q2">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q2</span><span class="pq-star">⋆</span><a href="week2.html#s22" class="pq-section-ref">§2.2–2.6</a></div>
+    For each utility function, identify the preference type, describe the IC shape, and state the MRS where defined.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>U(X,Y) = 3X + 4Y</li>
+      <li>U(X,Y) = min(2X, Y)</li>
+      <li>U(X,Y) = X</li>
+      <li>U(X,Y) = X &minus; Y&sup2; &nbsp;(Y &ge; 0)</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> Linear utility &rArr; perfect substitutes. MRS = 3/4 (constant). ICs are parallel straight lines with slope &minus;3/4.</p>
+    <p><strong>(b)</strong> Perfect complements with kinks on the ray 2X = Y. L-shaped ICs; MRS is 0 on horizontal arm, &infin; on vertical arm, undefined at kink.</p>
+    <p><strong>(c)</strong> Utility depends only on X &rArr; Y is a neutral good. ICs are vertical lines. MRS = &infin; (the IC has zero horizontal extent).</p>
+    <p><strong>(d)</strong> &part;U/&part;Y = &minus;2Y &lt; 0 for Y &gt; 0 &rArr; Y is an economic bad. ICs slope upward. MRS is negative.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q3">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q3</span><span class="pq-star">⋆</span><a href="week2.html#s27" class="pq-section-ref">§2.7</a></div>
+    A consumer has I = $120, P<sub>x</sub> = $3, P<sub>y</sub> = $4.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Write the budget constraint equation.</li>
+      <li>Find the X- and Y-intercepts.</li>
+      <li>State the slope and explain its economic meaning.</li>
+      <li>Sketch the budget line on a labelled diagram, shading the affordable set.</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> 3X + 4Y = 120.</p>
+    <p><strong>(b)</strong> X<sub>max</sub> = 120/3 = <strong>40</strong>; Y<sub>max</sub> = 120/4 = <strong>30</strong>.</p>
+    <p><strong>(c)</strong> Slope = &minus;3/4. For every additional unit of X purchased, the consumer must give up 3/4 of a unit of Y — this is the opportunity cost of X in terms of Y.</p>
+    <p><strong>(d)</strong> Draw axes (Y vertical, X horizontal). Mark (0,30) on Y-axis and (40,0) on X-axis. Connect with a line labeled 3X + 4Y = 120. Shade the affordable region below the line.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q4">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q4</span><span class="pq-star">⋆</span><a href="week2.html#s28" class="pq-section-ref">§2.8</a></div>
+    Explain the difference between a parallel shift and a pivot of the budget line. What causes each? Give one real-world example of each.
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>Parallel shift:</strong> both intercepts change proportionally, slope unchanged. Caused by an income change (prices fixed). <em>Example:</em> a wage increase shifts the budget line outward without changing the relative price of goods.</p>
+    <p><strong>Pivot (rotation):</strong> one intercept is fixed, the second changes, and the slope changes. Caused by a price change for one good. <em>Example:</em> a petrol tax raises the price of driving, pivoting the budget line inward around the non-petrol intercept.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q5">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q5</span><span class="pq-star">⋆</span><span class="pq-warn">⚠️ Common exam mistake</span><a href="week2.html#s29" class="pq-section-ref">§2.9</a></div>
+    State the two conditions for an interior optimum. Explain in plain English why each is necessary — what goes wrong if either fails?
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>Condition 1 — Budget exhaustion:</strong> P<sub>x</sub>X* + P<sub>y</sub>Y* = I. Necessary because both goods are desirable: any unspent income is wasteful — the consumer could increase utility by spending it on more of either good.</p>
+    <p><strong>Condition 2 — Tangency:</strong> P<sub>x</sub>/P<sub>y</sub> = MU<sub>x</sub>/MU<sub>y</sub>. Necessary because if the slopes differ, the IC crosses the budget line, meaning there is an affordable bundle on a higher IC. Only at tangency is it impossible to reach a higher IC within the budget.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q6">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q6</span><span class="pq-star">⋆</span><a href="week2.html#s210" class="pq-section-ref">§2.10</a></div>
+    Explain the "bang for the buck" condition in your own words. Give a concrete business example of what a manager should do when the condition is not satisfied.
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p>The bang-for-the-buck condition: MU<sub>x</sub>/P<sub>x</sub> = MU<sub>y</sub>/P<sub>y</sub>. At the optimum, the extra utility gained per dollar spent must be the same for every good. If MU<sub>x</sub>/P<sub>x</sub> &gt; MU<sub>y</sub>/P<sub>y</sub>, the consumer gets more utility per dollar from X than from Y. They should reduce spending on Y and increase spending on X until the ratios equalise.</p>
+    <p><em>Business example:</em> if concert tickets give 20 utils per dollar and coffee gives 10 utils per dollar, a manager allocating an entertainment budget should shift spending from coffee to concert tickets (as diminishing MU sets in for concerts).</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q7">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q7</span><span class="pq-star">⋆</span><span class="pq-warn">⚠️ Common exam mistake</span><a href="week2.html#s210" class="pq-section-ref">§2.10</a></div>
+    A consumer has MU<sub>x</sub>/P<sub>x</sub> = 8 and MU<sub>y</sub>/P<sub>y</sub> = 5 and her budget is exactly exhausted. Is she at an optimum? If not, how should she reallocate spending?
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p>She is <strong>not</strong> at an optimum. Since MU<sub>x</sub>/P<sub>x</sub> = 8 &gt; 5 = MU<sub>y</sub>/P<sub>y</sub>, good X provides more utility per dollar. She should <strong>increase spending on X and decrease spending on Y</strong>. As she does so, diminishing MU will lower MU<sub>x</sub> and raise MU<sub>y</sub> until the two ratios equalise.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q8">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q8</span><span class="pq-star">⋆</span><a href="week2.html#s23" class="pq-section-ref">§2.3</a></div>
+    A consumer says: "No matter how much coffee I drink, I always value the next unit of music streaming the same relative to coffee." What preferences is she describing? Write down a utility function and sketch her indifference map.
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>Perfect substitutes.</strong> Her MRS between streaming and coffee is constant — it does not depend on how much of either she consumes. Her IC map consists of straight, parallel, downward-sloping lines.</p>
+    <p>Utility function: U(X,Y) = aX + bY, where X = coffee and Y = streaming, and a/b reflects the constant trade-off rate she described. The MRS = a/b everywhere on every IC.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q9">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q9</span><span class="pq-star">⋆</span><a href="week2.html#s29" class="pq-section-ref">§2.9</a></div>
+    Why will a rational consumer with positive marginal utilities never choose a bundle strictly inside the budget constraint? How does the answer change if one good is an economic bad?
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p>At any point strictly inside the budget constraint the consumer has unspent income. Since both goods are desirable (positive MU), spending the remaining income on more of either X or Y moves the consumer to a higher IC. The optimal bundle must therefore lie <em>on</em> the budget line.</p>
+    <p>If one good is an economic bad (negative MU), the consumer wants zero of that good and spends all income on the normal good — a corner solution on the budget line. The conclusion (optimum lies on the budget line) still holds; it just occurs at a corner rather than an interior point.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q10">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q10</span><span class="pq-star">⋆</span><a href="week2.html#s211" class="pq-section-ref">§2.11</a></div>
+    A student says: "Doubling my income always doubles my consumption of every good." Under what class of utility functions is this true? What is this property called?
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p>This holds for <strong>Cobb-Douglas utility functions</strong> U(X,Y) = X<sup>&alpha;</sup>Y<sup>&beta;</sup>. The demand functions X* = [&alpha;/(&alpha;+&beta;)] &middot; I/P<sub>x</sub> and Y* = [&beta;/(&alpha;+&beta;)] &middot; I/P<sub>y</sub> are both linear in income — doubling I doubles both X* and Y*.</p>
+    <p>More generally this is called <strong>homotheticity</strong>. Any homothetic utility function has demands proportional to income.</p>
+  </div></div>
+</div>
+
+<!-- ══════════════════════════════════
+     LEVEL 2
+══════════════════════════════════ -->
+<div id="level2" class="level-header">
+  <div class="level-title"><span class="level-badge-2">⋆⋆ Level 2</span> Intermediate Problems</div>
+  <div class="level-desc">Requires algebra and diagram work. Set up the two optimality conditions and solve systematically.</div>
+</div>
+
+<div class="pq-item" id="q11">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q11</span><span class="pq-star">⋆⋆</span><a href="week2.html#s28" class="pq-section-ref">§2.8</a></div>
+    A consumer has I = $80, P<sub>x</sub> = $2, P<sub>y</sub> = $4.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Draw the budget constraint with labelled intercepts.</li>
+      <li>Income rises to $120 (prices fixed). Draw the new line. Shift or pivot? Does slope change?</li>
+      <li>Instead P<sub>x</sub> rises to $4 (I = $80, P<sub>y</sub> fixed). Draw. Shift or pivot?</li>
+      <li>A classmate says the consumer in (c) is equally well off since income is unchanged. Is she correct?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> 2X + 4Y = 80. X<sub>max</sub> = 40; Y<sub>max</sub> = 20. Slope = &minus;1/2.</p>
+    <p><strong>(b)</strong> 2X + 4Y = 120. X<sub>max</sub> = 60; Y<sub>max</sub> = 30. <strong>Parallel shift outward.</strong> Slope = &minus;1/2 — unchanged. Both intercepts scale by 1.5.</p>
+    <p><strong>(c)</strong> 4X + 4Y = 80. X<sub>max</sub> = 20 (falls from 40); Y<sub>max</sub> = 20 (unchanged). <strong>Pivot inward</strong> around Y-intercept = 20. Slope changes from &minus;1/2 to &minus;1 (steeper).</p>
+    <p><strong>(d)</strong> The classmate is incorrect. Although nominal income is unchanged, the budget set is smaller in (c): the new budget line lies inside the old one for all X &gt; 0. A higher P<sub>x</sub> means every unit of X costs more, effectively reducing purchasing power. The consumer has strictly fewer affordable options.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q12">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q12</span><span class="pq-star">⋆⋆</span><a href="week2.html#s23" class="pq-section-ref">§2.3–2.4</a></div>
+    Tom and Jerry both have I = $60, P<sub>x</sub> = $3, P<sub>y</sub> = $6. Tom: U<sub>T</sub> = 2X + Y; Jerry: U<sub>J</sub> = min(X,Y).
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Find Tom's optimal bundle.</li>
+      <li>Find Jerry's optimal bundle.</li>
+      <li>Why do their solutions differ so dramatically? Link to IC shapes.</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a) Tom:</strong> Check bang for the buck: MU<sub>x</sub>/P<sub>x</sub> = 2/3; MU<sub>y</sub>/P<sub>y</sub> = 1/6. Since 2/3 &gt; 1/6, X gives more utility per dollar. Tom spends all income on X: <strong>X* = 60/3 = 20, Y* = 0.</strong></p>
+    <p><strong>(b) Jerry:</strong> Perfect complements — optimum at kink: X = Y. Budget: 3X + 6X = 60 &rArr; 9X = 60 &rArr; <strong>X* = Y* = 20/3 &asymp; 6.67.</strong></p>
+    <p><strong>(c)</strong> Tom views the goods as perfect substitutes (linear utility) and always chooses the good with more utility per dollar — a corner solution. Jerry treats them as perfect complements and always consumes equal amounts, giving an interior kink solution. Their dramatically different ICs (straight line vs. L-shaped) produce completely different optimal strategies even with the same budget.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q13">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q13</span><span class="pq-star">⋆⋆</span><a href="week2.html#s211" class="pq-section-ref">§2.11</a></div>
+    P<sub>x</sub> = $5, P<sub>y</sub> = $10, I = $100, U = X<sup>1/2</sup>Y<sup>1/2</sup>.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Find (X*, Y*).</li>
+      <li>Verify the tangency condition at the optimum.</li>
+      <li>Verify budget exhaustion.</li>
+      <li>P<sub>y</sub> falls to $5. Find the new optimum. What changed and why?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> Tangency: Y/X = P<sub>x</sub>/P<sub>y</sub> = 5/10 = 1/2 &rArr; Y = X/2. Budget: 5X + 10(X/2) = 100 &rArr; 10X = 100 &rArr; <strong>X* = 10, Y* = 5.</strong></p>
+    <p><strong>(b)</strong> MRS at (10,5): &minus;Y/X = &minus;5/10 = &minus;1/2. Slope of BC: &minus;5/10 = &minus;1/2. ✓</p>
+    <p><strong>(c)</strong> 5(10) + 10(5) = 50 + 50 = 100 = I. ✓</p>
+    <p><strong>(d)</strong> New tangency: Y/X = 5/5 = 1 &rArr; Y = X. Budget: 5X + 5X = 100 &rArr; <strong>X** = 10, Y** = 10.</strong> X is unchanged; Y doubled. The fall in P<sub>y</sub> made clothing cheaper, so Amanda shifted spending entirely into Y — consistent with the equal-expenditure-share property of &radic;(XY).</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q14">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q14</span><span class="pq-star">⋆⋆</span><a href="week2.html#s24" class="pq-section-ref">§2.4</a></div>
+    U = min(X, 2Y), I = $90, P<sub>x</sub> = $3, P<sub>y</sub> = $6.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Sketch two indifference curves. Where do the kinks lie?</li>
+      <li>Find the optimal bundle.</li>
+      <li>P<sub>x</sub> rises to $6. Find the new optimal bundle and describe the total effect on both goods.</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> ICs are L-shaped with kinks on the ray X = 2Y. Example kink points: (2,1) for U=2, (4,2) for U=4. Each IC has a vertical arm at the corresponding X-value and a horizontal arm at the corresponding Y-value.</p>
+    <p><strong>(b)</strong> Optimum at kink: X = 2Y. Budget: 3(2Y) + 6Y = 90 &rArr; 12Y = 90 &rArr; <strong>Y* = 7.5, X* = 15.</strong></p>
+    <p><strong>(c)</strong> New P<sub>x</sub> = 6: kink condition X = 2Y unchanged. Budget: 6(2Y) + 6Y = 90 &rArr; 18Y = 90 &rArr; <strong>Y** = 5, X** = 10.</strong> Total effect: X falls 15&rarr;10 and Y falls 7.5&rarr;5. Both goods decrease because the higher price of X forces the consumer to reduce the entire complementary bundle.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q15">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q15</span><span class="pq-star">⋆⋆</span><a href="week2.html#s23" class="pq-section-ref">§2.3</a></div>
+    I = $150, U = 4X + 3Y.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>P<sub>x</sub> = $4, P<sub>y</sub> = $3: find the optimum.</li>
+      <li>P<sub>x</sub> = $3, P<sub>y</sub> = $4: find the optimum.</li>
+      <li>P<sub>x</sub> = $4, P<sub>y</sub> = $4: describe the solution set carefully.</li>
+      <li>What do your answers illustrate about perfect substitutes?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> MU<sub>x</sub>/P<sub>x</sub> = 4/4 = 1; MU<sub>y</sub>/P<sub>y</sub> = 3/3 = 1. Equal — any bundle on the budget line is optimal. The budget line overlaps an IC; the consumer is indifferent among all affordable combinations.</p>
+    <p><strong>(b)</strong> MU<sub>x</sub>/P<sub>x</sub> = 4/3 &gt; 3/4 = MU<sub>y</sub>/P<sub>y</sub>. Spend all on X: <strong>X* = 150/3 = 50, Y* = 0.</strong></p>
+    <p><strong>(c)</strong> MU<sub>x</sub>/P<sub>x</sub> = 4/4 = 1 &gt; 3/4 = MU<sub>y</sub>/P<sub>y</sub>. Spend all on X: <strong>X* = 150/4 = 37.5, Y* = 0.</strong></p>
+    <p><strong>(d)</strong> Perfect substitutes generate corner solutions (spend all on the good with the higher utility per dollar). When utility per dollar is exactly equal (a), every point on the budget line is optimal — the IC and budget line coincide. Any small price change tips the consumer to a corner.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q16">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q16</span><span class="pq-star">⋆⋆</span><a href="week2.html#s29" class="pq-section-ref">§2.9</a></div>
+    (Graphical.) I = $60, P<sub>x</sub> = $3, P<sub>y</sub> = $2, U = X<sup>1/2</sup>Y<sup>1/2</sup>.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Find (X*, Y*).</li>
+      <li>Mark an affordable but non-optimal bundle. Explain geometrically why it fails.</li>
+      <li>Sketch the optimal IC and confirm tangency.</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> Tangency: Y/X = 3/2 &rArr; Y = 3X/2. Budget: 3X + 2(3X/2) = 60 &rArr; 6X = 60 &rArr; <strong>X* = 10, Y* = 15.</strong></p>
+    <p><strong>(b)</strong> Take bundle (6,12): cost = 18 + 24 = $42 &lt; $60 — affordable and inside the BC. It lies on a lower IC (U = &radic;72 &lt; &radic;150 = U*). Geometrically, it is in the interior of the budget set; the consumer can increase utility by spending the remaining $18 on more goods.</p>
+    <p><strong>(c)</strong> The optimal IC is XY = 150 (i.e. Y = 150/X). At (10,15): slope of IC = &minus;Y/X = &minus;15/10 = &minus;3/2. Slope of BC = &minus;3/2. ✓ The IC touches the budget line at exactly one point without crossing it.</p>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q17">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q17</span><span class="pq-star">⋆⋆</span><a href="week2.html#s211" class="pq-section-ref">§2.11</a></div>
+    (Reverse problem.) A consumer with U = X<sup>1/2</sup>Y<sup>1/2</sup> and I = $120 is observed at (X*, Y*) = (30, 12).
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Use budget exhaustion to find P<sub>y</sub>, given P<sub>x</sub> = $2.</li>
+      <li>Verify your answer with the tangency condition.</li>
+      <li>Repeat for observed bundle (20, 20) with P<sub>x</sub> = $2. Is this bundle consistent with optimisation?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> Budget exhaustion: 2(30) + P<sub>y</sub>(12) = 120 &rArr; 12P<sub>y</sub> = 60 &rArr; <strong>P<sub>y</sub> = $5.</strong></p>
+    <p><strong>(b)</strong> Tangency check: MRS = Y/X = 12/30 = 2/5. Price ratio: P<sub>x</sub>/P<sub>y</sub> = 2/5. ✓ Consistent with optimisation.</p>
+    <p><strong>(c)</strong> Bundle (20,20): budget exhaustion gives 2(20) + P<sub>y</sub>(20) = 120 &rArr; P<sub>y</sub> = $4. Tangency check: MRS = Y/X = 20/20 = 1. Price ratio: 2/4 = 1/2 &ne; 1. <strong>Not consistent</strong> with optimisation — budget exhaustion holds but the tangency condition fails, so (20,20) is not a utility maximum at these prices.</p>
+  </div></div>
+</div>
+
+<!-- ══════════════════════════════════
+     LEVEL 3
+══════════════════════════════════ -->
+<div id="level3" class="level-header">
+  <div class="level-title"><span class="level-badge-3">⋆⋆⋆ Level 3</span> Advanced and Long-Answer</div>
+  <div class="level-desc">Synthesis problems requiring full exam-quality solutions. Derive, explain, and verify all steps.</div>
+</div>
+
+<div class="pq-item" id="q18">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q18</span><span class="pq-star">⋆⋆⋆</span><a href="week2.html#s211" class="pq-section-ref">§2.11</a></div>
+    I = $200, P<sub>x</sub> = $4, P<sub>y</sub> = $8, U = X<sup>2/3</sup>Y<sup>1/3</sup>.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Derive the Marshallian demand functions X*(P<sub>x</sub>, P<sub>y</sub>, I) and Y*(P<sub>x</sub>, P<sub>y</sub>, I).</li>
+      <li>Compute the optimum at the given parameters.</li>
+      <li>What fraction of income is spent on each good? Is this consistent with the Cobb-Douglas result?</li>
+      <li>Income rises to $300. Find the new optimum and state the percentage change in each good. Are X and Y normal goods?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> &alpha; = 2/3, &beta; = 1/3. Using the general Cobb-Douglas demand formula:</p>
+    <p>X* = [&alpha;/(&alpha;+&beta;)] &middot; I/P<sub>x</sub> = <strong>(2/3) &middot; I/P<sub>x</sub> = 2I/(3P<sub>x</sub>)</strong></p>
+    <p>Y* = [&beta;/(&alpha;+&beta;)] &middot; I/P<sub>y</sub> = <strong>(1/3) &middot; I/P<sub>y</sub> = I/(3P<sub>y</sub>)</strong></p>
+    <p><strong>(b)</strong> X* = 2(200)/(3&times;4) = 400/12 = <strong>100/3 &asymp; 33.3</strong>; Y* = 200/(3&times;8) = <strong>25/3 &asymp; 8.33.</strong></p>
+    <p><strong>(c)</strong> Spending on X: 4&times;(100/3) = $133.3 = 2/3&times;$200. Spending on Y: 8&times;(25/3) = $66.7 = 1/3&times;$200. Consistent with Cobb-Douglas: spending share on X = &alpha;/(&alpha;+&beta;) = 2/3; on Y = 1/3. ✓</p>
+    <p><strong>(d)</strong> I' = $300: X** = 2(300)/12 = <strong>50</strong>; Y** = 300/24 = <strong>12.5.</strong> Both rose by 50% (= percentage income increase). Both are normal goods (demand increases with income). ✓</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps (MU derivation, tangency condition setup, and verification) is sufficient.</div>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q19">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q19</span><span class="pq-star">⋆⋆⋆</span><a href="week2.html#s211" class="pq-section-ref">§2.11</a></div>
+    Weekly budget $60: coffee (X, $3), textbooks (Y, $15). U = X<sup>3/4</sup>Y<sup>1/4</sup>.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Find the optimal bundle and compute utility at the optimum.</li>
+      <li>Textbooks go on sale at $10. Find the new optimal bundle.</li>
+      <li>Draw both budget lines on one diagram, marking both optima. Shift or pivot? Which intercept is fixed?</li>
+      <li>What percentage does textbook consumption change? Is this consistent with Cobb-Douglas spending shares?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> &alpha; = 3/4, &beta; = 1/4. X* = (3/4)(60/3) = <strong>15</strong>; Y* = (1/4)(60/15) = <strong>1</strong>. U* = 15<sup>3/4</sup>&times;1<sup>1/4</sup> = 15<sup>3/4</sup> &asymp; 8.09.</p>
+    <p><strong>(b)</strong> P<sub>y</sub>' = $10: X** = (3/4)(60/3) = <strong>15</strong> (unchanged); Y** = (1/4)(60/10) = <strong>1.5.</strong></p>
+    <p><strong>(c)</strong> Both BCs share the same X-intercept (= 60/3 = 20) since P<sub>x</sub> is unchanged. The Y-intercept moves from 60/15 = 4 to 60/10 = 6. This is a <strong>pivot outward</strong> around the X-intercept at X = 20.</p>
+    <p><strong>(d)</strong> Textbook consumption: 1 &rarr; 1.5, a <strong>50% increase.</strong> Under Cobb-Douglas, the spending share on Y = &beta;/(&alpha;+&beta;) = 1/4 is fixed. Spending on Y at old price: $15&times;1 = $15 = 1/4&times;$60. Spending on Y at new price: $10&times;1.5 = $15 = 1/4&times;$60. ✓ Consistent — the spending share is unchanged even though quantity changes.</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps is sufficient.</div>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q20">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q20</span><span class="pq-star">⋆⋆⋆</span><a href="week2.html#s211" class="pq-section-ref">§2.11</a></div>
+    U(X,Y) = ln X + 2 ln Y.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Derive the MRS. (Note: this is a monotone transformation of XY&sup2;.)</li>
+      <li>I = $120, P<sub>x</sub> = $2, P<sub>y</sub> = $4: find the optimal bundle.</li>
+      <li>What fraction of income is spent on each good?</li>
+      <li>Derive the general demand functions X*(P<sub>x</sub>, P<sub>y</sub>, I) and Y*(P<sub>x</sub>, P<sub>y</sub>, I).</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> MU<sub>x</sub> = 1/X; MU<sub>y</sub> = 2/Y. MRS = (1/X)/(2/Y) = Y/(2X) in magnitude.</p>
+    <p><strong>(b)</strong> Tangency: Y/(2X) = P<sub>x</sub>/P<sub>y</sub> = 2/4 = 1/2 &rArr; Y/(2X) = 1/2 &rArr; Y = X. Budget: 2X + 4X = 120 &rArr; 6X = 120 &rArr; <strong>X* = 20; Y* = 20.</strong></p>
+    <p><strong>(c)</strong> Spending on X: 2&times;20 = $40 = 1/3&times;$120. Spending on Y: 4&times;20 = $80 = 2/3&times;$120. Shares: 1/3 on X and 2/3 on Y — consistent with &alpha; = 1, &beta; = 2 in the equivalent XY&sup2; form. ✓</p>
+    <p><strong>(d)</strong> X* = (1/3)&middot;I/P<sub>x</sub>; Y* = (2/3)&middot;I/P<sub>y</sub>.</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps is sufficient.</div>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q21">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q21</span><span class="pq-star">⋆⋆⋆</span><span class="pq-warn">⚠️ Common exam mistakes</span><a href="week2.html" class="pq-section-ref">All sections</a></div>
+    (True/False — justify carefully.)
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>A rise in P<sub>x</sub> rotates the budget line inward around the Y-intercept.</li>
+      <li>For perfect complements, the optimal bundle is always at the kink.</li>
+      <li>At the optimum, slope of IC = &minus;P<sub>x</sub>/P<sub>y</sub> for all preference types.</li>
+      <li>If MU<sub>x</sub>/P<sub>x</sub> &gt; MU<sub>y</sub>/P<sub>y</sub>, the consumer should shift spending toward Y.</li>
+      <li>Doubling all prices has the same effect on the budget set as halving income.</li>
+      <li>For U = aX + bY, the consumer always buys only the good with the higher utility-per-dollar ratio.</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a) True.</strong> When P<sub>x</sub> rises, X<sub>max</sub> = I/P<sub>x</sub> falls (inward pivot) while Y<sub>max</sub> = I/P<sub>y</sub> is unchanged.</p>
+    <p><strong>(b) True.</strong> For perfect complements, extra units of one good are useless without the other. Moving away from the kink along either arm provides no extra utility, so the kink is always optimal.</p>
+    <p><strong>(c) False — for corner solutions and kinks.</strong> The tangency condition holds for smooth interior optima (Cobb-Douglas). For perfect substitutes or complements, the optimum is at a corner or kink where the condition need not hold.</p>
+    <p><strong>(d) False.</strong> If MU<sub>x</sub>/P<sub>x</sub> &gt; MU<sub>y</sub>/P<sub>y</sub>, X gives more utility per dollar — shift spending <em>toward X</em>, not Y.</p>
+    <p><strong>(e) True.</strong> If all prices double: 2P<sub>x</sub>X + 2P<sub>y</sub>Y = I &hArr; P<sub>x</sub>X + P<sub>y</sub>Y = I/2. Both intercepts halve, identical to halving income.</p>
+    <p><strong>(f) True (generally).</strong> MU<sub>x</sub>/P<sub>x</sub> = a/P<sub>x</sub> and MU<sub>y</sub>/P<sub>y</sub> = b/P<sub>y</sub>. The consumer spends all income on whichever gives the higher ratio. Only if a/P<sub>x</sub> = b/P<sub>y</sub> exactly is the consumer indifferent among all bundles on the budget line.</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps is sufficient.</div>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q22">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q22</span><span class="pq-star">⋆⋆⋆</span><a href="week2.html#s211" class="pq-section-ref">§2.11</a></div>
+    I = $240, P<sub>x</sub> = $6 (food), P<sub>y</sub> = $12 (housing), U = X<sup>1/2</sup>Y<sup>1/2</sup>.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Find the optimal bundle.</li>
+      <li>P<sub>y</sub> rises to $16. Find the new optimal bundle.</li>
+      <li>Draw both budget lines and mark both optima on a labelled diagram.</li>
+      <li>How much must income rise (with P<sub>y</sub> = $16) to restore the original utility level?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> X* = 240/(2&times;6) = <strong>20</strong>; Y* = 240/(2&times;12) = <strong>10.</strong> U* = &radic;(20&times;10) = &radic;200.</p>
+    <p><strong>(b)</strong> P<sub>y</sub>' = $16: X** = 240/(2&times;6) = <strong>20</strong>; Y** = 240/(2&times;16) = <strong>7.5.</strong></p>
+    <p><strong>(c)</strong> Old BC: 6X + 12Y = 240 (X-int=40, Y-int=20). New BC: 6X + 16Y = 240 (X-int=40, Y-int=15). Pivot around X-intercept = 40. Mark (20,10) and (20,7.5).</p>
+    <p><strong>(d)</strong> Need U = &radic;200 with P<sub>y</sub> = 16. At new prices, optimum ratio: X/Y = P<sub>y</sub>/P<sub>x</sub> = 16/6 = 8/3 &rArr; X = (8/3)Y. Then XY = (8/3)Y&sup2; = 200 &rArr; Y = &radic;75 = 5&radic;3; X = (40/3)&radic;3. Income needed: I' = 6&times;(40&radic;3/3) + 16&times;5&radic;3 = 80&radic;3 + 80&radic;3 = 160&radic;3 &asymp; <strong>$277.1.</strong> Income must rise by approximately $37.1.</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps is sufficient.</div>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q23">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q23</span><span class="pq-star">⋆⋆⋆</span><a href="week2.html#s29" class="pq-section-ref">§2.9</a></div>
+    U = XY + X, I = $100, P<sub>x</sub> = $5, P<sub>y</sub> = $4.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Find MU<sub>x</sub>, MU<sub>y</sub>, and the MRS.</li>
+      <li>Find the optimal bundle. Show all steps.</li>
+      <li>Verify both optimality conditions.</li>
+      <li>How does the +X term affect the MRS relative to a standard Cobb-Douglas? What does it imply about the consumer's willingness to trade?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> MU<sub>x</sub> = Y + 1; MU<sub>y</sub> = X. MRS = (Y+1)/X in magnitude.</p>
+    <p><strong>(b)</strong> Tangency: (Y+1)/X = P<sub>x</sub>/P<sub>y</sub> = 5/4 &rArr; 4(Y+1) = 5X &rArr; Y = (5X&minus;4)/4. Budget: 5X + 4Y = 100 &rArr; 5X + 5X &minus; 4 = 100 &rArr; 10X = 104 &rArr; <strong>X* = 10.4; Y* = (52&minus;4)/4 = 12.</strong></p>
+    <p><strong>(c)</strong> Budget: 5(10.4) + 4(12) = 52 + 48 = 100. ✓ MRS at (10.4,12): (12+1)/10.4 = 13/10.4 = 1.25 = 5/4 = P<sub>x</sub>/P<sub>y</sub>. ✓</p>
+    <p><strong>(d)</strong> For standard XY: MRS = Y/X. For XY+X: MRS = (Y+1)/X. The +X term adds 1 to the numerator, making MRS higher at any given bundle — the consumer is willing to give up more Y for one more X compared to standard Cobb-Douglas. At low Y values this effect is proportionally large; at high Y it is negligible. Intuitively, X has "standalone value" (the +X term) that makes it more desirable independent of Y.</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps is sufficient.</div>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q24">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q24</span><span class="pq-star">⋆⋆⋆</span><a href="week2.html#s211" class="pq-section-ref">§2.11</a></div>
+    U = X<sup>1/3</sup>Y<sup>2/3</sup>, I = $90, P<sub>x</sub> = $3, P<sub>y</sub> = $3.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Find the optimal bundle.</li>
+      <li>P<sub>y</sub> rises to $6. Find the new optimum.</li>
+      <li>Sketch both budget lines and both optima.</li>
+      <li>Income rises to $180 (P<sub>x</sub> = $3, P<sub>y</sub> = $6). Find the new optimum and the income effect.</li>
+      <li>Confirm both goods are normal using the demand functions.</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> &alpha;=1/3, &beta;=2/3. X* = (1/3)(90/3) = <strong>10</strong>; Y* = (2/3)(90/3) = <strong>20.</strong></p>
+    <p><strong>(b)</strong> P<sub>y</sub>'=$6: X** = (1/3)(90/3) = <strong>10</strong> (unchanged); Y** = (2/3)(90/6) = <strong>10.</strong></p>
+    <p><strong>(c)</strong> Old BC: 3X+3Y=90 (X-int=30, Y-int=30). New BC: 3X+6Y=90 (X-int=30, Y-int=15). Pivot around X-int=30. Mark (10,20) and (10,10).</p>
+    <p><strong>(d)</strong> I'=$180, P<sub>y</sub>=$6: X*** = (1/3)(180/3) = <strong>20</strong>; Y*** = (2/3)(180/6) = <strong>20.</strong> Income effect: &Delta;X = 20&minus;10 = +10; &Delta;Y = 20&minus;10 = +10. Both increase. ✓</p>
+    <p><strong>(e)</strong> From demand: &part;X*/&part;I = 1/(3P<sub>x</sub>) &gt; 0 and &part;Y*/&part;I = 2/(3P<sub>y</sub>) &gt; 0. Both demands increase with income &rArr; both normal goods. ✓</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps is sufficient.</div>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q25">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q25</span><span class="pq-star">⋆⋆⋆</span><a href="week2.html#s24" class="pq-section-ref">§2.4</a></div>
+    I = $100, U = min(X,Y), P<sub>x</sub> = $3, P<sub>y</sub> = $7.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Find the optimal bundle.</li>
+      <li>Why does the tangency condition not apply? State the correct condition.</li>
+      <li>Both prices double. Find the new optimum and state the general principle illustrated.</li>
+      <li>Show algebraically that X* = Y* always holds for U = min(X,Y).</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> Kink condition: X = Y. Budget: 3X + 7X = 100 &rArr; 10X = 100 &rArr; <strong>X* = Y* = 10.</strong></p>
+    <p><strong>(b)</strong> The IC is L-shaped and the optimum is at the kink where the slope of the IC is undefined (it jumps from 0 to &infin;). The tangency condition requires a well-defined MRS, which does not exist at the kink. The correct condition is the <strong>kink condition</strong>: X/a = Y/b (here X = Y) plus budget exhaustion.</p>
+    <p><strong>(c)</strong> P<sub>x</sub>'=6, P<sub>y</sub>'=14: kink: X=Y. Budget: 6X+14X = 100 &rArr; 20X = 100 &rArr; <strong>X** = Y** = 5.</strong> Quantities halved. Principle: for perfect complements, doubling all prices is equivalent to halving income — the kink ratio is unchanged, only the scale of consumption changes.</p>
+    <p><strong>(d)</strong> For U=min(X,Y): if X&gt;Y, extra X is wasted; if X&lt;Y, extra Y is wasted. Utility only increases by increasing both simultaneously. So the consumer always chooses X=Y. Combined with the budget: P<sub>x</sub>X + P<sub>y</sub>X = I &rArr; X* = Y* = I/(P<sub>x</sub>+P<sub>y</sub>). &square;</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps is sufficient.</div>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q26">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q26</span><span class="pq-star">⋆⋆⋆</span><a href="week2.html#s28" class="pq-section-ref">§2.8</a></div>
+    I given, P<sub>x</sub> = P<sub>y</sub> = P, U = X<sup>1/2</sup>Y<sup>1/2</sup>.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Find the optimal bundle in terms of I and P.</li>
+      <li>Both prices double to 2P. How does the optimum change?</li>
+      <li>Compare doubling all prices to halving income. What principle does this illustrate?</li>
+      <li>P<sub>x</sub> doubles but P<sub>y</sub> stays at P. How does this differ from (b)? Which change hurts more, and why?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> X* = I/(2P); Y* = I/(2P). Equal prices &rArr; equal quantities.</p>
+    <p><strong>(b)</strong> P<sub>x</sub>=P<sub>y</sub>=2P: X** = I/(4P); Y** = I/(4P). Demand for each good halves.</p>
+    <p><strong>(c)</strong> Doubling all prices is identical to halving income — real purchasing power falls by half. The budget set is the same in both cases. This illustrates the <strong>homogeneity of degree zero</strong> of demand functions: only relative prices and real income matter, not nominal magnitudes.</p>
+    <p><strong>(d)</strong> Only P<sub>x</sub> doubles (to 2P, P<sub>y</sub> stays P): tangency gives Y/X = 2P/P = 2 &rArr; Y=2X. Budget: 2PX + P(2X) = I &rArr; X*** = I/(4P); Y*** = I/(2P). The consumer substitutes away from the now-more-expensive X into Y. This <em>hurts more</em> than the proportional price increase in (b) because the pivot changes relative prices, distorting consumption away from the previously preferred equal-quantity mix. The consumer ends up on a lower IC than in (b) despite spending the same nominal income.</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps is sufficient.</div>
+  </div></div>
+</div>
+
+<div class="pq-item" id="q27">
+  <div class="pq-q">
+    <div class="pq-q-header"><span class="pq-num">Q27</span><span class="pq-star">⋆⋆⋆</span><a href="week2.html" class="pq-section-ref">All sections</a></div>
+    (Firm application.) A firm uses labour L and capital K with production function Q = L<sup>1/2</sup>K<sup>1/2</sup>, wage w = $10, rental rate r = $20, and cost budget C = $200.
+    <ol style="margin-top:8px;padding-left:22px;font-size:1rem;">
+      <li>Draw the isocost line. State its intercepts and slope.</li>
+      <li>Write the two conditions for cost-minimising input choice (analogous to consumer optimality).</li>
+      <li>Solve for the cost-minimising (L*, K*) to produce Q = 10 units.</li>
+      <li>What structural parallels exist between this problem and consumer optimisation?</li>
+    </ol>
+  </div>
+  <button class="sol-btn" onclick="toggleSol(this)"><span class="sol-btn-txt">Show Solution</span><span class="s-arrow">▾</span></button>
+  <div class="sol-body"><div class="sol-inner">
+    <p><strong>(a)</strong> Isocost line: 10L + 20K = 200. L-intercept: L=20; K-intercept: K=10. Slope: &minus;w/r = &minus;10/20 = &minus;1/2.</p>
+    <p><strong>(b)</strong> Cost exhaustion: wL* + rK* = C. Tangency: MP<sub>L</sub>/MP<sub>K</sub> = w/r (the technical rate of substitution equals the input price ratio).</p>
+    <p><strong>(c)</strong> MP<sub>L</sub> = &frac12;L<sup>&minus;1/2</sup>K<sup>1/2</sup>; MP<sub>K</sub> = &frac12;L<sup>1/2</sup>K<sup>&minus;1/2</sup>. Tangency: K/L = w/r = 1/2 &rArr; K = L/2. Production target: Q = L<sup>1/2</sup>(L/2)<sup>1/2</sup> = L/&radic;2 = 10 &rArr; L* = 10&radic;2 &asymp; 14.14; K* = 5&radic;2 &asymp; 7.07. Cost check: 10(10&radic;2) + 20(5&radic;2) = 100&radic;2 + 100&radic;2 = 200&radic;2 &asymp; $283 &gt; $200. Therefore the firm cannot produce Q=10 on this budget. The cost-minimising bundle at C=$200 produces Q = 200/(2&radic;200) &asymp; 7.07 units.</p>
+    <p><strong>(d)</strong> The isocost line (wL+rK=C) is the exact analogue of the budget constraint. The isoquant (Q=Q&macr;) plays the role of the IC. The firm minimises cost subject to a production target, just as the consumer maximises utility subject to a budget. The tangency condition MP<sub>L</sub>/MP<sub>K</sub> = w/r mirrors MU<sub>x</sub>/MU<sub>y</sub> = P<sub>x</sub>/P<sub>y</sub>.</p>
+    <div class="sol-quality">This is a full exam-quality solution. In an exam, showing key steps is sufficient.</div>
+  </div></div>
+</div>
+
+</div><!-- .container -->
+
+<div class="footer">
+  <span>EC224 · Week 2 · Practice Questions · Bentley University</span>
+  <span>Prof. Naveen Sunder</span>
+</div>
+
+<script>
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  var on=document.body.classList.contains('dark');
+  localStorage.setItem('dk',on);
+  document.getElementById('dark-toggle').textContent=on?'☀️ Light':'🌙 Dark';
+}
+if(localStorage.getItem('dk')==='true'){document.body.classList.add('dark');document.getElementById('dark-toggle').textContent='☀️ Light';}
+var pb=document.getElementById('progress-bar'),st=document.getElementById('scroll-top');
+window.addEventListener('scroll',function(){
+  var h=document.documentElement;
+  pb.style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%';
+  st.style.display=h.scrollTop>400?'flex':'none';
+});
+function toggleSol(btn){
+  var open=btn.classList.toggle('open');
+  btn.querySelector('.sol-btn-txt').textContent=open?'Hide Solution':'Show Solution';
+  btn.querySelector('.s-arrow').textContent=open?'▴':'▾';
+  btn.nextElementSibling.classList.toggle('open');
+}
+</script>
+</body>
+</html>

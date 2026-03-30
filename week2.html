@@ -338,7 +338,7 @@ body.dark #dark-toggle { background: #e8ecf0; color: #1a1a2e; }
 }
 .pq-item { border: 1px solid #e0e4ea; border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
 .pq-q {
-  padding: 14px 18px; font-size: 0.95rem; cursor: default;
+  padding: 14px 18px; font-size: 1.09rem; cursor: default;
   background: #fff; line-height: 1.7;
 }
 body.dark .pq-item { border-color: #2e3545; }
@@ -371,10 +371,101 @@ body.dark .pq-q { background: #1a1f2e; }
   background: #f7f9fc; border-top: 1px solid #e0e4ea;
 }
 .sol-body.open { max-height: 2000px; }
-.sol-inner { padding: 14px 18px; font-size: 0.92rem; line-height: 1.75; color: #333; }
+.sol-inner { padding: 14px 18px; font-size: 1.06rem; line-height: 1.75; color: #333; }
 body.dark .sol-btn { background: #1e2535; border-color: #2e3545; }
 body.dark .sol-body { background: #1e2535; border-color: #2e3545; }
 body.dark .sol-inner { color: #c0c8d4; }
+
+
+/* ── DARK MODE TEXT FIXES ── */
+body.dark .box { color: #d8dee9; }
+body.dark .box p, body.dark .box li, body.dark .box ol, body.dark .box ul { color: #d8dee9; }
+body.dark .box-title { color: inherit; }
+body.dark .box-key .box-title { color: #93c5fd; }
+body.dark .box-app .box-title { color: #6ee7b7; }
+body.dark .box-try .box-title { color: #fcd34d; }
+body.dark .box-warn .box-title { color: #fca5a5; }
+body.dark .box-def .box-title { color: #c4b5fd; }
+body.dark .box-insight .box-title { color: #6ee7b7; }
+body.dark .box-case .box-title { color: #d1d5db; }
+body.dark .box-case { background: #1e2535; border-left-color: #4b5563; }
+body.dark .fig-caption { color: #8a97a8; }
+body.dark .fig-caption strong { color: #c0c8d4; }
+body.dark .notation-table th, body.dark .sum-table th { background: #1a3a5c; }
+body.dark .check-q-title { color: #8a97a8; }
+body.dark .pq-star { color: #fcd34d; }
+body.dark .pq-num { background: #1a3a5c; color: #93c5fd; }
+body.dark .sol-inner p, body.dark .sol-inner li { color: #c0c8d4; }
+body.dark .sol-inner strong { color: #e8ecf0; }
+body.dark .questions-box li { color: #93c5fd; }
+body.dark .questions-box-title { color: #93c5fd; }
+body.dark .lo-text { color: #c0c8d4; }
+body.dark .lo-sections { color: #6b7280; }
+body.dark .lo-badge { background: #1a3a5c; }
+body.dark .meta-value { color: #d8dee9; }
+body.dark .meta-label { color: #6b7280; }
+body.dark .hero-desc { color: #8a97a8; }
+body.dark .section-lead { color: #6b7280; }
+body.dark .we-body p, body.dark .we-body li { color: #c0c8d4; }
+body.dark .we-step-label { color: #93c5fd; }
+body.dark .we-step { border-color: #2e3545; }
+body.dark .dg-pref { color: #93c5fd; }
+body.dark .dg-method { color: #c0c8d4; }
+body.dark .dg-row { border-color: #2e3545; }
+body.dark .term-name { color: #93c5fd; }
+body.dark .term-def { color: #c0c8d4; }
+body.dark .video-num { color: #93c5fd; }
+body.dark .video-title { color: #e8ecf0; }
+body.dark .video-desc { color: #8a97a8; }
+body.dark .video-time { color: #6b7280; }
+body.dark .where-next { background: #0f2018; border-color: #1e4030; }
+body.dark .where-next-title { color: #6ee7b7; }
+body.dark .where-next ul li { color: #c0c8d4; }
+body.dark .mistake-list li { background: #2d1010; border-color: #7f1d1d; color: #fca5a5; }
+body.dark .mistake-title { color: #fca5a5; }
+body.dark .glance-card-title { color: #93c5fd; }
+body.dark .collapse-trigger h2 { color: #e8ecf0; }
+body.dark .collapse-arrow { color: #93c5fd; }
+body.dark .collapse-trigger { border-color: #2e3545; }
+body.dark .collapse-divider { background: linear-gradient(to right, #1a56a0, transparent); }
+body.dark .sticky-title { color: #93c5fd; border-color: #1a56a0; }
+body.dark .eq-num { color: #6b7280; }
+body.dark .eq-label { color: #93c5fd; }
+body.dark #scroll-top { background: #1a3a5c; }
+body.dark .we-trigger { background: #1a3a5c; }
+body.dark .pq-q { color: #c0c8d4; }
+body.dark .pq-level-label { color: #6b7280; border-color: #2e3545; }
+body.dark .sol-btn { background: #1e2535; border-color: #2e3545; color: #93c5fd; }
+
+/* ── RELATED SECTION LINK ── */
+.pq-section-ref {
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 11px; color: #999; margin-left: 8px;
+  text-decoration: none; border-bottom: 1px dashed #ccc;
+  transition: color 150ms;
+}
+.pq-section-ref:hover { color: #0066B3; border-color: #0066B3; }
+body.dark .pq-section-ref { color: #6b7280; border-color: #4b5563; }
+body.dark .pq-section-ref:hover { color: #93c5fd; }
+
+/* ── EXAM TIP FLAG ── */
+.exam-tip-flag { color: #dc2626; font-size: 13px; margin-right: 4px; }
+
+/* ── TEST YOURSELF PROMPT ── */
+.test-yourself {
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 12px; color: #0066B3; background: #e8f2fb;
+  border: 1px solid #c5ddf4; border-radius: 6px;
+  padding: 7px 14px; margin: 14px 0 0; display: inline-block;
+  text-decoration: none; transition: background 150ms;
+}
+.test-yourself:hover { background: #c5ddf4; }
+body.dark .test-yourself { background: #1a2a3a; border-color: #2a4060; color: #93c5fd; }
+
+/* ── CONCEPT MAP WRAP ── */
+.concept-map-wrap { margin: 0 0 8px; }
+.concept-map-wrap svg { width: 100%; border-radius: 12px; border: 1px solid #e0e4ea; }
+body.dark .concept-map-wrap svg { border-color: #2e3545; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
@@ -1272,7 +1363,7 @@ body.dark .sol-inner { color: #c0c8d4; }
 <!-- ══════════════════════════════════
      FIVE COMMON MISTAKES
 ══════════════════════════════════ -->
-<h2>Five Common Exam Mistakes — and How to Avoid Them</h2>
+<h2><span class="exam-tip-flag">🎯</span>Five Common Exam Mistakes — and How to Avoid Them</h2>
 <ol class="mistake-list">
   <li><div class="mistake-title">Drawing a parallel shift when a price changes.</div>A price change pivots the budget line around one fixed intercept — it never shifts both intercepts equally. Only an income change produces a parallel shift.</li>
   <li><div class="mistake-title">Applying the tangency condition to perfect complements or substitutes.</div>The tangency condition requires a smooth, convex IC. For perfect complements, use the kink condition X/a = Y/b. For perfect substitutes, compare MU<sub>x</sub>/P<sub>x</sub> vs. MU<sub>y</sub>/P<sub>y</sub> and buy only the better-value good.</li>
@@ -1547,6 +1638,14 @@ body.dark .sol-inner { color: #c0c8d4; }
 
 </div></div>
 </div></div>
+
+<!-- PRACTICE QUESTIONS LINK -->
+<div style="text-align:center;padding:40px 0 20px;">
+  <a href="week2_questions.html" style="display:inline-flex;align-items:center;gap:10px;background:#0066B3;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;font-weight:700;padding:14px 32px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(0,102,179,.3);transition:all 150ms;">
+    📝 Practice Questions (Q1–Q27) →
+  </a>
+  <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:#999;margin-top:10px;">All 27 questions with full solutions — Level 1, 2 &amp; 3</p>
+</div>
 <!-- FIXED UI -->
 <div id="progress-bar"></div>
 <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
