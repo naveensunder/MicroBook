@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EC224 · Intermediate Microeconomics · Bentley University</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #1a1a2e;
+  background: #f7f9fc;
+  min-height: 100vh;
+}
+
+/* ── TOP BAND ── */
+.top-band {
+  background: #0066B3;
+  color: #fff;
+  padding: 10px 40px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.top-band-sep { opacity: 0.4; }
+
+/* ── HERO ── */
+.hero {
+  background: #fff;
+  border-bottom: 1px solid #e0e4ea;
+  padding: 56px 40px 48px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #0066B3;
+  margin-bottom: 14px;
+}
+.hero-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0a0a1a;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+.hero-title span { color: #0066B3; }
+.hero-meta {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.hero-meta-item { display: flex; flex-direction: column; gap: 2px; }
+.hero-meta-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; }
+.hero-meta-value { font-size: 14px; font-weight: 600; color: #333; }
+.hero-divider { height: 1px; background: #e0e4ea; margin: 28px 0; }
+.hero-desc {
+  font-size: 1.02rem;
+  color: #444;
+  line-height: 1.85;
+  max-width: 700px;
+}
+
+/* ── MAIN CONTAINER ── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #999;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e4ea;
+}
+
+/* ── TOC TABLE ── */
+.toc-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,.07);
+  margin-bottom: 48px;
+}
+.toc-table thead tr {
+  background: #0066B3;
+}
+.toc-table thead th {
+  padding: 12px 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-align: left;
+}
+.toc-row {
+  border-bottom: 1px solid #f0f2f5;
+  transition: background 150ms ease;
+}
+.toc-row:last-child { border-bottom: none; }
+.toc-row:hover { background: #f0f6ff; }
+.toc-row.greyed { opacity: 0.45; pointer-events: none; }
+.toc-row td {
+  padding: 14px 18px;
+  vertical-align: middle;
+}
+.toc-week {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0066B3;
+  background: #e8f2fb;
+  padding: 3px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.toc-row.greyed .toc-week {
+  color: #999;
+  background: #f0f0f0;
+}
+.toc-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+  display: block;
+  margin-bottom: 3px;
+}
+.toc-topics {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.5;
+}
+.toc-link {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0066B3;
+  text-decoration: none;
+  padding: 5px 14px;
+  border: 1.5px solid #c5ddf4;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all 150ms ease;
+  display: inline-block;
+}
+.toc-link:hover {
+  background: #0066B3;
+  color: #fff;
+  border-color: #0066B3;
+}
+.toc-coming {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  color: #bbb;
+  font-style: italic;
+}
+
+/* ── HOW TO USE ── */
+.how-to-use {
+  background: #fff;
+  border: 1px solid #e0e4ea;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+.how-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.how-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.how-num {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #c5ddf4;
+  line-height: 1;
+}
+.how-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ── FOOTER ── */
+.footer {
+  border-top: 1px solid #e0e4ea;
+  padding: 24px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  color: #aaa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .hero, .container { padding-left: 20px; padding-right: 20px; }
+  .hero-title { font-size: 1.7rem; }
+  .how-grid { grid-template-columns: 1fr; }
+  .toc-table thead th:last-child,
+  .toc-row td:last-child { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAND -->
+<div class="top-band">
+  <span>Bentley University</span>
+  <span class="top-band-sep">·</span>
+  <span>Department of Economics</span>
+  <span class="top-band-sep">·</span>
+  <span>EC224 · Intermediate Microeconomics</span>
+</div>
+
+<!-- HERO -->
+<div style="background:#fff;border-bottom:1px solid #e0e4ea;">
+<div class="hero">
+  <div class="hero-eyebrow">Course Textbook &nbsp;·&nbsp; EC224</div>
+  <h1 class="hero-title">Intermediate<br><span>Microeconomics</span></h1>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span class="hero-meta-label">Instructor</span><span class="hero-meta-value">Prof. Naveen Sunder</span></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Department</span><span class="hero-meta-value">Economics, Bentley University</span></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Course Code</span><span class="hero-meta-value">EC224</span></div>
+    <div class="hero-meta-item"><span class="hero-meta-label">Weeks</span><span class="hero-meta-value">12</span></div>
+  </div>
+  <div class="hero-divider"></div>
+  <p class="hero-desc">This course develops the analytical foundations of microeconomic theory, focusing on the behaviour of individual consumers and firms. Topics include consumer preferences and utility maximisation, demand theory and comparative statics, production and cost analysis, and market structures ranging from perfect competition to monopoly and oligopoly. Students will apply these tools to real-world markets, pricing strategies, and policy questions. A working knowledge of calculus is assumed; formal proofs are balanced with applied examples drawn from business and public policy.</p>
+</div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- HOW TO USE -->
+  <div class="how-to-use">
+    <div class="how-title">📖 How to Use These Notes</div>
+    <div class="how-grid">
+      <div class="how-item"><div class="how-num">01</div><div class="how-text">Read each chapter before the corresponding lecture. Focus on the Learning Objectives at the top.</div></div>
+      <div class="how-item"><div class="how-num">02</div><div class="how-text">Work through the Try It and Check Your Understanding questions as you go — do not skip ahead to solutions.</div></div>
+      <div class="how-item"><div class="how-num">03</div><div class="how-text">Use the Chapter at a Glance section and Key Terms for exam revision. Attempt practice questions independently first.</div></div>
+    </div>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="section-label">Table of Contents</div>
+  <table class="toc-table">
+    <thead>
+      <tr>
+        <th style="width:80px;">Week</th>
+        <th>Chapter Title &amp; Topics</th>
+        <th style="width:110px;">Access</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- WEEK 1 — greyed -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 1</span></td>
+        <td>
+          <span class="toc-title">Consumer Preferences and Utility</span>
+          <span class="toc-topics">Preferences · Utility functions · Marginal utility · Diminishing MU · Ordinal vs. cardinal utility</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 2 — LIVE -->
+      <tr class="toc-row">
+        <td><span class="toc-week">Week 2</span></td>
+        <td>
+          <span class="toc-title">Indifference Curves, Budget Constraints &amp; the Consumer Optimum</span>
+          <span class="toc-topics">IC types · Perfect substitutes &amp; complements · Budget constraint · Shifts &amp; pivots · Tangency condition · Bang for the buck · Cobb-Douglas demand</span>
+        </td>
+        <td><a href="week2.html" class="toc-link">Read →</a></td>
+      </tr>
+
+      <!-- WEEK 3 — greyed -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 3</span></td>
+        <td>
+          <span class="toc-title">Individual Demand and Comparative Statics</span>
+          <span class="toc-topics">Price-consumption curve · Demand functions · Income &amp; substitution effects · Normal vs. inferior goods · Engel curves</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 4 -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 4</span></td>
+        <td>
+          <span class="toc-title">Consumer Welfare and Surplus</span>
+          <span class="toc-topics">Consumer surplus · Compensating variation · Equivalent variation · Welfare effects of price changes &amp; taxes</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 5 -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 5</span></td>
+        <td>
+          <span class="toc-title">Production Theory</span>
+          <span class="toc-topics">Production functions · Marginal &amp; average product · Returns to scale · Isoquants · MRTS · Short run vs. long run</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 6 -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 6</span></td>
+        <td>
+          <span class="toc-title">Costs of Production</span>
+          <span class="toc-topics">Fixed &amp; variable costs · Short-run cost curves · Long-run cost minimisation · Economies of scale · Isocost lines</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 7 -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 7</span></td>
+        <td>
+          <span class="toc-title">Perfect Competition</span>
+          <span class="toc-topics">Profit maximisation · Price-taking firms · Short-run supply · Entry &amp; exit · Long-run equilibrium · Market efficiency</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 8 -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 8</span></td>
+        <td>
+          <span class="toc-title">Monopoly</span>
+          <span class="toc-topics">Market power · MR &lt; P · Profit maximisation · Deadweight loss · Natural monopoly · Regulation</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 9 -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 9</span></td>
+        <td>
+          <span class="toc-title">Price Discrimination</span>
+          <span class="toc-topics">First, second &amp; third-degree PD · Two-part tariffs · Bundling · Welfare effects · Real-world applications</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 10 -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 10</span></td>
+        <td>
+          <span class="toc-title">Game Theory and Strategic Behaviour</span>
+          <span class="toc-topics">Normal form games · Dominant strategies · Nash equilibrium · Prisoner's dilemma · Sequential games · Backward induction</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 11 -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 11</span></td>
+        <td>
+          <span class="toc-title">Oligopoly</span>
+          <span class="toc-topics">Cournot competition · Bertrand competition · Stackelberg model · Collusion &amp; cartels · Repeated games</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+      <!-- WEEK 12 -->
+      <tr class="toc-row greyed">
+        <td><span class="toc-week">Week 12</span></td>
+        <td>
+          <span class="toc-title">Externalities and Public Goods</span>
+          <span class="toc-topics">Positive &amp; negative externalities · Pigouvian taxes · Coase theorem · Public goods · Common resources · Market failure</span>
+        </td>
+        <td><span class="toc-coming">Coming soon</span></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div><!-- .container -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>EC224 · Intermediate Microeconomics · Bentley University · Department of Economics</span>
+  <span>Prof. Naveen Sunder</span>
+</div>
+
+</body>
+</html>
