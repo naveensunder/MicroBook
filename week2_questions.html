@@ -87,26 +87,29 @@ body.dark .footer{border-color:#2e3545;}
 @media(max-width:640px){.container{padding:20px 16px;}.page-header{padding:20px;}}
 
 /* Sub-part lists */
-.pq-q ol ol, .sol-inner ol { list-style: none; padding-left: 0; }
-.pq-q ol ol li, .sol-inner ol li { 
-  padding-left: 48px; position: relative; margin-bottom: 10px; 
+.sub-parts { list-style: none; padding-left: 0; counter-reset: alpha-counter; }
+.sub-parts li {
+  padding-left: 48px; position: relative; margin-bottom: 10px;
+  counter-increment: alpha-counter;
 }
-.pq-q ol ol li::before, .sol-inner ol li::before {
+.sub-parts li::before {
+  content: "(" counter(alpha-counter, lower-alpha) ")";
   position: absolute; left: 0; font-weight: 700;
   color: #0066B3; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   font-size: 13px;
 }
-/* Generate a b c d labels */
-.pq-q ol ol, .sol-inner ol { counter-reset: alpha-counter; }
-.pq-q ol ol li::before { 
-  content: "(" counter(alpha-counter, lower-alpha) ")";
+body.dark .sub-parts li::before { color: #93c5fd; }
+.sol-inner ol { list-style: none; padding-left: 0; counter-reset: alpha-counter; }
+.sol-inner ol li {
+  padding-left: 48px; position: relative; margin-bottom: 10px;
   counter-increment: alpha-counter;
 }
 .sol-inner ol li::before {
   content: "(" counter(alpha-counter, lower-alpha) ")";
-  counter-increment: alpha-counter;
+  position: absolute; left: 0; font-weight: 700;
+  color: #0066B3; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size: 13px;
 }
-body.dark .pq-q ol ol li::before,
 body.dark .sol-inner ol li::before { color: #93c5fd; }
 </style>
 </head>
