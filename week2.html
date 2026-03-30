@@ -70,7 +70,7 @@ a { color: #0066B3; }
 .section-lead { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; color: #666; font-style: italic; margin: -6px 0 14px; }
 
 /* ── CONTENT BOXES ── */
-.box { border-radius: 8px; padding: 16px 18px; margin: 18px 0; border-left: 4px solid; }
+.box { border-radius: 8px; padding: 12px 14px; margin: 18px 0; border-left: 4px solid; }
 .box-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 7px; }
 .box p { margin-bottom: 8px; font-size: 0.95rem; }
 .box p:last-child { margin-bottom: 0; }
@@ -123,7 +123,7 @@ a { color: #0066B3; }
 .sum-table tr:last-child td { border-bottom: none; }
 
 /* ── WORKED EXAMPLES ── */
-.worked-example { border: 1px solid #e0e4ea; border-radius: 10px; overflow: hidden; margin: 22px 0; }
+.worked-example { border: 1px solid #e0e4ea; border-radius: 8px; overflow: hidden; margin: 18px 0; }
 .we-header { background: #0066B3; color: #fff; padding: 12px 18px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 700; }
 .we-body { padding: 18px; }
 .we-step { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0; }
@@ -489,17 +489,13 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
     <cite>— Adam Smith, <em>The Wealth of Nations</em>, 1776</cite>
   </blockquote>
 
-  <div class="meta-bar">
-    <div class="meta-item"><span class="meta-label">Course</span><span class="meta-value">EC224</span></div>
-    <div class="meta-item"><span class="meta-label">Instructor</span><span class="meta-value">Prof. Naveen Sunder</span></div>
+      <div class="meta-item"><span class="meta-label">Instructor</span><span class="meta-value">Prof. Naveen Sunder</span></div>
     <div class="meta-item"><span class="meta-label">Week</span><span class="meta-value">2 of 12</span></div>
     <div class="meta-item"><span class="meta-label">Learning Objectives</span><span class="meta-value">7</span></div>
     <div class="meta-item"><span class="meta-label">Practice Questions</span><span class="meta-value">27</span></div>
   </div>
 
-  <div class="questions-box">
-    <div class="questions-box-title">Questions This Chapter Will Answer</div>
-    <ul>
+      <ul>
       <li>Why do airlines offer economy and business class?</li>
       <li>When fuel taxes rise, do consumers cut driving as predicted?</li>
       <li>Why might raising a price increase total revenue?</li>
@@ -513,7 +509,13 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <!-- ══════════════════════════════════
      LEARNING OBJECTIVES
 ══════════════════════════════════ -->
-<h2>Learning Objectives</h2>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2>Learning Objectives</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="collapse-divider"></div>
 <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#666;margin-bottom:14px;">Each objective states what you will be able to do after completing this chapter.</p>
 <div class="lo-grid">
   <div class="lo-card"><div class="lo-badge">LO1</div><div class="lo-text">Identify and sketch the four IC types and explain the logic behind each shape.</div><div class="lo-sections">§2.1 · §2.2 · §2.3 · §2.4 · §2.5 · §2.6</div></div>
@@ -526,6 +528,7 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 </div>
 
 
+</div></div>
 <!-- ══════════════════════════════════
      CONCEPT MAP
 ══════════════════════════════════ -->
@@ -763,10 +766,17 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 </div>
 </div></div>
 
+</div></div>
 <!-- ══════════════════════════════════
      NOTATION
 ══════════════════════════════════ -->
-<h2>Notation Used in This Chapter</h2>
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2>Notation Used in This Chapter</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="collapse-divider"></div>
 <table class="notation-table">
   <thead><tr><th>Symbol</th><th>Meaning</th><th>Symbol</th><th>Meaning</th></tr></thead>
   <tbody>
@@ -790,8 +800,6 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.1 — Recap: What Is an Indifference Curve?</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">How do economists represent what a consumer wants, without asking them to put a dollar value on their happiness?</p>
-
 <p>In the previous week, we introduced the concept of consumer preferences and indifference curves. To briefly recap: a consumer who faces two goods, X and Y, can be described by an <strong>indifference curve</strong> — a set of all bundles (X,Y) that provide the consumer with exactly the same level of utility (satisfaction). The consumer is, by definition, indifferent among all bundles on the same curve.</p>
 
 <p>Several key properties hold for well-behaved preferences:</p>
@@ -803,7 +811,7 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 </ul>
 
 <div class="box box-key">
-  <div class="box-title">💡 Why This Matters</div>
+  <div class="box-title">Why This Matters</div>
   <p>Indifference curves are the economist's way of representing preferences without asking people to assign dollar values to their satisfaction. Businesses use similar logic — through market research and conjoint analysis — to understand how customers trade off product features such as price, quality, and convenience. The same framework that describes a student choosing between food and clothing underlies how airlines design fare classes and how phone manufacturers bundle features.</p>
 </div>
 
@@ -827,12 +835,10 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.2 — Types of Goods and Their Indifference Curves</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">The shape of the indifference curve depends entirely on the relationship between the two goods.</p>
-
 <p>The standard convex indifference curve is the right shape for a typical consumer who values both goods and prefers variety. But economics deals with many kinds of goods, and the shape of the indifference curve changes depending on the relationship between them. We examine four important cases.</p>
 
 <div class="box box-case">
-  <div class="box-title">📋 Mini Case Study: Maya's Weekly Budget</div>
+  <div class="box-title">Mini Case Study: Maya's Weekly Budget</div>
   <p>Consider Maya, a college student with $60 per week to spend on coffee and textbooks. She values both, but they are neither perfect substitutes (she cannot read a cup of coffee) nor perfect complements (she can enjoy coffee without a textbook in hand). Her preferences are well-behaved: she prefers more of each, she prefers variety, and her willingness to give up coffee for an extra textbook declines as she already has many textbooks. Her indifference curves are the standard convex shape — downward sloping and bowing toward the origin. The concepts in this section explain how Maya's optimal choice changes if her budget grows or if textbook prices change.</p>
 </div>
 
@@ -860,10 +866,8 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.3 — Perfect Substitutes</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">If two products are truly identical in the eyes of the consumer, how does that change the shape of the indifference curve — and what does it mean for how a firm should price them?</p>
-
 <div class="box box-def">
-  <div class="box-title">📖 Definition: Perfect Substitutes</div>
+  <div class="box-title">Definition: Perfect Substitutes</div>
   <p><strong>Perfect Substitutes:</strong> Two goods are perfect substitutes if the consumer regards them as identical — they serve the same function perfectly and the consumer is always willing to trade one for the other at a constant ratio.</p>
   <p>The classic example is gasoline from two neighboring stations: Exxon gas and Mobil gas. For most consumers, a gallon of gasoline is a gallon of gasoline, regardless of brand.</p>
 </div>
@@ -927,23 +931,23 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
     <text x="44" y="244" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">2</text>
     <text x="44" y="184" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">4</text>
   </svg>
-  <div class="fig-caption"><strong>Figure 1.</strong> Perfect substitutes: Exxon vs. Mobil gasoline. All three curves are straight parallel lines — the hallmark of perfect substitutes. Bundles A, B, and C all lie on U&#x2081; because each involves exactly 4 gallons total. The equal spacing between curves reflects the fact that each additional gallon raises utility by the same fixed amount regardless of brand mix.</div>
+  <div class="fig-caption"><strong>Figure 1.</strong> Perfect substitutes: Exxon vs.</div>
 </div>
 
 <div class="box box-key">
-  <div class="box-title">💡 Key Idea</div>
+  <div class="box-title">Key Idea</div>
   <p>Because the consumer treats the two goods as identical, no amount of X or Y already consumed changes how willing they are to swap. The MRS is fixed. This is why the IC is a <strong>straight line</strong> rather than the bowed shape we see for ordinary goods.</p>
   <p><strong>Key feature:</strong> The ICs are straight, parallel, downward-sloping lines. The MRS is constant — the consumer is always willing to trade the two goods at the same fixed rate, regardless of how much of each they already have.</p>
 </div>
 
 <div class="box box-app">
-  <div class="box-title">📊 Application 2.1: Store Brands and the Perfect-Substitute Threat</div>
+  <div class="box-title">Application 2.1: Store Brands and the Perfect-Substitute Threat</div>
   <p>Retailers face perfect-substitute logic every time they launch a private-label product. If consumers genuinely view a store-brand paper towel as identical to the name-brand version, the IC between the two is a straight line with slope &minus;1. The consumer will always choose whichever is cheaper — the budget line will be tangent to the IC at a corner, buying only the cheaper brand.</p>
   <p>This is why Procter &amp; Gamble and Unilever invest heavily in advertising: the goal is not just awareness but <em>preference differentiation</em> — shifting consumers away from a linear IC toward a bowed one, so that they prefer a mix rather than the cheapest-only corner solution.</p>
 </div>
 
 <div class="box box-try">
-  <div class="box-title">✏️ Try It</div>
+  <div class="box-title">Try It</div>
   <ol>
     <li>A consumer has utility U(X,Y) = 2X + 3Y. What is the MRS? Draw one indifference curve for U = 12.</li>
     <li>If two goods are perfect substitutes, will the consumer ever buy both simultaneously? Under what special condition might they?</li>
@@ -970,10 +974,8 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.4 — Perfect Complements</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">What happens when two goods must always be consumed together in a fixed ratio?</p>
-
 <div class="box box-def">
-  <div class="box-title">📖 Definition: Perfect Complements</div>
+  <div class="box-title">Definition: Perfect Complements</div>
   <p><strong>Perfect Complements:</strong> Two goods are perfect complements if they must be consumed together in fixed proportions in order to generate utility. Extra units of one good, without the corresponding extra units of the other, provide no additional utility.</p>
   <p>The canonical example is left shoes and right shoes. A consumer with 2 left shoes and 2 right shoes has 2 functional pairs.</p>
 </div>
@@ -1044,17 +1046,17 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
     <text x="44" y="184" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">2</text>
     <text x="44" y="124" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">3</text>
   </svg>
-  <div class="fig-caption"><strong>Figure 2.</strong> Perfect complements: left shoes and right shoes. The kink of each L-shaped curve is the only bundle where both goods are fully "used up." On the horizontal arm (bundles B and C), there are surplus left shoes that add nothing. All kinks lie on the 45&deg; ray, confirming the consumer always wants equal amounts of each good.</div>
+  <div class="fig-caption"><strong>Figure 2.</strong> Perfect complements: left shoes and right shoes.</div>
 </div>
 
 <div class="box box-key">
-  <div class="box-title">💡 Key Idea</div>
+  <div class="box-title">Key Idea</div>
   <p>The kink of the L is the only point on each IC where both goods are being "used." Anywhere else on the L, one good is in excess. Extra units of the surplus good add no utility.</p>
   <p><strong>Key feature:</strong> L-shaped ICs with the kink on the ray X/a = Y/b. The MRS is not defined at the kink, and is either 0 (horizontal arm) or &infin; (vertical arm).</p>
 </div>
 
 <div class="box box-app">
-  <div class="box-title">📊 Application 2.2: The Razor-and-Blade Business Model</div>
+  <div class="box-title">Application 2.2: The Razor-and-Blade Business Model</div>
   <p>Perfect-complement preferences underlie one of the most successful pricing strategies in business history. Gillette sells razors cheaply (near cost) and charges a premium on replacement blades. Printer companies do the same with ink cartridges. Apple's ecosystem — iPhone and App Store — exhibits the same logic. When two goods are perfect complements, the consumer must buy them in a fixed ratio. A firm that controls supply of one complement can therefore extract value through the other. This is the foundation for understanding why firms in technology, gaming (consoles and games), and healthcare (devices and consumables) adopt two-part pricing structures.</p>
 </div>
 
@@ -1078,10 +1080,8 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.5 — Neutral (Useless) Good</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">Can a good have zero value to a consumer? What does the indifference map look like when one good simply does not matter?</p>
-
 <div class="box box-def">
-  <div class="box-title">📖 Definition: Neutral Good</div>
+  <div class="box-title">Definition: Neutral Good</div>
   <p><strong>Neutral Good:</strong> A good is neutral if it provides zero marginal utility to the consumer — consuming more or less of it leaves utility completely unchanged. Examples include class notes for a course you have never taken, or a book in a language you do not speak.</p>
 </div>
 
@@ -1134,7 +1134,7 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
     <text x="44" y="184" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">2</text>
     <text x="44" y="124" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">3</text>
   </svg>
-  <div class="fig-caption"><strong>Figure 3.</strong> Neutral (useless) good: vertical indifference curves. Point A=(2,2) and the point (2,3) lie on the same IC U&#x2081; — adding more of the neutral good Y changes nothing. Utility increases only when X increases, which is why higher ICs lie to the right, not above.</div>
+  <div class="fig-caption"><strong>Figure 3.</strong> Neutral (useless) good: vertical indifference curves.</div>
 </div>
 
 <div class="check-q">
@@ -1157,10 +1157,8 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.6 — Economic Bads</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">How do economists model goods that consumers would prefer to avoid entirely — like pollution, noise, or a long commute?</p>
-
 <div class="box box-def">
-  <div class="box-title">📖 Definition: Economic Bad</div>
+  <div class="box-title">Definition: Economic Bad</div>
   <p><strong>Economic Bad:</strong> A good is an economic bad if consuming more of it <em>reduces</em> the consumer's utility. It confers negative marginal utility — also called disutility. Classic examples: pollution, noise, commute time.</p>
 </div>
 
@@ -1213,11 +1211,11 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
     <text x="44" y="184" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">2</text>
     <text x="44" y="244" font-family="sans-serif" font-size="11" fill="#666" text-anchor="end">1</text>
   </svg>
-  <div class="fig-caption"><strong>Figure 4.</strong> Economic bad: upward-sloping indifference curves. All three curves slope upward. Bundle A=(2,2) lies on U&#x2081;. To stay on U&#x2081; when pollution Y rises above 2, the consumer must receive more food X as compensation. Moving right (more food, same pollution) reaches U&#x2082; and U&#x2083;.</div>
+  <div class="fig-caption"><strong>Figure 4.</strong> Economic bad: upward-sloping indifference curves.</div>
 </div>
 
 <div class="box box-key">
-  <div class="box-title">💡 Why This Matters — Policy Application</div>
+  <div class="box-title">Why This Matters — Policy Application</div>
   <p>Economic bads appear constantly in policy debates. When a government evaluates a highway expansion, residents near the road experience noise and pollution as economic bads. To keep utility constant, they need compensation — more of some other good (income, parks, soundproofing). Understanding ICs for bads helps economists design sensible compensation policies and value environmental amenities.</p>
 </div>
 
@@ -1241,8 +1239,6 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.7 — The Budget Constraint</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">A student has $60 a week for coffee and textbooks. What is the full set of bundles she can afford, and how does that set change if textbook prices rise?</p>
-
 <p>Indifference curves describe what the consumer <em>wants</em>. But wanting something is not enough — the consumer also faces a resource constraint. This is where the <strong>budget constraint (BC)</strong> comes in.</p>
 
 <p>Suppose a consumer has income I and faces prices P<sub>x</sub> for good X and P<sub>y</sub> for good Y. If the consumer spends all of their income:</p>
@@ -1289,18 +1285,18 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
     <text x="472" y="304" font-family="sans-serif" font-size="13" fill="#1a1a2e">X</text>
     <text x="30" y="18" font-family="sans-serif" font-size="13" fill="#1a1a2e">Y</text>
   </svg>
-  <div class="fig-caption"><strong>Figure 5.</strong> The budget constraint. The Y-intercept is the most Y the consumer can buy (spending everything on Y); the X-intercept is the most X they can buy. The slope &minus;P<sub>x</sub>/P<sub>y</sub> tells you exactly how many units of Y must be sacrificed for one more unit of X. Every point in the shaded triangle is affordable; every point above the line is not.</div>
+  <div class="fig-caption"><strong>Figure 5.</strong> The budget constraint.</div>
 </div>
 
 <div class="box box-key">
-  <div class="box-title">💡 Key Idea</div>
+  <div class="box-title">Key Idea</div>
   <p>The budget constraint separates the feasible from the infeasible. Any bundle on or below the line is affordable; any bundle above the line requires more money than the consumer has. The line itself represents all the ways the consumer can spend every last dollar.</p>
 </div>
 
 <h3>Worked Example: Sheela's Budget Constraint</h3>
 <div class="worked-example">
   <div class="we-trigger">
-    <span><strong>Worked Example: Sheela's Budget Constraint — I = $100, P<sub>x</sub> = $5, P<sub>y</sub> = $2</strong></span>
+    <span><strong>Sheela's Budget Constraint — I = $100, P<sub>x</sub> = $5, P<sub>y</sub> = $2</strong></span>
     <span class="we-arrow">▾</span>
   </div>
   <div class="we-collapse">
@@ -1327,7 +1323,7 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 </div>
 
 <div class="box box-try">
-  <div class="box-title">✏️ Try It</div>
+  <div class="box-title">Try It</div>
   <p>Suppose Sheela's income rises to $150 but prices stay the same. Without calculating, predict what happens to the budget line. Then verify by computing the new intercepts.</p>
   <p><em>Answer: both intercepts scale by 1.5; slope unchanged.</em></p>
 </div>
@@ -1352,8 +1348,6 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.8 — Changes in the Budget Constraint</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">When a government cuts fuel taxes, does the budget line shift or rotate? Getting this right is the foundation for predicting how consumers respond to price changes.</p>
-
 <h3>Income Increases: Parallel Outward Shift</h3>
 <p>When income increases from $100 to $150 while P<sub>x</sub> = 5 and P<sub>y</sub> = 2 remain the same:</p>
 <ul>
@@ -1364,7 +1358,7 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <p>Both intercepts increase proportionally and the slope is unchanged. The budget line <strong>shifts outward in parallel</strong>.</p>
 
 <div class="box box-key">
-  <div class="box-title">💡 Key Idea</div>
+  <div class="box-title">Key Idea</div>
   <p><strong>Income change &Rightarrow; parallel shift</strong> of budget line. The slope is set by prices alone, so as long as prices do not change, a higher income simply slides the entire line outward. Income up: BC shifts outward. Income down: BC shifts inward.</p>
 </div>
 
@@ -1378,12 +1372,12 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <p>The line <strong>pivots outward</strong> around the fixed Y-intercept. The X-intercept moves outward; the slope changes.</p>
 
 <div class="box box-key">
-  <div class="box-title">💡 Key Idea</div>
+  <div class="box-title">Key Idea</div>
   <p><strong>Own-price change &Rightarrow; pivot</strong> of budget line. The intercept on the other good's axis is fixed; only the intercept on the good whose price changed moves. P<sub>x</sub> falls: pivot outward (flatter). P<sub>x</sub> rises: pivot inward (steeper).</p>
 </div>
 
 <div class="box box-warn">
-  <div class="box-title">⚠️ Common Mistake: Confusing Shifts with Pivots</div>
+  <div class="box-title">Common Mistake: Confusing Shifts with Pivots</div>
   <p>Students often draw a parallel shift when a price changes, or a pivot when income changes. The rule is simple: <strong>income changes both intercepts proportionally and leaves the slope unchanged (parallel shift); a price change fixes one intercept and moves the other, changing the slope (pivot).</strong> Quick check: if the fixed intercept has moved, it is not a pivot.</p>
 </div>
 
@@ -1402,7 +1396,7 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 </table>
 
 <div class="box box-app">
-  <div class="box-title">📊 Application 2.3: Fuel Tax vs. Income Tax — Same Revenue, Different Behaviour</div>
+  <div class="box-title">Application 2.3: Fuel Tax vs. Income Tax — Same Revenue, Different Behaviour</div>
   <p>Suppose the government needs to raise $500 per household in revenue. It can do so either by levying a tax on petrol (pivoting the budget line inward around the non-petrol intercept) or by reducing all households' income by $500 (a parallel shift inward). Both policies raise the same revenue. But they affect consumer choices very differently: the fuel tax changes relative prices and discourages petrol consumption specifically; the income tax leaves relative prices intact and reduces consumption of all goods proportionally.</p>
   <p>This is why environmental economists prefer fuel taxes to income taxes when they want to reduce emissions — the pivot, not the shift, does the work.</p>
 </div>
@@ -1427,8 +1421,6 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.9 — Determining the Optimal Consumption Bundle</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">Given that a consumer wants to reach the highest IC and can only afford bundles on or below the budget line, where exactly is the best bundle — and how do we find it?</p>
-
 <p>We now have two pieces: (1) indifference curves, which describe what the consumer <em>wants</em>, and (2) the budget constraint, which describes what they can <em>afford</em>. The consumer's goal is:</p>
 <p style="text-align:center;font-style:italic;font-size:1.05rem;margin:16px 0;padding:12px;background:#f7f9fc;border-radius:8px;border-left:4px solid #0066B3;">Choose the bundle that provides the highest utility while remaining within the budget.</p>
 
@@ -1450,12 +1442,12 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <p>In words: the market's trade-off between the two goods (the price ratio) must equal the consumer's personal trade-off (the MRS). If they differ, the consumer can always rearrange spending to reach a higher IC.</p>
 
 <div class="box box-key">
-  <div class="box-title">💡 Key Idea</div>
+  <div class="box-title">Key Idea</div>
   <p>The tangency condition says: at the optimum, the market's exchange rate between X and Y (the price ratio) exactly equals the consumer's personal exchange rate (the MRS). If they differed, the consumer could rearrange spending to get more utility without spending more money.</p>
 </div>
 
 <div class="box box-warn">
-  <div class="box-title">⚠️ Common Mistake: Using Tangency for All Preference Types</div>
+  <div class="box-title">Common Mistake: Using Tangency for All Preference Types</div>
   <p>The tangency condition holds only for smooth, strictly convex ICs (like Cobb-Douglas). For perfect complements, the optimum is at the kink of the L, where the MRS is undefined. For perfect substitutes, the optimum is typically at a corner. Always check the type of preferences before applying the tangency condition mechanically.</p>
 </div>
 
@@ -1504,12 +1496,12 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <p>The optimality condition says: <strong>at the optimal bundle, the utility per dollar spent is the same for every good.</strong> If this were not so — say, MU<sub>x</sub>/P<sub>x</sub> &gt; MU<sub>y</sub>/P<sub>y</sub> — the consumer could increase total utility by spending one less dollar on Y and one more dollar on X.</p>
 
 <div class="box box-key">
-  <div class="box-title">💡 Why This Matters</div>
+  <div class="box-title">Why This Matters</div>
   <p>The bang-for-the-buck condition applies far beyond individual consumers. A firm deciding how to allocate a marketing budget across TV and digital advertising should equalize the return per dollar across channels. A hospital system allocating resources across departments, or a government allocating spending across programs, faces the same logic. Wherever resources are scarce and alternatives exist, equating marginal return per dollar is the path to efficiency.</p>
 </div>
 
 <div class="box box-app">
-  <div class="box-title">📊 Application 2.4: Marketing Budget Allocation</div>
+  <div class="box-title">Application 2.4: Marketing Budget Allocation</div>
   <p>A coffee shop owner has $10,000 to split between espresso machine upgrades and barista training. The last $1,000 spent on machines increases daily throughput worth $80. The last $1,000 spent on training improves customer satisfaction, increasing repeat visits worth $130 per $1,000 over a quarter. Since the return per dollar is higher for training ($130) than for machines ($80), the owner should shift spending toward training — and keep reallocating until marginal returns per dollar are equalized. This is the bang-for-the-buck condition applied directly to a capital budgeting decision.</p>
 </div>
 
@@ -1525,11 +1517,9 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <div class="collapse-body">
 <div class="sticky-title">§ 2.11 — Finding the Optimal Bundle: Worked Examples</div>
 <div class="collapse-divider"></div>
-<p class="section-lead">How do we translate the two conditions for optimality into a concrete step-by-step calculation?</p>
-
 <div class="worked-example">
   <div class="we-trigger">
-    <span><strong>Worked Example 1: Amanda's Optimal Consumption Bundle</strong></span>
+    <span><strong>Amanda's Optimal Consumption Bundle</strong></span>
     <span class="we-arrow">▾</span>
   </div>
   <div class="we-collapse">
@@ -1561,18 +1551,19 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
       <p>200 = 2X + 5&middot;(2X/5) = 2X + 2X = 4X &rArr; <strong>X* = 50, Y* = 20</strong></p>
       <p><em>Observation:</em> When the price of food fell from $4 to $2, Amanda doubled her food consumption (25 &rarr; 50). Her clothing consumption stayed at 20. This reflects the equal-expenditure-share property of &radic;(XY): exactly half of income is always spent on each good.</p>
     </div>
-  </div>
-</div>
-</div>
+  
 
 <div class="box box-insight">
-  <div class="box-title">💚 Economic Insight</div>
+  <div class="box-title">Economic Insight</div>
+</div>
+</div>
+</div>
   <p>When two goods are consumed under Cobb-Douglas preferences, a fall in the price of one good raises its consumption but leaves consumption of the other good <em>completely unchanged</em>. The freed-up spending goes entirely into the cheaper good — a result that turns out to be useful for understanding demand elasticities in Chapter 3.</p>
 </div>
 
 <div class="worked-example">
   <div class="we-trigger">
-    <span><strong>Worked Example 2: Cobb-Douglas Demand Functions (General Case)</strong></span>
+    <span><strong>Cobb-Douglas Demand Functions (General Case)</strong></span>
     <span class="we-arrow">▾</span>
   </div>
   <div class="we-collapse">
@@ -1589,32 +1580,16 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
       <div class="eq-wrap" style="margin:8px 0;">X* = [&alpha;/(&alpha;+&beta;)] &middot; I/P<sub>x</sub> &nbsp;&nbsp;&nbsp;&nbsp; Y* = [&beta;/(&alpha;+&beta;)] &middot; I/P<sub>y</sub></div>
       <p><strong>Interpretation:</strong> The consumer spends fraction &alpha;/(&alpha;+&beta;) of income on X and fraction &beta;/(&alpha;+&beta;) on Y. For Amanda (&alpha; = &beta; = 1/2): X* = I/(2P<sub>x</sub>), Y* = I/(2P<sub>y</sub>) — exactly half of income on each.</p>
     </div>
-  </div>
-</div>
-</div>
+  
 
 <div class="box box-insight">
-  <div class="box-title">💚 Economic Insight: Fixed Expenditure Shares</div>
+  <div class="box-title">Economic Insight: Fixed Expenditure Shares</div>
+</div>
+</div>
+</div>
   <p>The fixed-expenditure-share property of Cobb-Douglas preferences is one of the most empirically useful results in consumer theory. When a government or market research firm reports that "households spend roughly 30% of income on housing regardless of income level," they are observing Cobb-Douglas behaviour. This result will reappear in Chapter 3 when we compute income and price elasticities of demand.</p>
 </div>
 
-<!-- ══════════════════════════════════
-     FIVE COMMON MISTAKES
-══════════════════════════════════ -->
-<h2><span class="exam-tip-flag">🎯</span>Five Common Exam Mistakes — and How to Avoid Them</h2>
-<ol class="mistake-list">
-  <li><div class="mistake-title">Drawing a parallel shift when a price changes.</div>A price change pivots the budget line around one fixed intercept — it never shifts both intercepts equally. Only an income change produces a parallel shift.</li>
-  <li><div class="mistake-title">Applying the tangency condition to perfect complements or substitutes.</div>The tangency condition requires a smooth, convex IC. For perfect complements, use the kink condition X/a = Y/b. For perfect substitutes, compare MU<sub>x</sub>/P<sub>x</sub> vs. MU<sub>y</sub>/P<sub>y</sub> and buy only the better-value good.</li>
-  <li><div class="mistake-title">Placing the optimal bundle off the budget line.</div>The optimal bundle must exhaust the budget — it always lies on the budget line, not inside it.</li>
-  <li><div class="mistake-title">Getting the MRS direction wrong.</div>The MRS is MU<sub>x</sub>/MU<sub>y</sub> (good on horizontal axis over good on vertical axis). Inverting this is one of the most common algebraic errors in this topic.</li>
-  <li><div class="mistake-title">Concluding that higher MU<sub>x</sub>/P<sub>x</sub> means spend less on X.</div>The opposite is true: if MU<sub>x</sub>/P<sub>x</sub> &gt; MU<sub>y</sub>/P<sub>y</sub>, shift spending <em>toward</em> X, not away from it.</li>
-</ol>
-
-<!-- ══════════════════════════════════
-     WHERE DOES THIS TAKE US?
-══════════════════════════════════ -->
-<div class="where-next">
-  <div class="where-next-title">&#x1F9ED; Where Does This Take Us?</div>
   <ul>
     <li><strong>Chapter 3</strong> builds directly on the tangency condition to derive the consumer's individual demand curve — showing how the optimal bundle changes as price changes.</li>
     <li><strong>The Cobb-Douglas demand shares</strong> derived here will reappear as the foundation for computing income and substitution effects.</li>
@@ -1686,14 +1661,7 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
 <!-- ══════════════════════════════════
      KEY TERMS
 ══════════════════════════════════ -->
-</div></div>
-<div class="collapsible-section">
-<div class="collapse-trigger">
-  <h2>Key Terms</h2>
-  <span class="collapse-arrow">▾</span>
-</div>
-<div class="collapse-body">
-<div class="collapse-divider"></div>
+<h3 style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:1rem;font-weight:700;margin:24px 0 14px;color:#0066B3;border-top:1px solid #e0e4ea;padding-top:16px;">Key Terms</h3>
 <div class="key-terms-grid">
   <div class="term-card"><div class="term-name">Perfect Substitutes</div><div class="term-def">Two goods that serve identical functions and can be traded at a constant ratio. ICs are straight, parallel, downward-sloping lines.</div></div>
   <div class="term-card"><div class="term-name">Perfect Complements</div><div class="term-def">Two goods consumed in fixed proportions. Extra units of one without the other provide no utility. ICs are L-shaped.</div></div>
