@@ -525,6 +525,244 @@ body.dark .concept-map-wrap svg { border-color: #2e3545; }
   <div class="lo-card"><div class="lo-badge">LO7</div><div class="lo-text">Select the correct optimisation method (tangency, corner, or kink) for any preference type.</div><div class="lo-sections">§2.10 · §2.12</div></div>
 </div>
 
+
+<!-- ══════════════════════════════════
+     CONCEPT MAP
+══════════════════════════════════ -->
+<div class="collapsible-section">
+<div class="collapse-trigger">
+  <h2>🗺 Chapter Concept Map</h2>
+  <span class="collapse-arrow">▾</span>
+</div>
+<div class="collapse-body">
+<div class="collapse-divider"></div>
+<p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#666;margin-bottom:14px;">The map below shows how all topics in this chapter connect. Each node links to the section where it is developed in detail.</p>
+<div class="concept-map-wrap">
+<svg viewBox="0 0 900 630" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <defs>
+    <!-- Gradients for main clusters -->
+    <radialGradient id="g-center" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a56a0"/>
+      <stop offset="100%" stop-color="#0066B3"/>
+    </radialGradient>
+    <radialGradient id="g-pref" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1976b0"/>
+      <stop offset="100%" stop-color="#0d5fa0"/>
+    </radialGradient>
+    <radialGradient id="g-budget" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2e8b57"/>
+      <stop offset="100%" stop-color="#1e7444"/>
+    </radialGradient>
+    <radialGradient id="g-opt" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#6025c8"/>
+    </radialGradient>
+    <!-- Sub-node fills -->
+    <linearGradient id="g-sub-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dbeafe"/>
+      <stop offset="100%" stop-color="#bfdbfe"/>
+    </linearGradient>
+    <linearGradient id="g-sub-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dcfce7"/>
+      <stop offset="100%" stop-color="#bbf7d0"/>
+    </linearGradient>
+    <linearGradient id="g-sub-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ede9fe"/>
+      <stop offset="100%" stop-color="#ddd6fe"/>
+    </linearGradient>
+    <!-- Drop shadows -->
+    <filter id="shadow-lg" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.18)"/>
+    </filter>
+    <filter id="shadow-md" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.13)"/>
+    </filter>
+    <filter id="shadow-sm" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="rgba(0,0,0,0.10)"/>
+    </filter>
+    <!-- Arrowhead markers -->
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#0066B3" opacity="0.7"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2e8b57" opacity="0.7"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#7c3aed" opacity="0.7"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#888" opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <!-- ── BACKGROUND ── -->
+  <rect width="900" height="620" fill="#f8fafc" rx="16"/>
+  <rect x="1" y="1" width="898" height="618" fill="none" stroke="#e0e4ea" stroke-width="1.5" rx="16"/>
+
+  <!-- ── TITLE ── -->
+  <text x="450" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="#666" letter-spacing="0.08em" text-transform="uppercase">CONCEPT MAP — WEEK 2: CONSUMER CHOICE</text>
+
+  <!-- ══════════════════════════════════
+       CONNECTOR LINES (drawn first, behind nodes)
+  ══════════════════════════════════ -->
+
+  <!-- Center → Preferences cluster (left) -->
+  <path d="M 390,270 C 330,250 280,210 248,188" stroke="#0066B3" stroke-width="2" fill="none" opacity="0.5" marker-end="url(#arrow-blue)" stroke-dasharray="none"/>
+  <!-- Center → Budget cluster (right) -->
+  <path d="M 510,270 C 570,250 620,210 652,188" stroke="#2e8b57" stroke-width="2" fill="none" opacity="0.5" marker-end="url(#arrow-green)"/>
+  <!-- Center → Optimum cluster (bottom) -->
+  <path d="M 450,320 C 450,370 450,390 450,418" stroke="#7c3aed" stroke-width="2" fill="none" opacity="0.5" marker-end="url(#arrow-purple)"/>
+
+  <!-- Preferences → sub-nodes -->
+  <path d="M 210,160 C 170,140 140,118 122,105" stroke="#0066B3" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arrow-blue)"/>
+  <path d="M 200,185 C 155,185 118,185 95,185" stroke="#0066B3" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arrow-blue)"/>
+  <path d="M 210,210 C 168,225 135,242 112,255" stroke="#0066B3" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arrow-blue)"/>
+  <path d="M 230,228 C 210,268 190,288 178,308" stroke="#0066B3" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arrow-blue)"/>
+
+  <!-- Budget → sub-nodes -->
+  <path d="M 690,160 C 728,140 758,118 776,105" stroke="#2e8b57" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arrow-green)"/>
+  <path d="M 700,185 C 745,185 778,185 800,185" stroke="#2e8b57" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arrow-green)"/>
+  <path d="M 690,210 C 730,225 762,242 782,255" stroke="#2e8b57" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arrow-green)"/>
+
+  <!-- Optimum → sub-nodes -->
+  <path d="M 412,468 C 370,488 338,500 310,508" stroke="#7c3aed" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arrow-purple)"/>
+  <path d="M 450,475 C 450,500 450,515 450,528" stroke="#7c3aed" stroke-width="1.5" fill="none" opacity="0.4" marker-end="url(#arrow-purple)"/>
+
+
+  <!-- Cross-cluster: Preferences + Budget → Optimum (the key insight) -->
+  <path d="M 260,220 C 280,320 340,390 412,435" stroke="#888" stroke-width="1.5" fill="none" opacity="0.35" stroke-dasharray="6,3" marker-end="url(#arrow-gray)"/>
+  <path d="M 640,220 C 620,320 560,390 488,435" stroke="#888" stroke-width="1.5" fill="none" opacity="0.35" stroke-dasharray="6,3" marker-end="url(#arrow-gray)"/>
+
+  <!-- ══════════════════════════════════
+       CONNECTOR LABELS
+  ══════════════════════════════════ -->
+  <rect x="296" y="236" width="68" height="18" rx="9" fill="white" opacity="0.85"/>
+  <text x="330" y="249" text-anchor="middle" font-size="10" fill="#555" font-style="italic">shapes</text>
+
+  <rect x="536" y="236" width="68" height="18" rx="9" fill="white" opacity="0.85"/>
+  <text x="570" y="249" text-anchor="middle" font-size="10" fill="#555" font-style="italic">constrains</text>
+
+  <rect x="456" y="358" width="80" height="18" rx="9" fill="white" opacity="0.85"/>
+  <text x="496" y="371" text-anchor="middle" font-size="10" fill="#555" font-style="italic">determines</text>
+
+  <rect x="290" y="330" width="68" height="18" rx="9" fill="white" opacity="0.85"/>
+  <text x="324" y="343" text-anchor="middle" font-size="10" fill="#888" font-style="italic">combined</text>
+
+  <rect x="548" y="330" width="68" height="18" rx="9" fill="white" opacity="0.85"/>
+  <text x="582" y="343" text-anchor="middle" font-size="10" fill="#888" font-style="italic">combined</text>
+
+  <!-- ══════════════════════════════════
+       CENTRAL NODE
+  ══════════════════════════════════ -->
+  <ellipse cx="450" cy="290" rx="72" ry="44" fill="url(#g-center)" filter="url(#shadow-lg)"/>
+  <ellipse cx="450" cy="290" rx="72" ry="44" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <text x="450" y="284" text-anchor="middle" font-size="13" font-weight="700" fill="white" letter-spacing="0.02em">Consumer</text>
+  <text x="450" y="301" text-anchor="middle" font-size="13" font-weight="700" fill="white" letter-spacing="0.02em">Choice</text>
+
+  <!-- ══════════════════════════════════
+       CLUSTER 1 — PREFERENCES (left, blue)
+  ══════════════════════════════════ -->
+  <!-- Main cluster node -->
+  <ellipse cx="245" cy="185" rx="58" ry="36" fill="url(#g-pref)" filter="url(#shadow-md)"/>
+  <ellipse cx="245" cy="185" rx="58" ry="36" fill="none" stroke="white" stroke-width="1" opacity="0.25"/>
+  <text x="245" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="white">Preferences</text>
+  <text x="245" y="195" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">&amp; Utility</text>
+
+  <!-- Sub-nodes: Preferences -->
+  <!-- IC Types -->
+  <rect x="34" y="76" width="104" height="50" rx="10" fill="url(#g-sub-blue)" filter="url(#shadow-sm)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="86" y="88" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">IC Types</text>
+  <text x="86" y="101" text-anchor="middle" font-size="9.5" fill="#3b82f6">Substitutes · Complements</text>
+  <text x="86" y="112" text-anchor="middle" font-size="8.5" fill="#60a5fa" font-style="italic">§2.3 – 2.6</text>
+
+  <!-- MRS -->
+  <rect x="22" y="166" width="88" height="46" rx="10" fill="url(#g-sub-blue)" filter="url(#shadow-sm)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="66" y="178" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">MRS</text>
+  <text x="66" y="191" text-anchor="middle" font-size="9.5" fill="#3b82f6">Slope of IC</text>
+  <text x="66" y="202" text-anchor="middle" font-size="8.5" fill="#60a5fa" font-style="italic">§2.1</text>
+
+  <!-- Neutral & Bads -->
+  <rect x="26" y="236" width="108" height="48" rx="10" fill="url(#g-sub-blue)" filter="url(#shadow-sm)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="80" y="248" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">Neutral &amp; Bads</text>
+  <text x="80" y="261" text-anchor="middle" font-size="9.5" fill="#3b82f6">Vertical · Upward ICs</text>
+  <text x="80" y="272" text-anchor="middle" font-size="8.5" fill="#60a5fa" font-style="italic">§2.5 – 2.6</text>
+
+  <!-- Convexity -->
+  <rect x="100" y="290" width="108" height="48" rx="10" fill="url(#g-sub-blue)" filter="url(#shadow-sm)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="154" y="302" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">Convexity</text>
+  <text x="154" y="315" text-anchor="middle" font-size="9.5" fill="#3b82f6">Preference for variety</text>
+  <text x="154" y="326" text-anchor="middle" font-size="8.5" fill="#60a5fa" font-style="italic">§2.1</text>
+
+  <!-- ══════════════════════════════════
+       CLUSTER 2 — BUDGET (right, green)
+  ══════════════════════════════════ -->
+  <!-- Main cluster node -->
+  <ellipse cx="655" cy="185" rx="58" ry="36" fill="url(#g-budget)" filter="url(#shadow-md)"/>
+  <ellipse cx="655" cy="185" rx="58" ry="36" fill="none" stroke="white" stroke-width="1" opacity="0.25"/>
+  <text x="655" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="white">Budget</text>
+  <text x="655" y="195" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">Constraint</text>
+
+  <!-- Sub-nodes: Budget -->
+  <!-- BC Equation -->
+  <rect x="762" y="76" width="110" height="50" rx="10" fill="url(#g-sub-green)" filter="url(#shadow-sm)" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="817" y="88" text-anchor="middle" font-size="11" font-weight="600" fill="#065f46">BC Equation</text>
+  <text x="817" y="101" text-anchor="middle" font-size="9.5" fill="#059669">PₓX + PyY = I</text>
+  <text x="817" y="112" text-anchor="middle" font-size="8.5" fill="#34d399" font-style="italic">§2.7</text>
+
+  <!-- Slope & Intercepts -->
+  <rect x="790" y="166" width="110" height="50" rx="10" fill="url(#g-sub-green)" filter="url(#shadow-sm)" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="845" y="178" text-anchor="middle" font-size="11" font-weight="600" fill="#065f46">Slope &amp; Intercepts</text>
+  <text x="845" y="191" text-anchor="middle" font-size="9.5" fill="#059669">&minus;Pₓ/Py</text>
+  <text x="845" y="202" text-anchor="middle" font-size="8.5" fill="#34d399" font-style="italic">§2.7</text>
+
+  <!-- Shifts & Pivots -->
+  <rect x="766" y="236" width="110" height="50" rx="10" fill="url(#g-sub-green)" filter="url(#shadow-sm)" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="821" y="248" text-anchor="middle" font-size="11" font-weight="600" fill="#065f46">Shifts &amp; Pivots</text>
+  <text x="821" y="261" text-anchor="middle" font-size="9.5" fill="#059669">Income vs Price changes</text>
+  <text x="821" y="272" text-anchor="middle" font-size="8.5" fill="#34d399" font-style="italic">§2.8</text>
+
+  <!-- ══════════════════════════════════
+       CLUSTER 3 — OPTIMUM (bottom, purple)
+  ══════════════════════════════════ -->
+  <!-- Main cluster node -->
+  <ellipse cx="450" cy="448" rx="58" ry="36" fill="url(#g-opt)" filter="url(#shadow-md)"/>
+  <ellipse cx="450" cy="448" rx="58" ry="36" fill="none" stroke="white" stroke-width="1" opacity="0.25"/>
+  <text x="450" y="443" text-anchor="middle" font-size="12" font-weight="700" fill="white">Consumer</text>
+  <text x="450" y="458" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">Optimum</text>
+
+  <!-- Sub-nodes: Optimum -->
+  <!-- Tangency Condition -->
+  <rect x="190" y="520" width="128" height="50" rx="10" fill="url(#g-sub-purple)" filter="url(#shadow-sm)" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="254" y="532" text-anchor="middle" font-size="11" font-weight="600" fill="#4c1d95">Tangency Condition</text>
+  <text x="254" y="545" text-anchor="middle" font-size="9.5" fill="#7c3aed">Pₓ/Py = MUₓ/MUy</text>
+  <text x="254" y="556" text-anchor="middle" font-size="8.5" fill="#a78bfa" font-style="italic">§2.9</text>
+
+  <!-- Bang for the Buck -->
+  <rect x="386" y="535" width="128" height="50" rx="10" fill="url(#g-sub-purple)" filter="url(#shadow-sm)" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="450" y="547" text-anchor="middle" font-size="11" font-weight="600" fill="#4c1d95">Bang for the Buck</text>
+  <text x="450" y="560" text-anchor="middle" font-size="9.5" fill="#7c3aed">MUₓ/Pₓ = MUy/Py</text>
+  <text x="450" y="571" text-anchor="middle" font-size="8.5" fill="#a78bfa" font-style="italic">§2.10</text>
+
+
+
+  <!-- ══════════════════════════════════
+       LEGEND
+  ══════════════════════════════════ -->
+  <rect x="20" y="572" width="340" height="34" rx="8" fill="white" opacity="0.7" stroke="#e0e4ea" stroke-width="1"/>
+  <circle cx="40" cy="589" r="7" fill="url(#g-pref)"/>
+  <text x="52" y="593" font-size="10" fill="#333">Preferences</text>
+  <circle cx="120" cy="589" r="7" fill="url(#g-budget)"/>
+  <text x="132" y="593" font-size="10" fill="#333">Budget</text>
+  <circle cx="192" cy="589" r="7" fill="url(#g-opt)"/>
+  <text x="204" y="593" font-size="10" fill="#333">Optimum</text>
+  <line x1="268" y1="589" x2="288" y2="589" stroke="#888" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="294" y="593" font-size="10" fill="#888">Combined</text>
+
+</svg>
+
+</div>
+</div></div>
+
 <!-- ══════════════════════════════════
      NOTATION
 ══════════════════════════════════ -->
